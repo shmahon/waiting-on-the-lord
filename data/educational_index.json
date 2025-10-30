@@ -1,0 +1,216 @@
+{
+  "title": "Educational Content Master Index",
+  "version": "1.0",
+  "created": "2025-10-30",
+  "purpose": "Complete reference for all grammatical concepts, lexical definitions, and educational notes used in the 'Waiting on the Lord' document",
+  
+  "content_files": {
+    "hebrew_stems": {
+      "file": "data/hebrew_stems.json",
+      "description": "Complete explanation of Hebrew verb stem system (binyanim)",
+      "covers": ["Qal", "Niphal", "Piel", "Pual", "Hiphil", "Hophal", "Hithpael"],
+      "usage": "Endnote section or inline reference when explaining Hebrew verb forms"
+    },
+    "hebrew_concepts": {
+      "file": "data/hebrew_concepts.json",
+      "description": "Learners' notes for Hebrew grammatical concepts",
+      "covers": [
+        "Perfect",
+        "Imperfect",
+        "Sequential Perfect",
+        "Sequential Imperfect",
+        "Participle",
+        "Imperative",
+        "Infinitive",
+        "Construct State"
+      ],
+      "usage": "Inline learners' notes when these concepts appear in parsing"
+    },
+    "greek_concepts": {
+      "file": "data/greek_concepts.json",
+      "description": "Learners' notes for Greek grammatical concepts",
+      "covers": [
+        "Present Tense",
+        "Aorist Tense",
+        "Active Voice",
+        "Middle Voice",
+        "Passive Voice",
+        "Deponent Verb",
+        "Middle/Passive Deponent",
+        "Indicative Mood",
+        "Participle (Greek)",
+        "First Person Plural"
+      ],
+      "usage": "Inline learners' notes when these concepts appear in parsing"
+    },
+    "hebrew_lexemes": {
+      "file": "data/hebrew_lexemes.json",
+      "description": "Detailed lexical definitions for all Hebrew words in the study",
+      "covers": ["קָוָה", "חָכָה", "יָחַל", "דָּמַם", "חוּל"],
+      "includes": [
+        "Etymology",
+        "Semantic range",
+        "Theological significance",
+        "Relationship to themes",
+        "Contrast with other words",
+        "Key verses"
+      ],
+      "usage": "Main body word studies for each Hebrew lexeme"
+    },
+    "greek_lexemes": {
+      "file": "data/greek_lexemes.json",
+      "description": "Detailed lexical definitions for all Greek words in the study",
+      "covers": ["ἀπεκδέχομαι", "προσδέχομαι", "μακροθυμέω", "ἀναμένω", "ἐλπίζω", "ὑπομονή"],
+      "includes": [
+        "Etymology",
+        "Semantic range",
+        "Theological significance",
+        "Relationship to themes",
+        "Contrast with other words",
+        "Key verses"
+      ],
+      "usage": "Main body word studies for each Greek lexeme"
+    }
+  },
+  
+  "document_structure": {
+    "introduction": {
+      "content": "Overview of the study, methodology, and significance of morphology for understanding 'waiting on the Lord'",
+      "length": "1-2 pages"
+    },
+    "main_body": {
+      "organization": "By theme (12 themes)",
+      "for_each_theme": {
+        "theme_introduction": "Brief explanation of thematic category",
+        "lexeme_studies": [
+          "For each Hebrew/Greek word appearing in theme:",
+          "- Word with transliteration",
+          "- Strong's number and TWOT/Greek reference",
+          "- Brief lexical definition from hebrew_lexemes.json or greek_lexemes.json",
+          "- Occurrences in this theme:",
+          "  - Reference",
+          "  - Full morphological parsing",
+          "  - Inline learners' notes for obscure concepts",
+          "  - Explanation of how morphology relates to theme",
+          "  - Scripture text with context"
+        ]
+      },
+      "estimated_length": "30-40 pages"
+    },
+    "endnotes": {
+      "hebrew_stem_system": {
+        "source": "data/hebrew_stems.json",
+        "content": "Comprehensive explanation of all seven Hebrew stems",
+        "estimated_length": "3-4 pages"
+      },
+      "hebrew_grammar_reference": {
+        "source": "data/hebrew_concepts.json",
+        "content": "Reference guide for Hebrew grammatical terms",
+        "estimated_length": "2-3 pages"
+      },
+      "greek_grammar_reference": {
+        "source": "data/greek_concepts.json",
+        "content": "Reference guide for Greek grammatical terms, especially deponent verbs",
+        "estimated_length": "2-3 pages"
+      },
+      "estimated_length": "7-10 pages"
+    },
+    "appendix": {
+      "content": [
+        "Summary table of all lexemes with occurrence counts",
+        "Thematic distribution chart",
+        "Bibliography and resources for further study"
+      ],
+      "estimated_length": "2-3 pages"
+    }
+  },
+  
+  "inline_learners_notes_strategy": {
+    "principle": "Provide brief, parenthetical explanation when obscure concept first appears in each theme section",
+    "format": "After morphological parsing, add: (Learners' Note: [brief explanation])",
+    "concepts_requiring_inline_notes": [
+      "Sequential Perfect",
+      "Sequential Imperfect",
+      "Construct State",
+      "Participle (first occurrence)",
+      "Infinitive (first occurrence)",
+      "Deponent (first occurrence)",
+      "Hebrew stems (reference to endnotes on first occurrence)"
+    ],
+    "example": "Verb, Qal, Participle, Masculine Plural Construct (Learners' Note: 'Construct' indicates this participle is in a tight grammatical relationship with what follows—here, 'those who wait for the LORD.' See endnotes for construct state explanation.)"
+  },
+  
+  "endnote_reference_strategy": {
+    "principle": "First occurrence of Hebrew stem or complex concept includes endnote reference",
+    "format": "Add superscript number linking to endnote section",
+    "concepts_requiring_endnotes": [
+      "Each Hebrew stem (Qal, Piel, Hiphil, etc.) - reference Hebrew Stem System endnote",
+      "Deponent verbs - reference Greek Grammar endnote",
+      "Sequential Perfect/Imperfect - reference Hebrew Grammar endnote"
+    ],
+    "example": "Verb, Qal¹, Imperative, Masculine Singular\n[Endnote 1: See 'Hebrew Verb Stem System' in endnotes for explanation of Qal and other stems.]"
+  },
+  
+  "morphology_explanation_template": {
+    "purpose": "For each occurrence, explain how the morphology contributes to theme",
+    "structure": [
+      "1. State the parsing (part of speech, stem, type, person, gender, number)",
+      "2. Add inline learners' note if concept is obscure",
+      "3. Explain what this form emphasizes or contributes",
+      "4. Connect to the theme",
+      "5. Show theological implication"
+    ],
+    "example": {
+      "parsing": "Verb, Qal, Participle, Masculine Plural Construct",
+      "inline_note": "(Construct shows tight relationship with 'the LORD')",
+      "explanation": "The participle emphasizes characteristic action—not those who waited once, but those characterized by waiting. The plural shows this is a corporate posture, not individual. The construct form binds the waiters inseparably to their object: 'LORD-waiters.'",
+      "theme_connection": "This fits the 'Strength & Renewal' theme because the participle makes 'waiting' an identity, not just an action. Those who characteristically wait on God are the ones who receive renewed strength.",
+      "theological_implication": "Waiting on God is not a one-time decision but a sustained posture—an identity marker of God's people."
+    }
+  },
+  
+  "usage_guidelines": {
+    "for_document_generator": [
+      "Load all JSON educational files at start",
+      "For each lexeme occurrence:",
+      "  - Pull parsing from parsed_entries.json",
+      "  - Pull lexeme definition from hebrew_lexemes.json or greek_lexemes.json",
+      "  - Check if any parsing terms appear in hebrew_concepts.json or greek_concepts.json",
+      "  - If obscure concept is found, insert inline learners' note",
+      "  - If stem is found, add endnote reference on first occurrence",
+      "  - Generate morphology explanation following template",
+      "Create endnotes section by:",
+      "  - Copying Hebrew Stem System from hebrew_stems.json",
+      "  - Creating glossary from hebrew_concepts.json and greek_concepts.json",
+      "  - Formatting as prose, not JSON"
+    ]
+  },
+  
+  "quality_standards": {
+    "accuracy": "All grammatical explanations must be linguistically sound",
+    "clarity": "Written for educated lay audience with some biblical language exposure",
+    "brevity": "Inline notes should be 1-2 sentences; detailed explanations in endnotes",
+    "theological_richness": "Always connect morphology to meaning and theology",
+    "consistency": "Use same terminology throughout; define technical terms",
+    "accessibility": "Avoid unnecessary jargon; explain when technical language is necessary"
+  },
+  
+  "completed_in_stage_3": {
+    "hebrew_stems": "✓ Complete - All 7 stems explained with examples and theology",
+    "hebrew_concepts": "✓ Complete - 8 concepts with learners' notes",
+    "greek_concepts": "✓ Complete - 10 concepts with learners' notes",
+    "hebrew_lexemes": "✓ Complete - All 5 Hebrew words fully defined",
+    "greek_lexemes": "✓ Complete - All 6 Greek words fully defined",
+    "master_index": "✓ Complete - This file provides integration strategy"
+  },
+  
+  "ready_for_stage_4": true,
+  "stage_4_tasks": [
+    "Create JavaScript document generator",
+    "Implement document structure per this index",
+    "Load and integrate all JSON educational files",
+    "Generate DOCX with proper formatting",
+    "Add endnotes system",
+    "Test with sample output"
+  ]
+}

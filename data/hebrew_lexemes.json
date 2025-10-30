@@ -1,0 +1,194 @@
+{
+  "title": "Hebrew Lexemes: Detailed Definitions",
+  "lexemes": [
+    {
+      "word": "קָוָה",
+      "transliteration": "qāwāh",
+      "strongs": "H6960",
+      "twot": "1994, 1995",
+      "pronunciation": "kaw-VAH",
+      "root_meaning": "To bind together by twisting, to collect, to gather",
+      "semantic_range": [
+        "To wait",
+        "To look for",
+        "To hope",
+        "To expect",
+        "To be gathered together (referring to water)"
+      ],
+      "primary_theological_meaning": "To wait in confident expectation",
+      "etymology": "The root idea involves twisting cords together or gathering—suggesting strength through unity and tension. Waiting is depicted as a gathering of one's energies toward a single hope.",
+      "usage_pattern": "Most common Hebrew word for 'waiting on God' in the Old Testament. Frequently appears in Psalms and prophetic literature. Often paired with themes of hope, strength, and deliverance.",
+      "theological_significance": "Qāwāh expresses active, confident waiting—not passive resignation. The image of twisted cords suggests strength through tension. Those who 'wait' are not idle but are gathering their focus and energy on God's promises. This is expectant faith.",
+      "distinctive_features": [
+        "Most frequent 'waiting' word in our study (16 occurrences)",
+        "Strong connection to hope and expectation",
+        "Often used in contexts of renewal and strength",
+        "Appears across multiple thematic categories"
+      ],
+      "relationship_to_themes": {
+        "strength_renewal": "Classic usage—'those who wait renew strength' (Isaiah 40:31)",
+        "trust_hope": "Core meaning involves confident expectation",
+        "patience_endurance": "Waiting requires sustained focus over time",
+        "blessing_inheritance": "Waiting is rewarded with God's promises"
+      },
+      "key_verses": [
+        "Isaiah 40:31 - 'Those who wait on the LORD shall renew their strength'",
+        "Psalm 27:14 - 'Wait on the LORD; be strong and let your heart take courage'",
+        "Psalm 25:3 - 'None who wait for you shall be put to shame'"
+      ],
+      "contrast_with_other_words": "Unlike יָחַל (yāḥal, which emphasizes hopeful yearning) or חָכָה (ḥākāh, which can suggest patient tarrying), qāwāh emphasizes the active tension of expectation—like a stretched cord awaiting release.",
+      "morphological_note": "Appears in multiple stems (primarily Qal and Piel) and forms (perfect, imperfect, imperative, participle), showing its versatility in describing various aspects of waiting."
+    },
+    {
+      "word": "חָכָה",
+      "transliteration": "ḥākāh",
+      "strongs": "H2442",
+      "twot": "648",
+      "pronunciation": "khaw-KAH",
+      "root_meaning": "To wait, to await, to tarry",
+      "semantic_range": [
+        "To wait",
+        "To tarry",
+        "To linger",
+        "To await patiently"
+      ],
+      "primary_theological_meaning": "To wait patiently, often with the sense of remaining in a position",
+      "etymology": "Related to Arabic cognates meaning 'to tarry' or 'remain.' The root suggests staying in place, remaining ready.",
+      "usage_pattern": "Less common than qāwāh but significant in prophetic and wisdom literature. Often appears in contexts where the wait involves discipline or involves waiting for God's justice, teaching, or timing.",
+      "theological_significance": "Ḥākāh emphasizes the discipline of remaining—not moving ahead of God's timing. It suggests patient lingering, staying in position, not being hasty. This is the wait of discipleship and submission to divine timing.",
+      "distinctive_features": [
+        "Second most frequent Hebrew word in our study (5 occurrences)",
+        "Strong emphasis on patience and remaining",
+        "Often connected to God's timing and instruction",
+        "Appears in varied contexts: judgment, teaching, blessing"
+      ],
+      "relationship_to_themes": {
+        "teaching_guidance": "Waiting for God to instruct",
+        "judgment_justice": "Waiting for God's righteous judgment",
+        "goodness_of_god": "Patient waiting reveals God's goodness",
+        "blessing_inheritance": "Faithful waiting leads to inheritance",
+        "help_deliverance": "Remaining in position for God's deliverance"
+      },
+      "key_verses": [
+        "Isaiah 30:18 - 'Blessed are all those who wait (ḥākāh) for Him'",
+        "Habakkuk 2:3 - 'Wait (ḥākāh) for it; it will surely come'"
+      ],
+      "contrast_with_other_words": "While qāwāh emphasizes the tension of expectation, ḥākāh emphasizes the patience of remaining. It's less about active gathering of hope and more about steadfast positioning.",
+      "morphological_note": "Appears primarily in Piel stem (intensive), emphasizing the deliberate, focused nature of this waiting. Also appears in various persons and numbers, showing both individual and corporate waiting."
+    },
+    {
+      "word": "יָחַל",
+      "transliteration": "yāḥal",
+      "strongs": "H3176",
+      "twot": "858",
+      "pronunciation": "yaw-KHAHL",
+      "root_meaning": "To wait, to hope, to be patient",
+      "semantic_range": [
+        "To wait",
+        "To hope",
+        "To tarry",
+        "To be patient",
+        "To expect"
+      ],
+      "primary_theological_meaning": "To wait with hopeful expectation, to place one's hope in something",
+      "etymology": "The root conveys the idea of writhing with hope or yearning—emotional investment in the object of hope.",
+      "usage_pattern": "Common in poetic and wisdom literature, especially Psalms. Often paired with themes of God's mercy, word, and faithfulness. Frequently in parallel with other hope/trust words.",
+      "theological_significance": "Yāḥal carries emotional warmth—this is not cold, passive waiting but yearning hope. It suggests an emotional investment, a longing for the fulfillment. This is the wait of the heart, not just the will.",
+      "distinctive_features": [
+        "Appears 4 times total (3 as יָחַל, 1 as יָחַל / חוּל combined)",
+        "Strong emotional connotation",
+        "Often found in Piel stem (intensive)",
+        "Frequently paralleled with trust/hope language"
+      ],
+      "relationship_to_themes": {
+        "strength_renewal": "Hope in God brings strength",
+        "help_deliverance": "Hopeful expectation of God's rescue",
+        "trust_hope": "Core meaning involves hopeful trust",
+        "patience_endurance": "Hope sustains during long waits"
+      },
+      "key_verses": [
+        "Psalm 31:24 - 'All you who hope (yāḥal) in the LORD'",
+        "Psalm 33:18 - 'The eye of the LORD is on those who hope (yāḥal) in Him'"
+      ],
+      "contrast_with_other_words": "Yāḥal is warmer and more emotionally invested than qāwāh's tense expectation or ḥākāh's patient tarrying. It's the word of longing and yearning hope.",
+      "morphological_note": "Appears primarily in Piel participle, suggesting characteristic, continuous hoping—not one-time acts but sustained posture of hopeful waiting."
+    },
+    {
+      "word": "דָּמַם",
+      "transliteration": "dāmam",
+      "strongs": "H1826",
+      "twot": "439",
+      "pronunciation": "daw-MAM",
+      "root_meaning": "To be silent, to be still, to wait in silence",
+      "semantic_range": [
+        "To be silent",
+        "To be still",
+        "To cease",
+        "To wait quietly",
+        "To rest"
+      ],
+      "primary_theological_meaning": "To wait in silence before God, to cease striving",
+      "etymology": "Onomatopoetic—the word sounds like silence (compare English 'mum'). The root conveys cessation of sound and motion.",
+      "usage_pattern": "Relatively rare but powerful. Often used in contexts of submission, meditation, or cessation of human effort before divine action.",
+      "theological_significance": "Dāmam represents the ultimate trust—silence before God. Not the silence of doubt but of submission. It's the cease of human striving to allow divine action. This is contemplative waiting, restful trust.",
+      "distinctive_features": [
+        "Only 1 occurrence in our study",
+        "Unique emphasis on silence and stillness",
+        "Strong contemplative connotation",
+        "Feminine imperative—'my soul' is personified"
+      ],
+      "relationship_to_themes": {
+        "trust_hope": "Silent trust is deepest trust",
+        "rest_stillness": "Waiting involves ceasing striving"
+      },
+      "key_verses": [
+        "Psalm 62:5 - 'My soul, wait (dāmam) in silence for God alone'"
+      ],
+      "contrast_with_other_words": "Unlike the active tension of qāwāh or the yearning of yāḥal, dāmam is completely still—outer and inner quietness. It's waiting by not-doing.",
+      "morphological_note": "Appears as Qal imperative feminine singular, as the psalmist addresses his own soul (נֶפֶשׁ, feminine noun) in self-exhortation."
+    },
+    {
+      "word": "חוּל",
+      "transliteration": "ḥûl",
+      "strongs": "H2342",
+      "twot": "623",
+      "pronunciation": "KHOOL",
+      "root_meaning": "To writhe, to twist, to dance, to tremble, to wait with travail",
+      "semantic_range": [
+        "To writhe (as in childbirth)",
+        "To tremble",
+        "To dance",
+        "To wait with anxiety",
+        "To be in anguish"
+      ],
+      "primary_theological_meaning": "To wait with intense longing or anxiety, sometimes with the image of birth pangs",
+      "etymology": "The root conveys circular or writhing motion—used of dancing, childbirth, and anxious trembling.",
+      "usage_pattern": "Can be positive (joyful anticipation) or negative (anxious dread). Context determines the emotional tone.",
+      "theological_significance": "Ḥûl captures the intensity and sometimes pain of waiting. Like childbirth, this waiting can be agonizing but leads to new life. It acknowledges that godly waiting isn't always comfortable—it can involve spiritual travail.",
+      "distinctive_features": [
+        "Only 1 occurrence in our study (plus 1 combined with yāḥal)",
+        "Most emotionally intense waiting word",
+        "Can imply either joyful or anxious anticipation",
+        "Birth pang imagery"
+      ],
+      "relationship_to_themes": {
+        "patience_endurance": "Enduring through difficult waiting",
+        "trust_hope": "Hope through the pain of delay"
+      },
+      "key_verses": [
+        "Micah 1:12 - 'The inhabitant of Maroth waited anxiously (ḥûl) for good'"
+      ],
+      "contrast_with_other_words": "While qāwāh is tense, yāḥal is yearning, and dāmam is silent, ḥûl is writhing—the most viscerally intense waiting word.",
+      "morphological_note": "When combined with yāḥal, it may intensify the meaning or show semantic overlap between hoping and anxiously awaiting.",
+      "note": "Some lexicons distinguish ḥûl I ('writhe') from ḥûl II ('hope/wait'), but they likely share semantic roots—both involve intense internal motion."
+    }
+  ],
+  "summary": {
+    "most_frequent": "קָוָה (qāwāh) - 16 occurrences - Active, expectant waiting",
+    "most_patient": "חָכָה (ḥākāh) - 5 occurrences - Patient tarrying, remaining",
+    "most_emotional": "יָחַל (yāḥal) - 4 occurrences - Yearning hope",
+    "most_contemplative": "דָּמַם (dāmam) - 1 occurrence - Silent, still waiting",
+    "most_intense": "חוּל (ḥûl) - 1-2 occurrences - Writhing, travailing wait"
+  },
+  "thematic_overview": "Hebrew vocabulary for 'waiting on God' is rich and varied. From silent trust (dāmam) to anxious travail (ḥûl), from patient tarrying (ḥākāh) to yearning hope (yāḥal), and especially the active, expectant tension (qāwāh), these words paint a full picture of what it means to depend on God through time. Waiting is not monolithic—it has many faces and emotional registers, all honored in Scripture."
+}

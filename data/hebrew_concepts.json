@@ -1,0 +1,128 @@
+{
+  "title": "Hebrew Grammatical Concepts - Learners' Notes",
+  "concepts": [
+    {
+      "term": "Perfect",
+      "category": "Verb Tense/Aspect",
+      "simple_explanation": "Completed action",
+      "detailed_explanation": "The Hebrew Perfect doesn't correspond exactly to English past tense. It primarily expresses completed or perfected action—action viewed as a whole. This can refer to past events, but also to present states resulting from past action, or even future events viewed as certain (prophetic perfect).",
+      "key_points": [
+        "Action viewed as complete",
+        "Usually (but not always) past time",
+        "Can express certainty about future events",
+        "Focus is on the completed nature, not timing"
+      ],
+      "example": "קָוִיתִי (qāwîtî) - 'I have waited' or 'I waited' - action is viewed as complete",
+      "why_relevant": "In waiting on God, the Perfect can express confident completion ('I have waited and know the outcome') or past experience ('I waited in times past')."
+    },
+    {
+      "term": "Imperfect",
+      "category": "Verb Tense/Aspect",
+      "simple_explanation": "Incomplete or ongoing action",
+      "detailed_explanation": "The Hebrew Imperfect expresses incomplete, ongoing, or repeated action. It often refers to future events, habitual actions, or actions in progress. Think of it as 'unfinished' rather than 'future'—though future is common.",
+      "key_points": [
+        "Action viewed as incomplete or ongoing",
+        "Often future, but can be present continuous",
+        "Can express habitual action",
+        "Focus on process rather than completion"
+      ],
+      "example": "יְקַוֶּה (yəqawweh) - 'he will wait' or 'he waits (regularly)' - ongoing or future action",
+      "why_relevant": "For waiting on God, Imperfect forms emphasize the ongoing nature of faith—continuous trust, not a one-time event."
+    },
+    {
+      "term": "Sequential Perfect (Waw-Consecutive Perfect)",
+      "category": "Verb Tense/Aspect",
+      "simple_explanation": "Perfect form that continues a narrative sequence, usually translated as past tense",
+      "detailed_explanation": "Also called Waw-Consecutive or Vav-Conversive. This is a Perfect verb prefixed with waw (וְ) that typically continues a narrative sequence started by an Imperfect. Despite being Perfect in form, it usually functions like an Imperfect or simple past in meaning. It's one of Hebrew's most distinctive features for storytelling.",
+      "key_points": [
+        "Perfect form with prefixed וְ (waw)",
+        "Usually follows Imperfect verbs in sequence",
+        "Functions as past narrative or future sequence",
+        "Very common in Hebrew narrative",
+        "The 'consecutive' means it continues the action sequence"
+      ],
+      "example": "וְקִוִּיתִי (wəqiwwîtî) - 'and I waited' or 'then I waited' - continues the narrative",
+      "why_relevant": "In Hebrew poetry and narrative, Sequential Perfect shows progression: 'I called to God, and [then] I waited, and [then] He answered.'",
+      "learners_tip": "Don't let the 'perfect' label confuse you. In sequential constructions, these often translate as simple past or future continuing action."
+    },
+    {
+      "term": "Sequential Imperfect (Waw-Consecutive Imperfect)",
+      "category": "Verb Tense/Aspect",
+      "simple_explanation": "Imperfect form that continues a past narrative, usually translated as past tense",
+      "detailed_explanation": "This is an Imperfect verb prefixed with waw (וַ) that typically continues a past narrative sequence started by a Perfect. Despite being Imperfect in form, it functions as past narrative. This is the most common way Hebrew narrative progresses—perfect to start, then waw-consecutive imperfects to continue.",
+      "key_points": [
+        "Imperfect form with prefixed וַ (waw)",
+        "Usually follows Perfect verbs in narrative",
+        "Functions as past narrative continuation",
+        "The backbone of Hebrew storytelling",
+        "Pronunciation changes (wayyiqtol pattern)"
+      ],
+      "example": "וַיְקַו (wayyəqaw) - 'and he waited' - continues past narrative",
+      "why_relevant": "Most of the Old Testament narrative uses this form. When you see 'and [someone] waited,' it's likely this construction.",
+      "learners_tip": "Hebrew narrative typically goes: Perfect → Waw-Consecutive Imperfect → Waw-Consecutive Imperfect → etc. Think of it as Hebrew's way of saying 'and then... and then... and then...'"
+    },
+    {
+      "term": "Participle",
+      "category": "Verb Form",
+      "simple_explanation": "A verbal adjective—acts like both a verb and an adjective",
+      "detailed_explanation": "The Participle bridges verbs and adjectives. It can function as: (1) a continuous/habitual action ('waiting' = 'one who waits'), (2) an adjective describing someone ('a waiting person'), or (3) a substantive noun ('the ones who wait'). Participles are timeless—the context determines when the action occurs.",
+      "key_points": [
+        "Can be verbal: 'they are waiting'",
+        "Can be adjectival: 'waiting people'",
+        "Can be nominal: 'those who wait'",
+        "No inherent time reference",
+        "Often emphasizes characteristic action or state"
+      ],
+      "example": "קוֹוִים (qōwîm) - 'ones who wait' or 'those waiting' - emphasizes the characteristic of being a waiter",
+      "why_relevant": "In 'waiting on the Lord' texts, participles often describe characteristic posture rather than one-time action. 'Those who wait' (participle) = people characterized by waiting, not just people who waited once.",
+      "learners_tip": "When you see a participle, ask: Is this describing ongoing action, a characteristic quality, or a group of people?"
+    },
+    {
+      "term": "Imperative",
+      "category": "Verb Mood",
+      "simple_explanation": "Command form—telling someone to do something",
+      "detailed_explanation": "The Imperative is the command mood. It's direct and immediate—'Wait!' 'Hope!' Hebrew has imperatives for second person only (you-singular, you-plural, masculine, feminine). Commands to third person or first person use different constructions (jussive, cohortative).",
+      "key_points": [
+        "Direct command",
+        "Only second person (you/you all)",
+        "Can be urgent or gentle depending on context",
+        "Often used in wisdom literature and exhortations"
+      ],
+      "example": "קַוֵּה (qawwēh) - 'Wait!' (command to one person, masculine)",
+      "why_relevant": "Many psalms command believers to 'Wait on the LORD!' These are direct exhortations to action.",
+      "learners_tip": "Imperatives in the Psalms often become life mottos—short, memorable commands like 'Wait on the LORD' (Psalm 27:14)."
+    },
+    {
+      "term": "Infinitive (Construct)",
+      "category": "Verb Form",
+      "simple_explanation": "The verbal noun—'to wait' or 'waiting' (the action itself)",
+      "detailed_explanation": "Hebrew has two infinitives: Infinitive Construct (more common) and Infinitive Absolute (for emphasis). The Infinitive Construct functions like English 'to wait' and often shows purpose ('in order to wait'), result, or the bare verbal idea. It's the 'noun form' of the verb.",
+      "key_points": [
+        "Functions as verbal noun",
+        "Often shows purpose: 'to wait'",
+        "Can be subject or object of another verb",
+        "Very common in Hebrew prose"
+      ],
+      "example": "לְקַוֺּת (ləqawwōt) - 'to wait' or 'for waiting'",
+      "why_relevant": "Infinitives express the abstract concept: not 'he waited' but the idea of 'waiting' itself.",
+      "learners_tip": "Look for the prefix ל (lə) as a clue—it often introduces infinitives."
+    },
+    {
+      "term": "Construct State",
+      "category": "Noun Grammar",
+      "simple_explanation": "A noun in relationship to another noun—shows possession or close association",
+      "detailed_explanation": "Hebrew expresses 'of' relationships through the construct chain: Construct noun + Absolute noun. The construct form is the first noun in a tight grammatical relationship with what follows. Example: 'word of God' is literally 'word-construct God-absolute.' The construct form often has different vowels than the regular (absolute) form.",
+      "key_points": [
+        "Shows possession or relationship between nouns",
+        "The construct noun comes first",
+        "Vowel changes in construct form",
+        "Very common in Hebrew—no separate word for 'of'",
+        "Can apply to participles too"
+      ],
+      "example": "קוֹוֵי יְהוָה (qōwê yhwh) - 'those-who-wait-of the-LORD' = 'those who wait for the LORD'",
+      "why_relevant": "Many 'waiting' passages use construct participles: 'waiters-of-the-LORD' = 'those who wait for the LORD.' The construct form shows the tight relationship between the action and its object.",
+      "learners_tip": "When you see a participle described as 'construct,' it's in a tight relationship with what follows—usually showing for whom or what the action is done.",
+      "recognition": "Construct participles often have different vowels than absolute participles. In our study, this appears in phrases like 'those who wait for the LORD' where 'wait' is construct."
+    }
+  ]
+}

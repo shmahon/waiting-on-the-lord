@@ -1,0 +1,151 @@
+{
+  "title": "Greek Grammatical Concepts - Learners' Notes",
+  "concepts": [
+    {
+      "term": "Present Tense",
+      "category": "Verb Tense",
+      "simple_explanation": "Ongoing or repeated action",
+      "detailed_explanation": "The Greek Present tense emphasizes continuous or repeated action. Unlike English, Greek tense is primarily about aspect (kind of action) rather than time. The Present indicates linear, durative, or habitual action—something happening continuously or regularly.",
+      "key_points": [
+        "Continuous or repeated action",
+        "Aspect (kind of action) is primary, not time",
+        "Can be present time, but not necessarily",
+        "Often translated 'is/are [verb]ing' or 'keeps [verb]ing'"
+      ],
+      "example": "ἀπεκδέχεται (apekdechetai) - 'he is eagerly awaiting' or 'he eagerly awaits (continually)'",
+      "why_relevant": "Present tense in 'waiting' contexts emphasizes ongoing faith—not a one-time decision but continuous posture.",
+      "theological_note": "The continuous aspect fits the Christian life: we don't just 'wait once' for Christ's return; we are continually waiting."
+    },
+    {
+      "term": "Aorist Tense",
+      "category": "Verb Tense",
+      "simple_explanation": "Simple, undefined action—viewed as a whole",
+      "detailed_explanation": "The Aorist is the 'snapshot' tense—it views action as a complete whole without reference to duration or repetition. It doesn't necessarily mean past time (though it often does in indicative mood). Think of it as a point or summary rather than a process.",
+      "key_points": [
+        "Action viewed as complete whole",
+        "No emphasis on duration or process",
+        "Often (but not always) past time",
+        "The 'default' tense for simple statements"
+      ],
+      "example": "ἠλπίσαμεν (ēlpisamen) - 'we hoped' - simple statement of completed action",
+      "why_relevant": "Aorist can express completed trust: 'we placed our hope' (done, settled), versus present 'we are placing our hope' (ongoing)."
+    },
+    {
+      "term": "Active Voice",
+      "category": "Verb Voice",
+      "simple_explanation": "Subject performs the action",
+      "detailed_explanation": "The Active voice is straightforward: the subject does the action. 'He waits' means he is performing the action of waiting. This is the most common voice.",
+      "key_points": [
+        "Subject performs the action",
+        "Most common voice",
+        "Direct, clear agency"
+      ],
+      "example": "ἀπεκδέχομαι (active) - 'I eagerly await' - I am doing the awaiting"
+    },
+    {
+      "term": "Middle Voice",
+      "category": "Verb Voice",
+      "simple_explanation": "Subject performs action with personal interest or involvement",
+      "detailed_explanation": "The Middle voice (unique to Greek, no English equivalent) indicates the subject performs the action with special reference to themselves—for their own benefit, or with personal involvement. It emphasizes the subject's participation or interest in the action.",
+      "key_points": [
+        "Subject acts with personal involvement",
+        "Action affects or benefits the subject",
+        "No direct English equivalent",
+        "Emphasizes subject's stake in the action"
+      ],
+      "example": "Middle: 'I receive for myself' vs. Active: 'I receive'",
+      "why_relevant": "Many Greek 'waiting' verbs are middle voice, emphasizing personal investment: 'I await for myself' = I have a personal stake in this expectation."
+    },
+    {
+      "term": "Passive Voice",
+      "category": "Verb Voice",
+      "simple_explanation": "Subject receives the action",
+      "detailed_explanation": "The Passive voice indicates the subject receives or is acted upon. 'He is awaited' means someone else is doing the waiting for him.",
+      "key_points": [
+        "Subject receives the action",
+        "Action is done to the subject",
+        "Often shares forms with middle voice"
+      ],
+      "example": "Passive: 'He is being received' - someone else receives him"
+    },
+    {
+      "term": "Deponent Verb",
+      "category": "Verb Classification",
+      "simple_explanation": "A verb with middle or passive form but active meaning",
+      "detailed_explanation": "Deponent verbs are a Greek peculiarity. They have middle or passive forms (endings) but function with active meaning. They 'laid aside' (deponent = 'laid aside') their active forms. For practical purposes, translate them as active even though they look middle/passive.",
+      "key_points": [
+        "Middle or passive form, active meaning",
+        "Very common in Greek",
+        "Must be memorized (can't predict from form)",
+        "Translate as active despite appearance"
+      ],
+      "example": "ἀπεκδέχομαι looks middle/passive but means 'I await' (active meaning)",
+      "why_relevant": "Several key 'waiting' verbs in our study are deponents. Don't be confused by their middle/passive appearance—they're active in meaning.",
+      "learners_tip": "When your lexicon says 'deponent,' treat it as active in translation even if it looks middle/passive."
+    },
+    {
+      "term": "Middle/Passive Deponent",
+      "category": "Verb Classification",
+      "simple_explanation": "A deponent verb that uses middle/passive forms throughout its conjugation",
+      "detailed_explanation": "This is a specific category of deponent: verbs that have middle or passive forms in all tenses but always carry active meaning. The slash 'middle/passive' indicates the form can look like either (they often share forms in Greek), but the meaning is active.",
+      "key_points": [
+        "Always in middle or passive form",
+        "Always active in meaning",
+        "Never has separate active forms",
+        "Common with verbs of perception, emotion, and anticipation"
+      ],
+      "example": "ἀπεκδέχομαι (apekdechomai) - always middle/passive in form, always active ('I eagerly await') in meaning",
+      "why_relevant": "Many Greek 'waiting' verbs fall into this category—they naturally express personal involvement (middle) but with active sense.",
+      "theological_note": "It's fitting that 'waiting' verbs are often middle deponents—waiting on God involves personal investment and active participation, not passive reception."
+    },
+    {
+      "term": "Indicative Mood",
+      "category": "Verb Mood",
+      "simple_explanation": "Statement of fact—this is the 'reality' mood",
+      "detailed_explanation": "The Indicative mood makes assertions of reality. It states facts, asks questions, or makes declarations. It's the most common mood and the most straightforward.",
+      "key_points": [
+        "States reality or fact",
+        "Most common mood",
+        "Used for assertions and questions",
+        "The 'default' mood for statements"
+      ],
+      "example": "ἀπεκδεχόμεθα (apekdechometha) - 'we are awaiting' - statement of fact",
+      "why_relevant": "Most biblical 'waiting' texts use indicative—they state the reality: 'We are waiting for Christ's return' is a fact, not a wish or command."
+    },
+    {
+      "term": "Participle (Greek)",
+      "category": "Verb Form",
+      "simple_explanation": "A verbal adjective—acts like both verb and adjective",
+      "detailed_explanation": "Greek participles are extremely versatile. They function as verbs (showing action) and adjectives (modifying nouns) simultaneously. They can express time (with another verb), manner, cause, purpose, condition, or simply describe. Greek uses participles far more than English does.",
+      "key_points": [
+        "Verbal adjective",
+        "Shows tense/aspect and voice",
+        "Can express time, manner, cause, condition, etc.",
+        "Very common in Greek",
+        "Must agree with noun in gender, number, case"
+      ],
+      "example": "οἱ προσδεχόμενοι (hoi prosdechomenoi) - 'the ones waiting' or 'those who wait'",
+      "why_relevant": "Participles often describe characteristic action: 'those waiting for the Messiah' identifies them by their waiting posture.",
+      "learners_tip": "Greek participles do heavy lifting. Ask: What does this participle modify? What relationship does it show to the main verb?"
+    },
+    {
+      "term": "First Person Plural",
+      "category": "Verb Person/Number",
+      "simple_explanation": "The 'we' form—speaker includes themselves with others",
+      "detailed_explanation": "First person plural indicates the speaker(s) and at least one other person are performing the action. In New Testament contexts, 'we' often creates solidarity between writer and readers.",
+      "key_points": [
+        "Includes speaker and others",
+        "Creates sense of community",
+        "Common in NT epistles for shared experience"
+      ],
+      "example": "ἀπεκδεχόμεθα (apekdechometha) - 'we await'",
+      "why_relevant": "New Testament writers often use 'we await' to include themselves and readers in the shared Christian hope.",
+      "theological_note": "First person plural creates solidarity: Paul doesn't just tell others to wait; he waits with them."
+    }
+  ],
+  "greek_voice_summary": {
+    "title": "Understanding Greek Voice",
+    "explanation": "Greek has three voices where English has two. The middle voice (no English equivalent) emphasizes the subject's involvement or benefit. Many Greek verbs expressing emotion, perception, or personal involvement prefer middle voice. Deponent verbs have 'set aside' their active forms and always appear in middle/passive form but retain active meaning.",
+    "practical_tip": "For our study: When you see 'middle/passive deponent' on a waiting verb, translate it actively ('I await') but remember it carries the nuance of personal investment typical of middle voice."
+  }
+}

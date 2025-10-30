@@ -1,0 +1,134 @@
+{
+  "title": "Hebrew Verb Stem System",
+  "description": "The Hebrew verb system uses seven primary stems (binyanim) to modify the basic meaning of a root. Think of stems as different 'voices' or patterns that transform how the verb functions.",
+  "stems": [
+    {
+      "name": "Qal",
+      "category": "Simple",
+      "meaning": "Simple active action",
+      "description": "The Qal is the most basic Hebrew verb stem, representing straightforward action without intensification or causation. It's the 'default' stem and the most common.",
+      "characteristics": [
+        "Simple, unmodified action",
+        "Can be active or stative (expressing a state)",
+        "Most frequent stem in Biblical Hebrew"
+      ],
+      "example": {
+        "root": "קָוָה (qāwāh) - to wait/hope",
+        "qal_form": "He waited",
+        "explanation": "Simple action of waiting without emphasis"
+      },
+      "theological_significance": "In our study of 'waiting on the Lord,' Qal verbs often express the fundamental, unadorned act of waiting—the basic posture of trust without embellishment."
+    },
+    {
+      "name": "Niphal",
+      "category": "Simple",
+      "meaning": "Simple passive or reflexive",
+      "description": "The Niphal stem typically expresses passive action (something done to the subject) or reflexive action (subject acting on itself). Sometimes it has reciprocal meaning.",
+      "characteristics": [
+        "Usually passive ('was waited for')",
+        "Sometimes reflexive ('wait for oneself')",
+        "Can express reciprocal action",
+        "Less common than Qal but still frequent"
+      ],
+      "example": {
+        "root": "קָוָה (qāwāh)",
+        "niphal_form": "It was awaited / One waited",
+        "explanation": "The action is received or has an intransitive nuance"
+      },
+      "theological_significance": "The passive voice can emphasize God's sovereignty—His purposes are 'being awaited' regardless of human agency."
+    },
+    {
+      "name": "Piel",
+      "category": "Intensive",
+      "meaning": "Intensive active or factitive",
+      "description": "The Piel intensifies the verbal idea or expresses causing a state. It can mean doing something repeatedly, with great effect, or causing someone to be in a certain state.",
+      "characteristics": [
+        "Intensifies the basic action",
+        "Can be factitive (causing a state)",
+        "Sometimes expresses repeated action",
+        "Often used with emotional or mental states"
+      ],
+      "example": {
+        "root": "יָחַל (yāḥal) - to wait/hope",
+        "piel_form": "To wait expectantly, to set one's hope firmly",
+        "explanation": "The intensive aspect adds fervor or certainty to the waiting"
+      },
+      "theological_significance": "Piel forms in 'waiting' contexts often convey passionate expectation or confident hope—not passive waiting but active, intense anticipation of God's action."
+    },
+    {
+      "name": "Pual",
+      "category": "Intensive",
+      "meaning": "Intensive passive",
+      "description": "The Pual is the passive counterpart of the Piel. It expresses intensive action done to the subject.",
+      "characteristics": [
+        "Passive of Piel",
+        "Relatively uncommon",
+        "Intensive action received by subject"
+      ],
+      "example": {
+        "root": "יָחַל (yāḥal)",
+        "pual_form": "To be confidently expected",
+        "explanation": "Something is intensively awaited (passive reception)"
+      }
+    },
+    {
+      "name": "Hiphil",
+      "category": "Causative",
+      "meaning": "Causative active",
+      "description": "The Hiphil stem expresses causation—making someone or something do the action of the verb. It's the 'cause to' stem.",
+      "characteristics": [
+        "Causative meaning ('cause to wait')",
+        "Active voice",
+        "Very common stem",
+        "Sometimes used for simple action with transitive force"
+      ],
+      "example": {
+        "root": "חָכָה (ḥākāh) - to wait",
+        "hiphil_form": "To cause to wait, to delay, to make tarry",
+        "explanation": "Someone causes another to wait or delays them"
+      },
+      "theological_significance": "When God 'causes waiting,' it reflects His sovereign timing. The Hiphil can show that waiting is not just our choice but often God's appointed discipline."
+    },
+    {
+      "name": "Hophal",
+      "category": "Causative",
+      "meaning": "Causative passive",
+      "description": "The Hophal is the passive of the Hiphil. It means 'to be caused to do' the action.",
+      "characteristics": [
+        "Passive of Hiphil",
+        "Relatively rare",
+        "Meaning: 'to be caused to [verb]'"
+      ],
+      "example": {
+        "root": "חָכָה (ḥākāh)",
+        "hophal_form": "To be made to wait, to be delayed",
+        "explanation": "Someone is caused to wait (passive reception of causation)"
+      }
+    },
+    {
+      "name": "Hithpael",
+      "category": "Reflexive-Intensive",
+      "meaning": "Reflexive or reciprocal intensive",
+      "description": "The Hithpael typically expresses reflexive action (acting on oneself) with intensive force. It can also show reciprocal action or pretense.",
+      "characteristics": [
+        "Reflexive ('wait for oneself')",
+        "Sometimes reciprocal ('wait for each other')",
+        "Can express pretense or repeated action",
+        "Intensive nuance"
+      ],
+      "example": {
+        "root": "חָכָה (ḥākāh)",
+        "hithpael_form": "To wait expectantly (with reflexive emphasis)",
+        "explanation": "Waiting with personal investment or self-involvement"
+      },
+      "theological_significance": "Reflexive forms can emphasize personal responsibility in waiting—it's not passive but involves active self-discipline and intentional positioning."
+    }
+  ],
+  "summary": {
+    "simple_stems": "Qal (active), Niphal (passive/reflexive)",
+    "intensive_stems": "Piel (active intensive), Pual (passive intensive)",
+    "causative_stems": "Hiphil (active causative), Hophal (passive causative)",
+    "reflexive_intensive": "Hithpael (reflexive/reciprocal intensive)"
+  },
+  "usage_note": "In this study, we primarily encounter Qal (simple action), Piel (intensive hope/waiting), and Hiphil (causing to wait). Each stem adds theological nuance to understanding how Scripture describes our posture before God."
+}
