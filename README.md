@@ -18,30 +18,58 @@ The analysis is based on a curated table of 41 Scripture references containing v
 ## Building the Document
 
 ### Prerequisites
-- Docker (for containerized builds)
+- **Docker** (recommended) OR **Node.js 18+**
 - Git
 
 ### Quick Build
 
 ```bash
-# Clone or extract the repository
+# Extract the repository
+tar -xzf waiting-on-the-lord-stageX.tar.gz
 cd waiting-on-the-lord
 
-# Build using Docker (recommended)
+# Build using the build script (works with Docker or Node.js)
 ./build.sh
 
 # Output will be in: output/waiting_on_the_lord_analysis.docx
 ```
 
-### Alternative: Manual Build
+The build script automatically detects whether you have Docker or Node.js and uses the appropriate method.
 
-If you prefer to build without Docker:
+### Alternative: Manual Build with Node.js
+
+If you prefer to build manually:
 
 ```bash
-# Requires Node.js 18+ and npm
+# Install dependencies (first time only)
 npm install
+
+# Generate the document
 npm run build
+
+# Or run directly
+node src/generator.js
 ```
+
+### Alternative: Manual Build with Docker
+
+```bash
+# Build the Docker image
+docker build -t waiting-on-the-lord:latest .
+
+# Run the generator
+docker run --rm -v "$(pwd)/output:/app/output" waiting-on-the-lord:latest
+```
+
+### Output
+
+The generated document will be in `output/waiting_on_the_lord_analysis.docx` and includes:
+- Introduction to the study
+- 12 thematic sections with lexeme analysis
+- Detailed morphological parsing for each occurrence
+- Inline learners' notes for obscure concepts
+- Endnotes explaining Hebrew stem system
+- Professional formatting
 
 ## Project Structure
 

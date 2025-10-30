@@ -1,0 +1,16 @@
+{
+  "name": "waiting-on-the-lord-generator",
+  "version": "1.0.0",
+  "description": "Document generator for 'Waiting on the Lord' lexical analysis",
+  "main": "src/generator.js",
+  "scripts": {
+    "build": "node src/generator.js",
+    "test": "node src/generator.js"
+  },
+  "keywords": ["biblical", "hebrew", "greek", "lexical", "analysis"],
+  "author": "Biblical Lexical Analysis",
+  "license": "MIT",
+  "dependencies": {
+    "docx": "^8.5.0"
+  }
+}
