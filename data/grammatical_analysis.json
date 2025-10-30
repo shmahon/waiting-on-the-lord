@@ -1,0 +1,35 @@
+{
+  "hebrew_stems": [
+    "Hiphil",
+    "Piel",
+    "Qal"
+  ],
+  "hebrew_verb_forms": [
+    "Imperative",
+    "Imperfect",
+    "Participle",
+    "Perfect",
+    "Sequential Perfect"
+  ],
+  "hebrew_features": [],
+  "greek_voices": [
+    "Active",
+    "Middle/Passive Deponent"
+  ],
+  "greek_tenses": [
+    "Aorist",
+    "Present"
+  ],
+  "greek_features": [
+    "Indicative"
+  ],
+  "obscure_concepts": [
+    "Construct",
+    "Deponent",
+    "Infinitive",
+    "Middle/Passive Deponent",
+    "Participle",
+    "Sequential Imperfect",
+    "Sequential Perfect"
+  ]
+}
