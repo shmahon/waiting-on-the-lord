@@ -5,7 +5,7 @@ const path = require('path');
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, UnderlineType,
   Table, TableRow, TableCell, WidthType, BorderStyle, Shading, VerticalAlign,
-  Footer, FootnoteReferenceRun, convertInchesToTwip
+  Footer, FootnoteReferenceRun, convertInchesToTwip, PageNumber, NumberFormat
 } = require('docx');
 
 // Mature Scholastic Color Palette
@@ -56,21 +56,22 @@ function getConceptExplanation(term, language) {
   return concepts.find(c => c.term === term || c.term.includes(term));
 }
 
-// Helper to create callout box for learner's notes
+// Helper to create callout box for learner's notes (floating frame style)
 function createCalloutBox(title, content) {
   return new Table({
-    width: { size: 100, type: WidthType.PERCENTAGE },
+    width: { size: 90, type: WidthType.PERCENTAGE },
     margins: {
-      top: 70,
-      bottom: 70,
-      left: 100,
-      right: 100
+      top: 100,
+      bottom: 100,
+      left: convertInchesToTwip(0.25),
+      right: convertInchesToTwip(0.25)
     },
     borders: {
-      left: { style: BorderStyle.SINGLE, size: 20, color: COLORS.SUPPORTING },
-      top: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT },
-      bottom: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT },
-      right: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT },
+      // All borders medium weight, darker color for floating frame effect
+      left: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
+      top: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
+      bottom: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
+      right: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
       insideHorizontal: { style: BorderStyle.NONE, size: 0 },
       insideVertical: { style: BorderStyle.NONE, size: 0 }
     },
@@ -79,15 +80,15 @@ function createCalloutBox(title, content) {
         children: [
           new TableCell({
             shading: {
-              fill: COLORS.SUPPORTING_LIGHT,
+              fill: 'FFFFFF',  // White background instead of pale blue
               type: 'clear',
               color: 'auto'
             },
             margins: {
-              top: 100,
-              bottom: 100,
-              left: 150,
-              right: 150
+              top: 120,
+              bottom: 120,
+              left: 180,
+              right: 180
             },
             verticalAlign: VerticalAlign.CENTER,
             children: [
@@ -97,16 +98,16 @@ function createCalloutBox(title, content) {
                     text: `📘 ${title}`,
                     bold: true,
                     color: COLORS.SUPPORTING,
-                    size: 20
+                    size: 21
                   })
                 ],
-                spacing: { after: 100 }
+                spacing: { after: 120 }
               }),
               new Paragraph({
                 children: [
                   new TextRun({
                     text: content,
-                    color: COLORS.TEXT_SECONDARY,
+                    color: COLORS.TEXT_PRIMARY,
                     size: 20
                   })
                 ]
@@ -117,8 +118,8 @@ function createCalloutBox(title, content) {
       })
     ],
     spacing: {
-      before: 150,
-      after: 150
+      before: 200,
+      after: 200
     }
   });
 }
@@ -127,6 +128,11 @@ function createCalloutBox(title, content) {
 const sections = [];
 const footnotes = {};
 let footnoteCounter = 1;
+
+// Track recent footnotes for deduplication (within a logical page/section)
+// Map: stem name -> footnote ID
+const recentFootnotes = new Map();
+const footnoteResetInterval = 3; // Reset tracking after N lexeme occurrences (approximates page breaks)
 
 // Title
 sections.push(
@@ -342,23 +348,45 @@ for (const themeData of structuredData) {
           }
         }
 
-        // Add stem note as footnote if applicable (stems are specific and won't repeat often)
+        // Add stem note as footnote if applicable (with deduplication for same-page refs)
         if (morph && morph.stem && !notesAdded.includes('Stem')) {
           const stemInfo = hebrewStems.stems.find(s => s.name === morph.stem);
           if (stemInfo) {
-            // Create footnote for this stem
-            const footnoteId = footnoteCounter++;
-            footnotes[footnoteId] = {
-              children: [
-                new Paragraph({
-                  children: [
-                    new TextRun({ text: `${morph.stem} Stem: `, bold: true }),
-                    new TextRun({ text: stemInfo.meaning + '. ' }),
-                    new TextRun({ text: stemInfo.description })
-                  ]
-                })
-              ]
-            };
+            let footnoteId;
+
+            // Check if this stem was recently footnoted (same page approximation)
+            if (recentFootnotes.has(morph.stem)) {
+              // Reuse existing footnote - reference it with "ibid."
+              const previousFootnoteId = recentFootnotes.get(morph.stem);
+              footnoteId = footnoteCounter++;
+              footnotes[footnoteId] = {
+                children: [
+                  new Paragraph({
+                    children: [
+                      new TextRun({ text: 'Ibid. ', italics: true }),
+                      new TextRun({ text: '(See previous note on this page)' })
+                    ]
+                  })
+                ]
+              };
+            } else {
+              // Create new footnote for this stem
+              footnoteId = footnoteCounter++;
+              footnotes[footnoteId] = {
+                children: [
+                  new Paragraph({
+                    children: [
+                      new TextRun({ text: `${morph.stem} Stem: `, bold: true }),
+                      new TextRun({ text: stemInfo.meaning + '. ' }),
+                      new TextRun({ text: stemInfo.description })
+                    ]
+                  })
+                ]
+              };
+
+              // Track this footnote for deduplication
+              recentFootnotes.set(morph.stem, footnoteId);
+            }
 
             // Add inline reference with footnote
             sections.push(
@@ -378,6 +406,11 @@ for (const themeData of structuredData) {
             notesAdded.push('Stem');
           }
         }
+      }
+
+      // Periodically reset footnote tracking (approximates page breaks)
+      if (i > 0 && i % footnoteResetInterval === 0) {
+        recentFootnotes.clear();
       }
 
       // Scripture text as styled block quote
@@ -721,11 +754,37 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
   );
 }
 
-// Create the document with footnotes
+// Create footer with page numbers
+const pageNumberFooter = new Footer({
+  children: [
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: [
+        new TextRun({
+          children: [PageNumber.CURRENT],
+          size: 20,
+          color: COLORS.GRAY_MEDIUM
+        })
+      ]
+    })
+  ]
+});
+
+// Create the document with footnotes and page numbers
 const doc = new Document({
   footnotes: footnotes,
   sections: [{
-    properties: {},
+    properties: {
+      page: {
+        pageNumbers: {
+          start: 1,
+          formatType: NumberFormat.DECIMAL
+        }
+      }
+    },
+    footers: {
+      default: pageNumberFooter
+    },
     children: sections
   }]
 });
