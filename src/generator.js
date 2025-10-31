@@ -170,11 +170,14 @@ for (const themeData of structuredData) {
         }
       }
 
-      // Add learners' note for obscure concepts
+      // Add ALL applicable learners' notes for obscure concepts
       if (occ.parsing) {
-        const obscureTerms = ['Sequential Perfect', 'Sequential Imperfect', 'Construct', 'Deponent', 'Participle'];
+        const obscureTerms = ['Sequential Perfect', 'Sequential Imperfect', 'Construct', 'Deponent', 
+                              'Participle', 'Infinitive', 'Imperative', 'Perfect', 'Imperfect'];
+        const notesAdded = [];
+        
         for (const term of obscureTerms) {
-          if (occ.parsing.includes(term)) {
+          if (occ.parsing.includes(term) && !notesAdded.includes(term)) {
             const concept = getConceptExplanation(term, lexeme.language);
             if (concept) {
               sections.push(
@@ -186,8 +189,25 @@ for (const themeData of structuredData) {
                   spacing: { after: 100 }
                 })
               );
-              break; // Only one note per occurrence
+              notesAdded.push(term); // Track to avoid duplicates
             }
+          }
+        }
+        
+        // Add stem note if applicable
+        if (morph && morph.stem && !notesAdded.includes('Stem')) {
+          const stemInfo = hebrewStems.stems.find(s => s.name === morph.stem);
+          if (stemInfo) {
+            sections.push(
+              new Paragraph({
+                children: [
+                  new TextRun({ text: `Learner's Note (${morph.stem} Stem): `, bold: true, italics: true }),
+                  new TextRun({ text: stemInfo.meaning, italics: true })
+                ],
+                spacing: { after: 100 }
+              })
+            );
+            notesAdded.push('Stem');
           }
         }
       }
@@ -218,7 +238,7 @@ sections.push(
   })
 );
 
-// Hebrew Stem System
+// Hebrew Verb Stem System
 sections.push(
   new Paragraph({
     text: 'Hebrew Verb Stem System',
@@ -250,6 +270,205 @@ for (const stem of hebrewStems.stems) {
         new TextRun({ text: stem.example.explanation })
       ],
       spacing: { after: 200 }
+    })
+  );
+}
+
+// Hebrew Grammatical Concepts Reference
+sections.push(
+  new Paragraph({
+    text: 'Hebrew Grammatical Concepts',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: 400, after: 200 }
+  }),
+  new Paragraph({
+    text: 'This section provides detailed explanations of Hebrew grammatical concepts that appear in the morphological analysis above.',
+    spacing: { after: 200 }
+  })
+);
+
+for (const concept of hebrewConcepts.concepts) {
+  sections.push(
+    new Paragraph({
+      children: [
+        new TextRun({ text: concept.term, bold: true, size: 26 }),
+        new TextRun({ text: ` (${concept.category})`, italics: true })
+      ],
+      spacing: { before: 200, after: 100 }
+    }),
+    new Paragraph({
+      children: [
+        new TextRun({ text: 'Definition: ', bold: true }),
+        new TextRun({ text: concept.simple_explanation })
+      ],
+      spacing: { after: 100 }
+    }),
+    new Paragraph({
+      text: concept.detailed_explanation,
+      spacing: { after: 100 }
+    })
+  );
+  
+  if (concept.example) {
+    sections.push(
+      new Paragraph({
+        children: [
+          new TextRun({ text: 'Example: ', italics: true }),
+          new TextRun({ text: concept.example })
+        ],
+        spacing: { after: 100 }
+      })
+    );
+  }
+  
+  if (concept.why_relevant) {
+    sections.push(
+      new Paragraph({
+        children: [
+          new TextRun({ text: 'Why This Matters: ', bold: true }),
+          new TextRun({ text: concept.why_relevant })
+        ],
+        spacing: { after: 200 }
+      })
+    );
+  }
+}
+
+// Greek Grammatical Concepts Reference
+sections.push(
+  new Paragraph({
+    text: 'Greek Grammatical Concepts',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: 400, after: 200 }
+  }),
+  new Paragraph({
+    text: 'This section provides detailed explanations of Greek grammatical concepts that appear in the morphological analysis above.',
+    spacing: { after: 200 }
+  })
+);
+
+for (const concept of greekConcepts.concepts) {
+  sections.push(
+    new Paragraph({
+      children: [
+        new TextRun({ text: concept.term, bold: true, size: 26 }),
+        new TextRun({ text: ` (${concept.category})`, italics: true })
+      ],
+      spacing: { before: 200, after: 100 }
+    }),
+    new Paragraph({
+      children: [
+        new TextRun({ text: 'Definition: ', bold: true }),
+        new TextRun({ text: concept.simple_explanation })
+      ],
+      spacing: { after: 100 }
+    }),
+    new Paragraph({
+      text: concept.detailed_explanation,
+      spacing: { after: 100 }
+    })
+  );
+  
+  if (concept.example) {
+    sections.push(
+      new Paragraph({
+        children: [
+          new TextRun({ text: 'Example: ', italics: true }),
+          new TextRun({ text: concept.example })
+        ],
+        spacing: { after: 100 }
+      })
+    );
+  }
+  
+  if (concept.why_relevant) {
+    sections.push(
+      new Paragraph({
+        children: [
+          new TextRun({ text: 'Why This Matters: ', bold: true }),
+          new TextRun({ text: concept.why_relevant })
+        ],
+        spacing: { after: 200 }
+      })
+    );
+  }
+}
+
+// Lexeme Summary Section
+const lexemeSummary = JSON.parse(fs.readFileSync(path.join(dataDir, 'lexeme_summary.json'), 'utf8'));
+
+sections.push(
+  new Paragraph({
+    text: 'Lexeme Summary',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: 400, after: 200 }
+  }),
+  new Paragraph({
+    text: 'This section provides a quick reference of all Hebrew and Greek words analyzed in this study.',
+    spacing: { after: 300 }
+  })
+);
+
+// Hebrew Lexemes Summary
+sections.push(
+  new Paragraph({
+    text: 'Hebrew Words',
+    heading: HeadingLevel.HEADING_3,
+    spacing: { before: 200, after: 100 }
+  })
+);
+
+for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
+  const lexDef = getLexemeDefinition(lex.word, lex.strongs, 'Hebrew');
+  sections.push(
+    new Paragraph({
+      children: [
+        new TextRun({ text: `${lex.word} (${lex.transliteration}) — ${lex.strongs}`, bold: true })
+      ],
+      spacing: { before: 150, after: 50 }
+    }),
+    new Paragraph({
+      text: lexDef ? lexDef.primary_theological_meaning : 'Definition not available',
+      spacing: { after: 50 }
+    }),
+    new Paragraph({
+      children: [
+        new TextRun({ text: `Occurrences: ${lex.occurrence_count} | Themes: `, italics: true }),
+        new TextRun({ text: lex.themes.join(', '), italics: true })
+      ],
+      spacing: { after: 150 }
+    })
+  );
+}
+
+// Greek Lexemes Summary
+sections.push(
+  new Paragraph({
+    text: 'Greek Words',
+    heading: HeadingLevel.HEADING_3,
+    spacing: { before: 200, after: 100 }
+  })
+);
+
+for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
+  const lexDef = getLexemeDefinition(lex.word, lex.strongs, 'Greek');
+  sections.push(
+    new Paragraph({
+      children: [
+        new TextRun({ text: `${lex.word} (${lex.transliteration}) — ${lex.strongs}`, bold: true })
+      ],
+      spacing: { before: 150, after: 50 }
+    }),
+    new Paragraph({
+      text: lexDef ? lexDef.primary_theological_meaning : 'Definition not available',
+      spacing: { after: 50 }
+    }),
+    new Paragraph({
+      children: [
+        new TextRun({ text: `Occurrences: ${lex.occurrence_count} | Themes: `, italics: true }),
+        new TextRun({ text: lex.themes.join(', '), italics: true })
+      ],
+      spacing: { after: 150 }
     })
   );
 }
