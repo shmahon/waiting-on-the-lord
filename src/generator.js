@@ -56,22 +56,23 @@ function getConceptExplanation(term, language) {
   return concepts.find(c => c.term === term || c.term.includes(term));
 }
 
-// Helper to create callout box for learner's notes (floating frame style)
+// Helper to create callout box for learner's notes (professional textbook sidebar style)
+// Based on academic publishing standards: sans-serif font, clear borders, subtle styling
 function createCalloutBox(title, content) {
   return new Table({
-    width: { size: 90, type: WidthType.PERCENTAGE },
+    width: { size: 85, type: WidthType.PERCENTAGE },
     margins: {
-      top: 100,
-      bottom: 100,
-      left: convertInchesToTwip(0.25),
-      right: convertInchesToTwip(0.25)
+      top: 120,
+      bottom: 120,
+      left: convertInchesToTwip(0.4),
+      right: convertInchesToTwip(0.4)
     },
     borders: {
-      // All borders medium weight, darker color for floating frame effect
-      left: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
-      top: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
-      bottom: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
-      right: { style: BorderStyle.SINGLE, size: 15, color: COLORS.SUPPORTING },
+      // Professional frame: subtle top/bottom, prominent left accent
+      left: { style: BorderStyle.SINGLE, size: 24, color: COLORS.SUPPORTING },
+      top: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      bottom: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      right: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
       insideHorizontal: { style: BorderStyle.NONE, size: 0 },
       insideVertical: { style: BorderStyle.NONE, size: 0 }
     },
@@ -80,37 +81,48 @@ function createCalloutBox(title, content) {
         children: [
           new TableCell({
             shading: {
-              fill: 'FFFFFF',  // White background instead of pale blue
+              fill: 'FAFBFC',  // Extremely subtle gray (better than pure white for print)
               type: 'clear',
               color: 'auto'
             },
             margins: {
-              top: 120,
-              bottom: 120,
-              left: 180,
-              right: 180
+              top: 140,
+              bottom: 140,
+              left: 200,
+              right: 200
             },
-            verticalAlign: VerticalAlign.CENTER,
+            verticalAlign: VerticalAlign.TOP,
             children: [
               new Paragraph({
                 children: [
                   new TextRun({
-                    text: `📘 ${title}`,
+                    text: `${title}`,  // Removed emoji for professional appearance
                     bold: true,
                     color: COLORS.SUPPORTING,
-                    size: 21
+                    size: 22,
+                    font: 'Calibri'  // Sans-serif for sidebars (publishing standard)
                   })
                 ],
-                spacing: { after: 120 }
+                spacing: { after: 140 },
+                border: {
+                  bottom: {
+                    color: COLORS.GRAY_LIGHT,
+                    space: 1,
+                    style: BorderStyle.SINGLE,
+                    size: 6
+                  }
+                }
               }),
               new Paragraph({
                 children: [
                   new TextRun({
                     text: content,
                     color: COLORS.TEXT_PRIMARY,
-                    size: 20
+                    size: 20,
+                    font: 'Calibri'  // Sans-serif to distinguish from body text
                   })
-                ]
+                ],
+                spacing: { line: 276 }  // 1.15 line spacing for readability
               })
             ]
           })
@@ -118,8 +130,8 @@ function createCalloutBox(title, content) {
       })
     ],
     spacing: {
-      before: 200,
-      after: 200
+      before: 240,
+      after: 240
     }
   });
 }
@@ -363,8 +375,15 @@ for (const themeData of structuredData) {
                 children: [
                   new Paragraph({
                     children: [
-                      new TextRun({ text: 'Ibid. ', italics: true }),
-                      new TextRun({ text: '(See previous note on this page)' })
+                      new TextRun({
+                        text: 'Ibid. ',
+                        italics: true,
+                        size: 18  // 9pt - smaller for footnotes (academic standard)
+                      }),
+                      new TextRun({
+                        text: '(See previous note on this page)',
+                        size: 18
+                      })
                     ]
                   })
                 ]
@@ -376,9 +395,19 @@ for (const themeData of structuredData) {
                 children: [
                   new Paragraph({
                     children: [
-                      new TextRun({ text: `${morph.stem} Stem: `, bold: true }),
-                      new TextRun({ text: stemInfo.meaning + '. ' }),
-                      new TextRun({ text: stemInfo.description })
+                      new TextRun({
+                        text: `${morph.stem} Stem: `,
+                        bold: true,
+                        size: 18  // 9pt - smaller for footnotes (academic standard)
+                      }),
+                      new TextRun({
+                        text: stemInfo.meaning + '. ',
+                        size: 18
+                      }),
+                      new TextRun({
+                        text: stemInfo.description,
+                        size: 18
+                      })
                     ]
                   })
                 ]
