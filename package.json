@@ -7,7 +7,13 @@
     "build": "node src/generator.js",
     "test": "node src/generator.js"
   },
-  "keywords": ["biblical", "hebrew", "greek", "lexical", "analysis"],
+  "keywords": [
+    "biblical",
+    "hebrew",
+    "greek",
+    "lexical",
+    "analysis"
+  ],
   "author": "Biblical Lexical Analysis",
   "license": "MIT",
   "dependencies": {

@@ -123,22 +123,28 @@ If you need to continue this work in a new chat session:
 - Deponent verbs (Greek)
 - Various aspects and moods
 
-## Repository Structure (Planned)
+## Repository Structure (Actual)
 ```
 waiting-on-the-lord/
-├── SESSION.md                 # This file
-├── README.md                  # Build instructions and documentation
-├── source_data.json          # Extracted source data
-├── data/
-│   ├── lexemes.json          # Structured lexeme data
-│   └── educational.json      # Learners' notes and explanations
+├── SESSION.md                      # This file
+├── README.md                       # Build instructions and documentation
+├── CLAUDE.md                       # Instructions for Claude Code
+├── source_data.json                # Extracted source data
+├── data/                           # Structured data
+│   ├── structured_by_theme.json    # All entries organized by theme
+│   ├── hebrew_lexemes.json         # Hebrew word definitions
+│   ├── greek_lexemes.json          # Greek word definitions
+│   ├── hebrew_concepts.json        # Hebrew grammatical concepts
+│   ├── greek_concepts.json         # Greek grammatical concepts
+│   ├── hebrew_stems.json           # Hebrew verb stem explanations
+│   ├── lexeme_summary.json         # Summary of all lexemes
+│   ├── parsed_entries.json         # Parsed data entries
+│   ├── grammatical_analysis.json   # Grammatical analysis
+│   └── educational_index.json      # Educational content index
 ├── src/
-│   ├── generator.js          # Main document generator
-│   ├── formatters.js         # Formatting utilities
-│   └── endnotes.js           # Endnote generation
-├── Dockerfile                # Container definition
-├── build.sh                  # Build script
-├── docker-compose.yml        # Optional: simplified building
+│   └── generator.js                # Complete document generator
+├── Dockerfile                      # Container definition
+├── build.sh                        # Build script
 └── output/
     └── waiting_on_the_lord_analysis.docx  # Generated document
 ```

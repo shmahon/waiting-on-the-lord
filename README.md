@@ -75,19 +75,26 @@ The generated document will be in `output/waiting_on_the_lord_analysis.docx` and
 
 ```
 waiting-on-the-lord/
-├── SESSION.md                 # Project status and resumption guide
-├── README.md                  # This file
-├── source_data.json          # Extracted source data (41 entries)
-├── data/                     # Structured data (generated in Stage 2)
-│   ├── lexemes.json          # Parsed lexeme information
-│   └── educational.json      # Learners' notes
-├── src/                      # Document generator (Stage 4)
-│   ├── generator.js          # Main generator
-│   ├── formatters.js         # Formatting utilities
-│   └── endnotes.js           # Endnote system
-├── Dockerfile                # Container definition (Stage 5)
-├── build.sh                  # Build script (Stage 5)
-└── output/                   # Generated documents
+├── SESSION.md                      # Project status and resumption guide
+├── README.md                       # This file
+├── CLAUDE.md                       # Instructions for Claude Code
+├── source_data.json                # Extracted source data (41 entries)
+├── data/                           # Structured data (generated in Stage 2)
+│   ├── structured_by_theme.json    # All entries organized by theme
+│   ├── hebrew_lexemes.json         # Hebrew word definitions
+│   ├── greek_lexemes.json          # Greek word definitions
+│   ├── hebrew_concepts.json        # Hebrew grammatical concepts
+│   ├── greek_concepts.json         # Greek grammatical concepts
+│   ├── hebrew_stems.json           # Hebrew verb stem explanations
+│   ├── lexeme_summary.json         # Summary of all lexemes
+│   ├── parsed_entries.json         # Parsed data entries
+│   ├── grammatical_analysis.json   # Grammatical analysis
+│   └── educational_index.json      # Educational content index
+├── src/                            # Document generator (Stage 4)
+│   └── generator.js                # Complete generator (all-in-one)
+├── Dockerfile                      # Container definition (Stage 5)
+├── build.sh                        # Build script (Stage 5)
+└── output/                         # Generated documents
     └── waiting_on_the_lord_analysis.docx
 ```
 
@@ -104,7 +111,7 @@ This project is developed incrementally across 6 stages:
 
 See `SESSION.md` for detailed stage information.
 
-## Document Contents (Planned)
+## Document Contents
 
 ### Main Sections
 1. **Introduction** - Overview of the study
@@ -161,9 +168,9 @@ This project uses Git for version control. Each development stage is committed s
 
 ## Current Status
 
-**Stage 1: Repository Setup** ✓ (IN PROGRESS)
+**Stage 6: Documentation & Delivery** ✓ COMPLETE
 
-See `SESSION.md` for current status and how to resume in a new chat session.
+All stages have been completed. The project is production-ready and generates a fully functional document.
 
 ## License
 
