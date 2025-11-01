@@ -99,7 +99,7 @@ function createCalloutBox(title, content) {
                     text: `${title}`,  // Removed emoji for professional appearance
                     bold: true,
                     color: COLORS.SUPPORTING,
-                    size: 22,
+                    size: 20,  // Reduced from 22
                     font: 'Calibri'  // Sans-serif for sidebars (publishing standard)
                   })
                 ],
@@ -118,7 +118,7 @@ function createCalloutBox(title, content) {
                   new TextRun({
                     text: content,
                     color: COLORS.TEXT_PRIMARY,
-                    size: 20,
+                    size: 18,  // Reduced from 20
                     font: 'Calibri'  // Sans-serif to distinguish from body text
                   })
                 ],
@@ -162,7 +162,7 @@ sections.push(
       color: 'FFFFFF',
       bold: true,
       font: 'Garamond',  // Classic serif for title
-      size: 32
+      size: 30  // Reduced from 32
     }
   }),
   new Paragraph({
@@ -172,7 +172,7 @@ sections.push(
     run: {
       color: COLORS.PRIMARY,
       italics: true,
-      size: 26,
+      size: 24,  // Reduced from 26
       font: 'Garamond'
     }
   })
@@ -195,7 +195,7 @@ sections.push(
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',  // Sans-serif for headings
-      size: 28
+      size: 26  // Reduced from 28
     }
   }),
   new Paragraph({
@@ -204,7 +204,7 @@ sections.push(
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -213,7 +213,7 @@ sections.push(
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -222,7 +222,7 @@ sections.push(
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -231,7 +231,7 @@ sections.push(
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -240,8 +240,305 @@ sections.push(
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
-      size: 24
+      size: 22  // Reduced from 24
     }
+  })
+);
+
+// Visual Summary: Lexeme Overview
+sections.push(
+  new Paragraph({
+    text: 'Visual Summary: Lexeme-Form-Theme Overview',
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 600, after: 300 },
+    pageBreakBefore: true,
+    border: {
+      left: {
+        color: COLORS.ACCENT,
+        space: 8,
+        style: BorderStyle.SINGLE,
+        size: 40
+      }
+    },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 26
+    }
+  }),
+  new Paragraph({
+    text: 'This diagram maps the relationship between Hebrew/Greek lexemes, their grammatical forms, and their thematic significance throughout Scripture.',
+    spacing: { after: 300, line: 360 },
+    run: {
+      color: COLORS.TEXT_SECONDARY,
+      italics: true,
+      font: 'Times New Roman',
+      size: 20
+    }
+  }),
+  new Paragraph({
+    children: [
+      new TextRun({
+        text: '═══════════════════════════════════════════════════════════════════════════════\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.GRAY_DARK
+      }),
+      new TextRun({
+        text: 'HEBREW LEXEMES\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.PRIMARY
+      }),
+      new TextRun({
+        text: '═══════════════════════════════════════════════════════════════════════════════\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.GRAY_DARK
+      }),
+      new TextRun({
+        text: 'קָוָה (qāwāh)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  ├─ Qal Participle ────────────────→ Strength & Renewal, Blessing & Inheritance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Piel Perfect ──────────────────→ Trust & Hope, Help & Deliverance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Piel Imperative ───────────────→ Help & Deliverance, Faithfulness & Devotion\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  └─ Piel Imperfect ────────────────→ Praise & Worship\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'חָכָה (ḥākāh)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  ├─ Piel Perfect ──────────────────→ Help & Deliverance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Piel Participle ───────────────→ Blessing & Inheritance, Goodness of God\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Piel Sequential Perfect ───────→ Teaching & Guidance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  └─ Piel Imperative ───────────────→ Judgment & Justice\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'יָחַל (yāḥal)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  ├─ Piel Participle ───────────────→ Strength & Renewal\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Piel Infinitive Construct ─────→ Patience & Endurance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Hiphil Imperfect ──────────────→ Help & Deliverance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  └─ Qal Participle ────────────────→ Goodness of God\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'חוּל (ḥûl)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  └─ Hithpolel Imperative ──────────→ Patience & Endurance\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'דָּמַם (dāmam)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  └─ Qal Imperative ────────────────→ Trust & Hope\n\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '═══════════════════════════════════════════════════════════════════════════════\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.GRAY_DARK
+      }),
+      new TextRun({
+        text: 'GREEK LEXEMES\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.PRIMARY
+      }),
+      new TextRun({
+        text: '═══════════════════════════════════════════════════════════════════════════════\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.GRAY_DARK
+      }),
+      new TextRun({
+        text: 'ἀπεκδέχομαι (apekdechomai)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  ├─ Present Deponent Indicative ────→ Strength & Renewal, Help & Deliverance\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  ├─ Present Deponent Participle ────→ Eschatological Hope (multiple)\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  └─ Present Deponent Indicative ────→ Blessing & Inheritance\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'προσδέχομαι (prosdechomai)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  ├─ Present Deponent Participle ────→ Messianic Expectation (multiple)\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '  └─ Present Deponent Participle ────→ Eschatological Hope\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'ἐλπίζω (elpizō)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  └─ Aorist Active Imperative ───────→ Trust & Hope\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'μακροθυμέω (makrothymeō)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  └─ Aorist Active Imperative ───────→ Patience & Endurance\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'ὑπομονή (hypomonē)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  └─ Noun, Genitive ────────────────→ Patience & Endurance\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: 'ἀναμένω (anamenō)\n',
+        font: 'Courier New',
+        size: 18,
+        bold: true,
+        color: COLORS.ACCENT
+      }),
+      new TextRun({
+        text: '  │\n  └─ Present Active Infinitive ──────→ Eschatological Hope\n\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.TEXT_PRIMARY
+      }),
+      new TextRun({
+        text: '═══════════════════════════════════════════════════════════════════════════════\n',
+        font: 'Courier New',
+        size: 18,
+        color: COLORS.GRAY_DARK
+      })
+    ],
+    spacing: { after: 400, before: 200 }
   })
 );
 
@@ -265,7 +562,7 @@ for (const themeData of structuredData) {
         color: COLORS.PRIMARY,
         bold: true,
         font: 'Calibri',  // Sans-serif for headings
-        size: 28
+        size: 26  // Reduced from 28
       },
       pageBreakBefore: true  // Start each theme on new page
     })
@@ -282,7 +579,7 @@ for (const themeData of structuredData) {
           new TextRun({
             text: `${lexeme.word} (${lexeme.transliteration}) — ${lexeme.strongs}`,
             bold: true,
-            size: 26,
+            size: 24,  // Reduced from 26
             color: COLORS.ACCENT,
             font: 'Times New Roman'
           })
@@ -301,13 +598,13 @@ for (const themeData of structuredData) {
               italics: true,
               color: COLORS.GRAY_DARK,
               font: 'Times New Roman',
-              size: 24
+              size: 22  // Reduced from 24
             }),
             new TextRun({
               text: lexDef.primary_theological_meaning || lexDef.root_meaning,
               color: COLORS.TEXT_PRIMARY,
               font: 'Times New Roman',
-              size: 24
+              size: 22  // Reduced from 24
             })
           ],
           spacing: { after: 200, line: 360 }
@@ -329,7 +626,7 @@ for (const themeData of structuredData) {
               underline: { type: UnderlineType.SINGLE },
               color: COLORS.PRIMARY,
               font: 'Times New Roman',
-              size: 24
+              size: 22  // Reduced from 24
             })
           ],
           spacing: { before: 200, after: 100 }
@@ -345,13 +642,13 @@ for (const themeData of structuredData) {
               bold: true,
               color: COLORS.GRAY_DARK,
               font: 'Times New Roman',
-              size: 22
+              size: 20  // Reduced from 22
             }),
             new TextRun({
               text: occ.parsing || 'Not available',
               color: COLORS.TEXT_PRIMARY,
               font: 'Times New Roman',
-              size: 22
+              size: 20  // Reduced from 22
             })
           ],
           spacing: { after: 100, line: 360 }
@@ -380,7 +677,7 @@ for (const themeData of structuredData) {
               spacing: { after: 100, line: 360 },
               run: {
                 color: COLORS.TEXT_SECONDARY,
-                size: 20,
+                size: 18,  // Reduced from 20
                 font: 'Times New Roman'
               }
             })
@@ -422,11 +719,11 @@ for (const themeData of structuredData) {
                       new TextRun({
                         text: 'Ibid. ',
                         italics: true,
-                        size: 18  // 9pt - smaller for footnotes (academic standard)
+                        size: 16  // Reduced from 18 (7pt)
                       }),
                       new TextRun({
                         text: '(See previous note on this page)',
-                        size: 18
+                        size: 16  // Reduced from 18
                       })
                     ]
                   })
@@ -442,15 +739,15 @@ for (const themeData of structuredData) {
                       new TextRun({
                         text: `${morph.stem} Stem: `,
                         bold: true,
-                        size: 18  // 9pt - smaller for footnotes (academic standard)
+                        size: 16  // Reduced from 18 (8pt)
                       }),
                       new TextRun({
                         text: stemInfo.meaning + '. ',
-                        size: 18
+                        size: 16  // Reduced from 18
                       }),
                       new TextRun({
                         text: stemInfo.description,
-                        size: 18
+                        size: 16  // Reduced from 18
                       })
                     ]
                   })
@@ -470,7 +767,7 @@ for (const themeData of structuredData) {
                     italics: true,
                     color: COLORS.GRAY_DARK,
                     font: 'Times New Roman',
-                    size: 22
+                    size: 20  // Reduced from 22
                   }),
                   new FootnoteReferenceRun(footnoteId)
                 ],
@@ -498,7 +795,7 @@ for (const themeData of structuredData) {
               text: truncated,
               italics: true,
               color: COLORS.TEXT_SECONDARY,
-              size: 22,
+              size: 20,  // Reduced from 22
               font: 'Times New Roman'
             })
           ],
@@ -544,7 +841,7 @@ sections.push(
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
-      size: 28
+      size: 26  // Reduced from 28
     }
   }),
   new Paragraph({
@@ -554,7 +851,7 @@ sections.push(
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -568,7 +865,7 @@ sections.push(
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -577,7 +874,7 @@ sections.push(
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -591,13 +888,13 @@ for (const stem of hebrewStems.stems) {
           bold: true,
           color: COLORS.ACCENT,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         }),
         new TextRun({
           text: stem.meaning,
           color: COLORS.TEXT_PRIMARY,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { after: 100 }
@@ -608,7 +905,7 @@ for (const stem of hebrewStems.stems) {
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
-        size: 20
+        size: 18  // Reduced from 20
       }
     }),
     new Paragraph({
@@ -618,13 +915,13 @@ for (const stem of hebrewStems.stems) {
           italics: true,
           color: COLORS.GRAY_DARK,
           font: 'Times New Roman',
-          size: 20
+          size: 18  // Reduced from 20
         }),
         new TextRun({
           text: stem.example.explanation,
           color: COLORS.TEXT_SECONDARY,
           font: 'Times New Roman',
-          size: 20
+          size: 18  // Reduced from 20
         })
       ],
       spacing: { after: 200 }
@@ -641,7 +938,7 @@ sections.push(
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -651,7 +948,7 @@ sections.push(
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -663,7 +960,7 @@ for (const concept of hebrewConcepts.concepts) {
         new TextRun({
           text: concept.term,
           bold: true,
-          size: 24,
+          size: 22,  // Reduced from 24
           color: COLORS.ACCENT,
           font: 'Times New Roman'
         }),
@@ -672,7 +969,7 @@ for (const concept of hebrewConcepts.concepts) {
           italics: true,
           color: COLORS.GRAY_MEDIUM,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { before: 200, after: 100 }
@@ -684,13 +981,13 @@ for (const concept of hebrewConcepts.concepts) {
           bold: true,
           color: COLORS.GRAY_DARK,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         }),
         new TextRun({
           text: concept.simple_explanation,
           color: COLORS.TEXT_PRIMARY,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { after: 100, line: 360 }
@@ -701,7 +998,7 @@ for (const concept of hebrewConcepts.concepts) {
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
-        size: 22
+        size: 20  // Reduced from 22
       }
     })
   );
@@ -715,13 +1012,13 @@ for (const concept of hebrewConcepts.concepts) {
             italics: true,
             color: COLORS.GRAY_DARK,
             font: 'Times New Roman',
-            size: 20
+            size: 18  // Reduced from 20
           }),
           new TextRun({
             text: concept.example,
             color: COLORS.TEXT_SECONDARY,
             font: 'Times New Roman',
-            size: 20
+            size: 18  // Reduced from 20
           })
         ],
         spacing: { after: 100, line: 360 }
@@ -738,13 +1035,13 @@ for (const concept of hebrewConcepts.concepts) {
             bold: true,
             color: COLORS.GRAY_DARK,
             font: 'Times New Roman',
-            size: 22
+            size: 20  // Reduced from 22
           }),
           new TextRun({
             text: concept.why_relevant,
             color: COLORS.TEXT_PRIMARY,
             font: 'Times New Roman',
-            size: 22
+            size: 20  // Reduced from 22
           })
         ],
         spacing: { after: 200, line: 360 }
@@ -762,7 +1059,7 @@ sections.push(
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -772,7 +1069,7 @@ sections.push(
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -784,7 +1081,7 @@ for (const concept of greekConcepts.concepts) {
         new TextRun({
           text: concept.term,
           bold: true,
-          size: 24,
+          size: 22,  // Reduced from 24
           color: COLORS.ACCENT,
           font: 'Times New Roman'
         }),
@@ -793,7 +1090,7 @@ for (const concept of greekConcepts.concepts) {
           italics: true,
           color: COLORS.GRAY_MEDIUM,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { before: 200, after: 100 }
@@ -805,13 +1102,13 @@ for (const concept of greekConcepts.concepts) {
           bold: true,
           color: COLORS.GRAY_DARK,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         }),
         new TextRun({
           text: concept.simple_explanation,
           color: COLORS.TEXT_PRIMARY,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { after: 100, line: 360 }
@@ -822,7 +1119,7 @@ for (const concept of greekConcepts.concepts) {
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
-        size: 22
+        size: 20  // Reduced from 22
       }
     })
   );
@@ -836,13 +1133,13 @@ for (const concept of greekConcepts.concepts) {
             italics: true,
             color: COLORS.GRAY_DARK,
             font: 'Times New Roman',
-            size: 20
+            size: 18  // Reduced from 20
           }),
           new TextRun({
             text: concept.example,
             color: COLORS.TEXT_SECONDARY,
             font: 'Times New Roman',
-            size: 20
+            size: 18  // Reduced from 20
           })
         ],
         spacing: { after: 100, line: 360 }
@@ -859,13 +1156,13 @@ for (const concept of greekConcepts.concepts) {
             bold: true,
             color: COLORS.GRAY_DARK,
             font: 'Times New Roman',
-            size: 22
+            size: 20  // Reduced from 22
           }),
           new TextRun({
             text: concept.why_relevant,
             color: COLORS.TEXT_PRIMARY,
             font: 'Times New Roman',
-            size: 22
+            size: 20  // Reduced from 22
           })
         ],
         spacing: { after: 200, line: 360 }
@@ -885,7 +1182,7 @@ sections.push(
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
-      size: 24
+      size: 22  // Reduced from 24
     }
   }),
   new Paragraph({
@@ -895,7 +1192,7 @@ sections.push(
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -909,7 +1206,7 @@ sections.push(
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -924,7 +1221,7 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
           bold: true,
           color: COLORS.ACCENT,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { before: 150, after: 50 }
@@ -935,7 +1232,7 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
-        size: 22
+        size: 20  // Reduced from 22
       }
     }),
     new Paragraph({
@@ -945,14 +1242,14 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
           italics: true,
           color: COLORS.GRAY_DARK,
           font: 'Times New Roman',
-          size: 20
+          size: 18  // Reduced from 20
         }),
         new TextRun({
           text: lex.themes.join(', '),
           italics: true,
           color: COLORS.TEXT_SECONDARY,
           font: 'Times New Roman',
-          size: 20
+          size: 18  // Reduced from 20
         })
       ],
       spacing: { after: 150 }
@@ -969,7 +1266,7 @@ sections.push(
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
-      size: 22
+      size: 20  // Reduced from 22
     }
   })
 );
@@ -984,7 +1281,7 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
           bold: true,
           color: COLORS.ACCENT,
           font: 'Times New Roman',
-          size: 22
+          size: 20  // Reduced from 22
         })
       ],
       spacing: { before: 150, after: 50 }
@@ -995,7 +1292,7 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
-        size: 22
+        size: 20  // Reduced from 22
       }
     }),
     new Paragraph({
@@ -1005,14 +1302,14 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
           italics: true,
           color: COLORS.GRAY_DARK,
           font: 'Times New Roman',
-          size: 20
+          size: 18  // Reduced from 20
         }),
         new TextRun({
           text: lex.themes.join(', '),
           italics: true,
           color: COLORS.TEXT_SECONDARY,
           font: 'Times New Roman',
-          size: 20
+          size: 18  // Reduced from 20
         })
       ],
       spacing: { after: 150 }
@@ -1028,7 +1325,7 @@ const pageNumberFooter = new Footer({
       children: [
         new TextRun({
           children: [PageNumber.CURRENT],
-          size: 20,
+          size: 18,  // Reduced from 20
           color: COLORS.GRAY_MEDIUM
         })
       ]

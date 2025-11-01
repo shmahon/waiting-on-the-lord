@@ -1,372 +1,7 @@
 [
   {
-    "theme": "BLESSING & INHERITANCE",
+    "theme": "STRENGTH & RENEWAL",
     "lexemes": [
-      {
-        "word": "חָכָה",
-        "transliteration": "ḥākāh",
-        "strongs": "H2442",
-        "twot": "648",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Isaiah 30:18",
-            "parsing": "Verb, Piel, Participle, Masculine Plural Construct",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Piel",
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "And therefore will the LORD wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for the LORD is a God of judgment: blessed are all they that wait for him.\n\nContext: Oracle against trusting Egypt instead of God (30:1-17). Remarkable reversal: God waits to show grace (v. 18). Divine waiting precedes human waiting. Judgment = justice/righteousness, not just wrath.\n\nThematic fit: Unique: God waits (ḥākāh) to be gracious. Beatitude: 'blessed are those who wait' (ḥākāh participle). Divine patience mirrors/enables human patience. Mercy follows judgment.\n\nApplication: God's waiting to show grace should inspire human waiting for His mercy. Divine patience model for human patience. Blessing pronounced on waiters."
-          }
-        ]
-      },
-      {
-        "word": "קָוָה",
-        "transliteration": "qāwāh",
-        "strongs": "H6960",
-        "twot": "1994, 1995",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Psalm 37:9",
-            "parsing": "Verb, Qal, Participle, Masculine Plural Construct",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Qal",
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "For evildoers shall be cut off: but those that wait upon the LORD, they shall inherit the earth.\n\nContext: Theodicy psalm (see 37:7). Contrast: wicked cut off vs. righteous inherit. 'Inherit earth/land' repeated (vv. 9, 11, 22, 29, 34). Echoes Abrahamic/Mosaic covenant promises.\n\nThematic fit: Qāwāh qal participle ('those who wait') = characteristic waiters. Inheritance promise contrasts with evildoers' destruction. Patient waiting rewarded with land-possession.\n\nApplication: Meekness/waiting, not violence/scheming, secures inheritance. NT Jesus quotes v. 11 (Matt 5:5). Eschatological fulfillment: new earth."
-          },
-          {
-            "reference": "Psalm 37:34",
-            "parsing": "Verb, Qal, Imperative, Masculine Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Qal",
-              "type": "Imperative",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "Wait on the LORD, and keep his way, and he shall exalt thee to inherit the land: when the wicked are cut off, thou shalt see it.\n\nContext: Same psalm, climactic exhortation. Waiting + obedience ('keep his way') = inheritance formula. Witnessing wicked's judgment part of vindication.\n\nThematic fit: Qāwāh qal imperative. Combines waiting with active obedience. Exaltation + inheritance promised. Righteous witness evildoers' demise—vindication visible.\n\nApplication: Waiting not passive but includes keeping God's way. Vindication includes seeing justice done. Obedience + patience = exaltation + inheritance."
-          },
-          {
-            "reference": "Isaiah 49:23",
-            "parsing": "Verb, Qal, Participle, Masculine Plural Construct",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Qal",
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "And kings shall be thy nursing fathers, and their queens thy nursing mothers: they shall bow down to thee with their face toward the earth, and lick up the dust of thy feet; and thou shalt know that I am the LORD: for they shall not be ashamed that wait for me.\n\nContext: Servant Song context (49:1-26). Zion's restoration promised. Gentile kings/queens serve restored Israel. Dramatic reversal: oppressed become honored. Recognition formula: 'you shall know I am LORD.'\n\nThematic fit: Qāwāh qal participle + shame reversal. 'Not ashamed' = vindication of trust. Extreme imagery (licking dust) shows complete reversal of fortunes. Eschatological restoration.\n\nApplication: Those who wait for God will not be disappointed—vindication certain. Shame of present suffering reversed in future glory. Trust honored publicly."
-          }
-        ]
-      },
-      {
-        "word": "ἀπεκδέχομαι",
-        "transliteration": "apekdechomai",
-        "strongs": "G553",
-        "twot": null,
-        "language": "Greek",
-        "occurrences": [
-          {
-            "reference": "Galatians 5:5",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": null,
-              "person": "1st Person Plural",
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": "Indicative"
-            },
-            "scripture_text": "For we through the Spirit wait for the hope of righteousness by faith.\n\nContext: Argument against Judaizers requiring circumcision (5:1-12). Faith vs. works-righteousness. 'Through the Spirit' = pneumatic, not fleshly, existence. 'By faith' = means, not works.\n\nThematic fit: Ἀπεκδέχομαι present indicative = ongoing eager expectation. 'Hope of righteousness' = future vindication/glorification, not justification (already possessed). Spirit-enabled eschatological hope.\n\nApplication: Christian hope is Spirit-empowered, faith-based, future-oriented. Already justified, waiting for final righteousness/glorification. Grace, not law."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "theme": "ESCHATOLOGICAL HOPE",
-    "lexemes": [
-      {
-        "word": "προσδέχομαι",
-        "transliteration": "prosdechomai",
-        "strongs": "G4327",
-        "twot": null,
-        "language": "Greek",
-        "occurrences": [
-          {
-            "reference": "Titus 2:13",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": null
-            },
-            "scripture_text": "Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ.\n\nContext: Practical theology section (2:11-14). Grace trains for godly living (v. 12) while awaiting Christ's return. 'Blessed hope' = second advent. High Christology: 'great God and Savior.'\n\nThematic fit: Προσδέχομαι present participle. Eschatological waiting as Christian norm. 'Blessed hope' (μακαρίαν ἐλπίδα) = happy expectation, not fearful dread. Present holiness motivated by future appearing.\n\nApplication: Christian life lived between two advents. Present godliness fueled by future hope. Eschatology produces ethics."
-          }
-        ]
-      },
-      {
-        "word": "ἀναμένω",
-        "transliteration": "anamenō",
-        "strongs": "G362",
-        "twot": null,
-        "language": "Greek",
-        "occurrences": [
-          {
-            "reference": "1 Thessalonians 1:10",
-            "parsing": "Verb, Present, Active, Infinitive",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": "Infinitive",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Active",
-              "mood": null
-            },
-            "scripture_text": "And to wait for his Son from heaven, whom he raised from the dead, even Jesus, which delivered us from the wrath to come.\n\nContext: Thessalonian conversion recounted (1:9-10). Turn from idols to serve living God (v. 9) and wait for Son from heaven (v. 10). Eschatological deliverance from wrath. Jesus' resurrection grounds hope.\n\nThematic fit: Ἀναμένω present infinitive (purpose: 'in order to wait'). Conversion includes eschatological reorientation: from idols to waiting for Christ. Deliverance from wrath, not just wrath's postponement.\n\nApplication: Conversion fundamentally eschatological: turning toward Christ's return. Waiting for Son from heaven essential to Christian identity. Hope grounded in resurrection."
-          }
-        ]
-      },
-      {
-        "word": "ἀπεκδέχομαι",
-        "transliteration": "apekdechomai",
-        "strongs": "G553",
-        "twot": null,
-        "language": "Greek",
-        "occurrences": [
-          {
-            "reference": "Philippians 3:20",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": null,
-              "person": "1st Person Plural",
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": "Indicative"
-            },
-            "scripture_text": "For our conversation is in heaven; from whence also we look for the Saviour, the Lord Jesus Christ.\n\nContext: Warning against enemies of cross—earthly minded (vv. 18-19). Contrast: citizenship in heaven, awaiting Savior. Body transformation promised (v. 21). Present suffering vs. future glory.\n\nThematic fit: Ἀπεκδέχομαι present indicative = ongoing eager expectation. Heavenly citizenship produces earthly distinctiveness. Christ as Savior returning from heaven. Body transformation (v. 21) = physical resurrection hope.\n\nApplication: Heavenly citizenship shapes earthly conduct. Eager expectation of Savior's return from heaven. Physical resurrection, not disembodied escape."
-          },
-          {
-            "reference": "Romans 8:19",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 3rd Person Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": null,
-              "person": "3rd Person Singular",
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": "Indicative"
-            },
-            "scripture_text": "For the earnest expectation of the creature waiteth for the manifestation of the sons of God.\n\nContext: Creation groaning (8:18-25, see v. 23). Personified creation (κτίσις) subjected to futility (v. 20), awaiting liberation (v. 21). Cosmic scope of redemption. Believers' glorification liberates creation.\n\nThematic fit: Ἀπεκδέχομαι present indicative. 'Earnest expectation' (ἀποκαραδοκία) = head-straining anticipation. Creation waits for believers' glorification ('manifestation of sons of God'). Cosmic redemption tied to human redemption.\n\nApplication: Redemption cosmic, not just individual. Creation's liberation awaits believers' glorification. Ecological hope grounded in eschatology."
-          },
-          {
-            "reference": "1 Corinthians 1:7",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Accusative Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": null
-            },
-            "scripture_text": "So that ye come behind in no gift; waiting for the coming of our Lord Jesus Christ.\n\nContext: Thanksgiving for Corinthian church (1:4-9) despite later problems. Spiritual gifts abundant. Waiting for revelation (ἀποκάλυψιν) of Christ. Eschatological confirmation/blamelessness promised (v. 8).\n\nThematic fit: Ἀπεκδέχομαι present participle. Spiritual gifts sustain community while awaiting Christ's revelation. 'Coming' (ἀποκάλυψις) = unveiling, disclosure. Eschatological perseverance promised (v. 8).\n\nApplication: Spiritual gifts for present ministry while awaiting Christ's return. Gifts equip church for witness during waiting period. Final vindication certain."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "theme": "FAITHFULNESS & DEVOTION",
-    "lexemes": [
-      {
-        "word": "קָוָה",
-        "transliteration": "qāwāh",
-        "strongs": "H6960",
-        "twot": "1994, 1995",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Isaiah 26:8",
-            "parsing": "Verb, Piel, Perfect, 1st Common Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Piel",
-              "type": "Perfect",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "Yea, in the way of thy judgments, O LORD, have we waited for thee; the desire of our soul is to thy name, and to the remembrance of thee.\n\nContext: Prophetic song of redeemed Judah after eschatological judgment (ch. 25-26). 'Way of thy judgments' = God's ordained paths/statutes, not judgment upon speakers. Walking obediently while longing for God.\n\nThematic fit: Devotional waiting during faithful obedience, not crisis. Emphasis on desire for God's name/presence while following His ways. 'Way of judgments' = righteous living.\n\nApplication: Waiting combines active obedience to Scripture with heartfelt desire for God's presence. Not passive inactivity but devoted alignment with divine purpose."
-          },
-          {
-            "reference": "Hosea 12:6",
-            "parsing": "Verb, Qal, Imperative, Masculine Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Qal",
-              "type": "Imperative",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "Therefore turn thou to thy God: keep mercy and judgment, and wait on thy God continually.\n\nContext: Indictment of Israel using Jacob typology (12:2-14). Call to repentance (v. 6). Ethical living ('mercy and judgment') paired with continual waiting. Covenant loyalty demanded.\n\nThematic fit: Qāwāh qal imperative + 'continually' (תָּמִיד = always, perpetually). Waiting not episodic but constant posture. Paired with ethical living (mercy/justice). Repentance includes ongoing devotion.\n\nApplication: Faithful waiting is continual, not intermittent. Combines ethics (mercy/justice) with piety (waiting on God). Whole-life devotion."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "theme": "GOODNESS OF GOD",
-    "lexemes": [
-      {
-        "word": "חָכָה",
-        "transliteration": "ḥākāh",
-        "strongs": "H2442",
-        "twot": "648",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Isaiah 64:4",
-            "parsing": "Verb, Piel, Participle, Masculine Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Piel",
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "For since the beginning of the world men have not heard, nor perceived by the ear, neither hath the eye seen, O God, beside thee, what he hath prepared for him that waiteth for him.\n\nContext: Corporate lament (64:1-12) following confession (63:7-64:12). Petition for divine intervention (vv. 1-5). God's incomparability affirmed. What God prepares exceeds human comprehension. Paul quotes (1 Cor 2:9).\n\nThematic fit: Ḥākāh piel participle ('one who waits'). God prepares incomprehensible blessings for waiters. Unique God (incomparable) acts for unique people (those who wait). Reward exceeds imagination.\n\nApplication: What God prepares for those who wait exceeds human comprehension. Reward unfathomable. Worth any present suffering."
-          }
-        ]
-      },
-      {
-        "word": "קָוָה",
-        "transliteration": "qāwāh",
-        "strongs": "H6960",
-        "twot": "1994, 1995",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Lamentations 3:25",
-            "parsing": "Verb, Qal, Participle, Masculine Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Qal",
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "The LORD is good unto them that wait for him, to the soul that seeketh him.\n\nContext: Center of Lamentations (see 3:26). Follows affirmation of God's faithfulness/mercy (vv. 22-24). 'Good' = God's character proven through experience. Waiting + seeking paired. Personal testimony ('I said,' v. 24).\n\nThematic fit: Qāwāh qal participle ('those who wait') + seeking. Divine goodness experienced by waiters. Parallel construction: waiting//seeking. Character affirmation amid suffering.\n\nApplication: God's goodness revealed to those who wait/seek. Suffering doesn't negate divine character. Experience confirms theology."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "theme": "HELP & DELIVERANCE",
-    "lexemes": [
-      {
-        "word": "חָכָה",
-        "transliteration": "ḥākāh",
-        "strongs": "H2442",
-        "twot": "648",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Psalm 33:20",
-            "parsing": "Verb, Piel, Perfect, 3rd Feminine Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Piel",
-              "type": "Perfect",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "Our soul waiteth for the LORD: he is our help and our shield.\n\nContext: Hymn of praise. Creation (vv. 6-9), providence (vv. 10-12), divine observation (vv. 13-19) lead to confident waiting (vv. 20-22). Military imagery: horses fail (v. 17) but God delivers (v. 19).\n\nThematic fit: Ḥākāh piel perfect = completed act of waiting. 'Help and shield' = military deliverance language. Corporate 'our soul' = community waiting for protection.\n\nApplication: Communal waiting for divine protection. Military metaphors: human strength insufficient, divine intervention necessary."
-          }
-        ]
-      },
       {
         "word": "יָחַל",
         "transliteration": "yāḥal",
@@ -375,12 +10,12 @@
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Micah 7:7",
-            "parsing": "Verb, Hiphil, Imperfect, 1st Common Singular",
+            "reference": "Psalm 31:24",
+            "parsing": "Verb, Piel, Participle, Masculine Plural",
             "morphology": {
               "part_of_speech": "Verb",
-              "stem": "Hiphil",
-              "type": "Imperfect",
+              "stem": "Piel",
+              "type": "Participle",
               "person": null,
               "gender": null,
               "number": null,
@@ -389,7 +24,7 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "Therefore I will look unto the LORD; I will wait for the God of my salvation: my God will hear me.\n\nContext: Micah's lament over societal corruption (7:1-6) transitions to personal trust (v. 7). Communal confession (vv. 8-10) follows. Prophet models waiting amid moral collapse.\n\nThematic fit: Yāḥal hiphil imperfect (causative: 'I will cause myself to hope'). Doubled future verbs ('I will look...I will wait') = resolute decision. Confidence God will hear/act.\n\nApplication: Waiting decision made despite societal conditions. Prophet's personal example becomes community's hope. Resolute trust when culture collapses."
+            "scripture_text": "Be of good courage, and he shall strengthen your heart, all ye that hope in the LORD.\n\nContext: Final verse of lament/thanksgiving psalm. David's deliverance from distress (vv. 7-8) becomes communal encouragement. Movement from individual crisis to corporate exhortation.\n\nThematic fit: Yāḥal (hope/trust) + heart-strengthening promise. Piel participle = intensive hoping as characteristic. Nearly identical to 27:14 in form/content, reinforcing strength theme.\n\nApplication: Hope in God strengthens community, not just individuals. Personal testimony becomes corporate encouragement."
           }
         ]
       },
@@ -401,8 +36,134 @@
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Isaiah 33:2",
-            "parsing": "Verb, Piel, Perfect, 1st Common Plural",
+            "reference": "Isaiah 40:31",
+            "parsing": "Verb, Qal, Participle, Masculine Plural Construct",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Qal",
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.\n\nContext: Climactic promise in Isaiah's comfort oracle (40:1-31) addressing exiled Israel's despair. Contrasts human weakness (vv. 28-30) with divine power. Promise follows rhetorical questions about God's creative strength.\n\nThematic fit: Quintessential renewal promise. Qāwāh participle ('those who wait') emphasizes characteristic posture, not one-time act. Physical imagery (eagle, running, walking) = spiritual vitality.\n\nApplication: Waiting on God produces strength unavailable through human effort. Sustained dependence on divine power, not self-reliance."
+          },
+          {
+            "reference": "Psalm 27:14",
+            "parsing": "Verb, Qal, Imperative, Masculine Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Qal",
+              "type": "Imperative",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD.\n\nContext: Concluding exhortation of confidence psalm amid danger (vv. 1-3, 11-12). David facing enemies/false witnesses. Self-encouragement becoming instruction.\n\nThematic fit: Doubled imperative ('wait...wait') + promise of heart-strengthening. Qal imperative = direct command. Courage vocabulary links waiting to inner fortification.\n\nApplication: Waiting actively produces courage for present trials, not just future deliverance. Commands self/others to maintain posture despite circumstances."
+          }
+        ]
+      },
+      {
+        "word": "ἀπεκδέχομαι",
+        "transliteration": "apekdechomai",
+        "strongs": "G553",
+        "twot": null,
+        "language": "Greek",
+        "occurrences": [
+          {
+            "reference": "Romans 8:25",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": null,
+              "person": "1st Person Plural",
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": "Indicative"
+            },
+            "scripture_text": "But if we hope for that we see not, then do we with patience wait for it.\n\nContext: Creation groaning passage (8:18-30). Present suffering vs. future glory. Hope for unseen glorification (v. 24) requires patient endurance. Cosmic scope: creation, believers, Spirit all waiting.\n\nThematic fit: Ἀπεκδέχομαι (eager waiting) + ὑπομονή (patient endurance). Intensified compound shows NT eschatological tension. Already justified (vv. 1, 30), not yet glorified (v. 30).\n\nApplication: Christian waiting combines confident hope with patient endurance of present suffering. Eschatological certainty enables present perseverance."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "TRUST & HOPE",
+    "lexemes": [
+      {
+        "word": "דָּמַם",
+        "transliteration": "dāmam",
+        "strongs": "H1826",
+        "twot": "439",
+        "language": "Hebrew",
+        "occurrences": [
+          {
+            "reference": "Psalm 62:5",
+            "parsing": "Verb, Qal, Imperative, Feminine Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Qal",
+              "type": "Imperative",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "My soul, wait thou only upon God; for my expectation is from him.\n\nContext: David addressing own soul during betrayal/attack (vv. 3-4). Self-exhortation to silence/stillness. Contrasts human threats (vv. 3-4, 9-10) with divine refuge (vv. 1-2, 5-8).\n\nThematic fit: Dāmam (be silent/still) = unique waiting verb emphasizing cessation, not activity. 'Only upon God' = exclusive trust. Feminine imperative addresses nephesh (soul).\n\nApplication: Waiting requires silencing competing voices/anxieties. Exclusive dependence on God, not multiple securities."
+          }
+        ]
+      },
+      {
+        "word": "יָחַל / חוּל",
+        "transliteration": "yāḥal / ḥûl",
+        "strongs": "H3176",
+        "twot": "858",
+        "language": "Hebrew",
+        "occurrences": [
+          {
+            "reference": "Lamentations 3:26",
+            "parsing": "Piel Imperfect 3MS / Qal Sequential Imperfect 3MS",
+            "morphology": {
+              "part_of_speech": "Piel Imperfect 3MS / Qal Sequential Imperfect 3MS",
+              "stem": null,
+              "type": null,
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "It is good that a man should both hope and quietly wait for the salvation of the LORD.\n\nContext: Center of Lamentations' acrostic. Personal lament (vv. 1-20) turns to hope (vv. 21-42) based on God's faithfulness/mercy (vv. 22-23). Corporate application follows (vv. 40-66).\n\nThematic fit: Yāḥal (hope) + ḥûl (writhe/wait quietly) = complex pairing. Combines confident expectation with patient endurance. 'Good' affirms value of waiting despite suffering.\n\nApplication: Hope and patient endurance together. Waiting through suffering is 'good'—produces character, aligns with divine purpose."
+          }
+        ]
+      },
+      {
+        "word": "קָוָה",
+        "transliteration": "qāwāh",
+        "strongs": "H6960",
+        "twot": "1994, 1995",
+        "language": "Hebrew",
+        "occurrences": [
+          {
+            "reference": "Psalm 130:5",
+            "parsing": "Verb, Piel, Perfect, 1st Common Singular",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": "Piel",
@@ -415,15 +176,15 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "O LORD, be gracious unto us; we have waited for thee: be thou their arm every morning, our salvation also in the time of trouble.\n\nContext: Woe oracle against Assyria (33:1) becomes prayer (vv. 2-4). Historical context: Sennacherib's invasion. 'Morning by morning' = daily dependence. Past waiting ('we have waited') grounds present petition.\n\nThematic fit: Qāwāh piel perfect + petition for deliverance. Military imagery: God's 'arm' = power/strength. Daily ('every morning') + crisis ('time of trouble') waiting.\n\nApplication: Past waiting validates present petition. Daily dependence in ordinary times, urgent plea in crisis. Both are legitimate waiting postures."
+            "scripture_text": "I wait for the LORD, my soul doth wait, and in his word do I hope.\n\nContext: Penitential psalm ('Out of the depths,' v. 1). Confession of sin (vv. 1-3) leads to hopeful waiting for forgiveness (vv. 4-6). Communal application (vv. 7-8).\n\nThematic fit: Qāwāh doubled (verb + soul waits) + hope in God's word. Piel perfect = completed/intensive waiting. Waiting grounded in revealed promise, not wishful thinking.\n\nApplication: Waiting for God includes trusting His word/promises. Penitent waiting expects mercy based on divine character revealed in Scripture."
           },
           {
-            "reference": "Proverbs 20:22",
-            "parsing": "Verb, Piel, Imperative, Masculine Singular",
+            "reference": "Psalm 39:7",
+            "parsing": "Verb, Piel, Perfect, 1st Common Singular",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": "Piel",
-              "type": "Imperative",
+              "type": "Perfect",
               "person": null,
               "gender": null,
               "number": null,
@@ -432,129 +193,33 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "Say not thou, I will recompense evil; but wait on the LORD, and he shall save thee.\n\nContext: Wisdom saying on vengeance. Prohibits personal retaliation ('say not...I will recompense'). Commands waiting for divine justice. Parallels Deut 32:35; Rom 12:19.\n\nThematic fit: Qāwāh piel imperative + salvation promise. Waiting = relinquishing vengeance to God. Divine justice preferable to human retribution.\n\nApplication: Waiting means forgoing personal vengeance, trusting God's justice. Salvation includes vindication, not just rescue."
+            "scripture_text": "And now, Lord, what wait I for? my hope is in thee.\n\nContext: Lament over life's brevity and divine discipline (vv. 4-11). Rhetorical question acknowledges futility of earthly hopes. Human frailty (vv. 4-6) drives exclusive hope in God.\n\nThematic fit: Rhetorical question + exclusive hope statement. Qāwāh piel perfect. Context of suffering/discipline makes hope in God only viable option.\n\nApplication: Life's transience eliminates false securities, forcing choice: despair or exclusive hope in God. Suffering clarifies hope's object."
           }
         ]
       },
       {
-        "word": "ἀπεκδέχομαι",
-        "transliteration": "apekdechomai",
-        "strongs": "G553",
+        "word": "ἐλπίζω",
+        "transliteration": "elpizō",
+        "strongs": "G1679",
         "twot": null,
         "language": "Greek",
         "occurrences": [
           {
-            "reference": "Romans 8:23",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural",
+            "reference": "1 Peter 1:13",
+            "parsing": "Verb, Aorist, Active, Imperative, 2nd Person Plural",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": null,
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": null
-            },
-            "scripture_text": "And not only they, but ourselves also, which have the firstfruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption, to wit, the redemption of our body.\n\nContext: Groaning passage (8:18-30). Three groaners: creation (v. 22), believers (v. 23), Spirit (v. 26). 'Firstfruits of Spirit' = down payment, not fullness. Already justified, not yet glorified.\n\nThematic fit: Ἀπεκδέχομαι present participle = ongoing eager waiting. 'Adoption' (υἱοθεσία) already possessed (v. 15) yet awaited (v. 23) = now/not-yet tension. Body's redemption = resurrection.\n\nApplication: Spirit-possession doesn't eliminate groaning but enables patient waiting for full redemption. Bodily resurrection hope, not escape from physicality."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "theme": "JUDGMENT & JUSTICE",
-    "lexemes": [
-      {
-        "word": "חָכָה",
-        "transliteration": "ḥākāh",
-        "strongs": "H2442",
-        "twot": "648",
-        "language": "Hebrew",
-        "occurrences": [
-          {
-            "reference": "Zephaniah 3:8",
-            "parsing": "Verb, Piel, Imperative, Masculine Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Piel",
               "type": "Imperative",
-              "person": null,
+              "person": "2nd Person Plural",
               "gender": null,
               "number": null,
               "state": null,
-              "tense": null,
-              "voice": null,
+              "tense": "Aorist",
+              "voice": "Active",
               "mood": null
             },
-            "scripture_text": "Therefore wait ye upon me, saith the LORD, until the day that I rise up to the prey: for my determination is to gather the nations, that I may assemble the kingdoms, to pour upon them mine indignation, even all my fierce anger: for all the earth shall be devoured with the fire of my jealousy.\n\nContext: Judgment oracle on Jerusalem/nations (3:1-8). Follows indictment of corrupt leaders/prophets/priests (vv. 1-7). Command to wait precedes universal judgment. Restoration follows (vv. 9-20).\n\nThematic fit: Ḥākāh piel imperative. Waiting for divine judgment on nations. 'Day that I rise up' = eschatological intervention. God's people wait while He gathers nations for judgment.\n\nApplication: Waiting for divine justice when human justice fails. Eschatological judgment certain. Present patience vindicated by future intervention."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "theme": "MESSIANIC EXPECTATION",
-    "lexemes": [
-      {
-        "word": "προσδέχομαι",
-        "transliteration": "prosdechomai",
-        "strongs": "G4327",
-        "twot": null,
-        "language": "Greek",
-        "occurrences": [
-          {
-            "reference": "Luke 2:25",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": null
-            },
-            "scripture_text": "And, behold, there was a man in Jerusalem, whose name was Simeon; and the same man was just and devout, waiting for the consolation of Israel: and the Holy Ghost was upon him.\n\nContext: Nativity narrative. Simeon's encounter with infant Jesus in temple. 'Consolation of Israel' = messianic deliverance (cf. Isa 40:1). Spirit-led righteous man embodying faithful remnant. Nunc Dimittis follows (vv. 29-32).\n\nThematic fit: Προσδέχομαι present participle = characteristic waiting posture. Messianic expectation based on OT promises. Simeon represents faithful Israel awaiting redemption. Waiting rewarded: sees Messiah.\n\nApplication: Faithful waiting for God's promises ultimately rewarded. Spirit-enabled messianic expectation. Patient hope spanning lifetime."
-          },
-          {
-            "reference": "Mark 15:43",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": null
-            },
-            "scripture_text": "Joseph of Arimathaea, an honourable counseller, which also waited for the kingdom of God, came, and went in boldly unto Pilate, and craved the body of Jesus.\n\nContext: Crucifixion narrative. Joseph (Sanhedrin member) requests Jesus' body. 'Waited for kingdom' explains his bold action. Secret disciple (John 19:38) going public. Risk-taking motivated by kingdom hope.\n\nThematic fit: Προσδέχομαι present participle. Kingdom expectation motivates burial act. Waiting for kingdom includes acting when opportunity arises. Faith becomes visible at crisis moment.\n\nApplication: Kingdom waiting not passive—produces bold action at critical moments. Hope motivates risk-taking. Secret faith going public."
-          },
-          {
-            "reference": "Luke 2:38",
-            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Dative Plural",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": null,
-              "type": "Participle",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": "Present",
-              "voice": "Middle/Passive Deponent",
-              "mood": null
-            },
-            "scripture_text": "And she coming in that instant gave thanks likewise unto the Lord, and spake of him to all them that looked for redemption in Jerusalem.\n\nContext: Anna the prophetess (84 years old, widow, temple-dweller) encounters infant Jesus. Worship/fasting lifestyle. Speaks to others 'looking for redemption.' Community of expectant faithful.\n\nThematic fit: Προσδέχομαι present participle (dative plural). Community of expectant believers in Jerusalem. Waiting expressed through worship, fasting, testimony. Anna evangelizes fellow waiters.\n\nApplication: Waiting creates community of shared hope. Testimony passed between expectant believers. Worship/fasting lifestyle sustained by messianic hope."
+            "scripture_text": "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ.\n\nContext: Exhortation following salvation praise (vv. 3-12). Persecution context (v. 6; 4:12-19). Hope grounded in resurrection (v. 3) and future inheritance (v. 4). Command to mental discipline + eschatological hope.\n\nThematic fit: Ἐλπίζω aorist imperative = decisive hope-act. 'To the end' (τελείως) = completely, perfectly. Mental/spiritual readiness for Christ's revelation.\n\nApplication: Hope requires mental discipline ('gird up loins of mind'). Eschatological hope shapes present holiness (vv. 14-16)."
           }
         ]
       }
@@ -696,22 +361,22 @@
     ]
   },
   {
-    "theme": "PRAISE & WORSHIP",
+    "theme": "HELP & DELIVERANCE",
     "lexemes": [
       {
-        "word": "קָוָה",
-        "transliteration": "qāwāh",
-        "strongs": "H6960",
-        "twot": "1994, 1995",
+        "word": "חָכָה",
+        "transliteration": "ḥākāh",
+        "strongs": "H2442",
+        "twot": "648",
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Psalm 52:9",
-            "parsing": "Verb, Piel, Imperfect (cohortative), 1st Common Singular",
+            "reference": "Psalm 33:20",
+            "parsing": "Verb, Piel, Perfect, 3rd Feminine Singular",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": "Piel",
-              "type": null,
+              "type": "Perfect",
               "person": null,
               "gender": null,
               "number": null,
@@ -720,10 +385,45 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "I will praise thee for ever, because thou hast done it: and I will wait on thy name; for it is good before thy saints.\n\nContext: Response to Doeg's betrayal (1 Sam 21-22; superscription). Wicked's end contrasted with righteous flourishing (vv. 5-7 vs. 8-9). 'Thou hast done it' = past deliverance. Public testimony ('before thy saints').\n\nThematic fit: Qāwāh piel imperfect (cohortative: 'I will wait'). Waiting on God's 'name' = character/reputation. Communal context ('before saints') makes waiting public testimony. Parallel to eternal praise.\n\nApplication: Waiting as worshipful testimony. Public acknowledgment of God's goodness in community. Past deliverance fuels ongoing trust."
-          },
+            "scripture_text": "Our soul waiteth for the LORD: he is our help and our shield.\n\nContext: Hymn of praise. Creation (vv. 6-9), providence (vv. 10-12), divine observation (vv. 13-19) lead to confident waiting (vv. 20-22). Military imagery: horses fail (v. 17) but God delivers (v. 19).\n\nThematic fit: Ḥākāh piel perfect = completed act of waiting. 'Help and shield' = military deliverance language. Corporate 'our soul' = community waiting for protection.\n\nApplication: Communal waiting for divine protection. Military metaphors: human strength insufficient, divine intervention necessary."
+          }
+        ]
+      },
+      {
+        "word": "יָחַל",
+        "transliteration": "yāḥal",
+        "strongs": "H3176",
+        "twot": "858",
+        "language": "Hebrew",
+        "occurrences": [
           {
-            "reference": "Isaiah 25:9",
+            "reference": "Micah 7:7",
+            "parsing": "Verb, Hiphil, Imperfect, 1st Common Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Hiphil",
+              "type": "Imperfect",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "Therefore I will look unto the LORD; I will wait for the God of my salvation: my God will hear me.\n\nContext: Micah's lament over societal corruption (7:1-6) transitions to personal trust (v. 7). Communal confession (vv. 8-10) follows. Prophet models waiting amid moral collapse.\n\nThematic fit: Yāḥal hiphil imperfect (causative: 'I will cause myself to hope'). Doubled future verbs ('I will look...I will wait') = resolute decision. Confidence God will hear/act.\n\nApplication: Waiting decision made despite societal conditions. Prophet's personal example becomes community's hope. Resolute trust when culture collapses."
+          }
+        ]
+      },
+      {
+        "word": "קָוָה",
+        "transliteration": "qāwāh",
+        "strongs": "H6960",
+        "twot": "1994, 1995",
+        "language": "Hebrew",
+        "occurrences": [
+          {
+            "reference": "Isaiah 33:2",
             "parsing": "Verb, Piel, Perfect, 1st Common Plural",
             "morphology": {
               "part_of_speech": "Verb",
@@ -737,25 +437,68 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "And it shall be said in that day, Lo, this is our God; we have waited for him, and he will save us: this is the LORD; we have waited for him, we will be glad and rejoice in his salvation.\n\nContext: Eschatological banquet (25:6-12) following judgment on nations (24:1-23). Death swallowed up (v. 8). Tears wiped away (v. 8). Vindication of Israel. Moab humiliated (vv. 10-12). Salvation hymn.\n\nThematic fit: Qāwāh piel perfect doubled ('we have waited...we have waited'). Eschatological fulfillment: waiting rewarded with salvation/gladness. Communal worship response. Recognition formula repeated ('this is our God...this is LORD').\n\nApplication: Waiting culminates in worship/rejoicing when God acts. Eschatological hope enables present endurance. Vindication includes joyful recognition."
+            "scripture_text": "O LORD, be gracious unto us; we have waited for thee: be thou their arm every morning, our salvation also in the time of trouble.\n\nContext: Woe oracle against Assyria (33:1) becomes prayer (vv. 2-4). Historical context: Sennacherib's invasion. 'Morning by morning' = daily dependence. Past waiting ('we have waited') grounds present petition.\n\nThematic fit: Qāwāh piel perfect + petition for deliverance. Military imagery: God's 'arm' = power/strength. Daily ('every morning') + crisis ('time of trouble') waiting.\n\nApplication: Past waiting validates present petition. Daily dependence in ordinary times, urgent plea in crisis. Both are legitimate waiting postures."
+          },
+          {
+            "reference": "Proverbs 20:22",
+            "parsing": "Verb, Piel, Imperative, Masculine Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Piel",
+              "type": "Imperative",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "Say not thou, I will recompense evil; but wait on the LORD, and he shall save thee.\n\nContext: Wisdom saying on vengeance. Prohibits personal retaliation ('say not...I will recompense'). Commands waiting for divine justice. Parallels Deut 32:35; Rom 12:19.\n\nThematic fit: Qāwāh piel imperative + salvation promise. Waiting = relinquishing vengeance to God. Divine justice preferable to human retribution.\n\nApplication: Waiting means forgoing personal vengeance, trusting God's justice. Salvation includes vindication, not just rescue."
+          }
+        ]
+      },
+      {
+        "word": "ἀπεκδέχομαι",
+        "transliteration": "apekdechomai",
+        "strongs": "G553",
+        "twot": null,
+        "language": "Greek",
+        "occurrences": [
+          {
+            "reference": "Romans 8:23",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": null
+            },
+            "scripture_text": "And not only they, but ourselves also, which have the firstfruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption, to wit, the redemption of our body.\n\nContext: Groaning passage (8:18-30). Three groaners: creation (v. 22), believers (v. 23), Spirit (v. 26). 'Firstfruits of Spirit' = down payment, not fullness. Already justified, not yet glorified.\n\nThematic fit: Ἀπεκδέχομαι present participle = ongoing eager waiting. 'Adoption' (υἱοθεσία) already possessed (v. 15) yet awaited (v. 23) = now/not-yet tension. Body's redemption = resurrection.\n\nApplication: Spirit-possession doesn't eliminate groaning but enables patient waiting for full redemption. Bodily resurrection hope, not escape from physicality."
           }
         ]
       }
     ]
   },
   {
-    "theme": "STRENGTH & RENEWAL",
+    "theme": "BLESSING & INHERITANCE",
     "lexemes": [
       {
-        "word": "יָחַל",
-        "transliteration": "yāḥal",
-        "strongs": "H3176",
-        "twot": "858",
+        "word": "חָכָה",
+        "transliteration": "ḥākāh",
+        "strongs": "H2442",
+        "twot": "648",
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Psalm 31:24",
-            "parsing": "Verb, Piel, Participle, Masculine Plural",
+            "reference": "Isaiah 30:18",
+            "parsing": "Verb, Piel, Participle, Masculine Plural Construct",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": "Piel",
@@ -768,7 +511,7 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "Be of good courage, and he shall strengthen your heart, all ye that hope in the LORD.\n\nContext: Final verse of lament/thanksgiving psalm. David's deliverance from distress (vv. 7-8) becomes communal encouragement. Movement from individual crisis to corporate exhortation.\n\nThematic fit: Yāḥal (hope/trust) + heart-strengthening promise. Piel participle = intensive hoping as characteristic. Nearly identical to 27:14 in form/content, reinforcing strength theme.\n\nApplication: Hope in God strengthens community, not just individuals. Personal testimony becomes corporate encouragement."
+            "scripture_text": "And therefore will the LORD wait, that he may be gracious unto you, and therefore will he be exalted, that he may have mercy upon you: for the LORD is a God of judgment: blessed are all they that wait for him.\n\nContext: Oracle against trusting Egypt instead of God (30:1-17). Remarkable reversal: God waits to show grace (v. 18). Divine waiting precedes human waiting. Judgment = justice/righteousness, not just wrath.\n\nThematic fit: Unique: God waits (ḥākāh) to be gracious. Beatitude: 'blessed are those who wait' (ḥākāh participle). Divine patience mirrors/enables human patience. Mercy follows judgment.\n\nApplication: God's waiting to show grace should inspire human waiting for His mercy. Divine patience model for human patience. Blessing pronounced on waiters."
           }
         ]
       },
@@ -780,7 +523,7 @@
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Isaiah 40:31",
+            "reference": "Psalm 37:9",
             "parsing": "Verb, Qal, Participle, Masculine Plural Construct",
             "morphology": {
               "part_of_speech": "Verb",
@@ -794,10 +537,10 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.\n\nContext: Climactic promise in Isaiah's comfort oracle (40:1-31) addressing exiled Israel's despair. Contrasts human weakness (vv. 28-30) with divine power. Promise follows rhetorical questions about God's creative strength.\n\nThematic fit: Quintessential renewal promise. Qāwāh participle ('those who wait') emphasizes characteristic posture, not one-time act. Physical imagery (eagle, running, walking) = spiritual vitality.\n\nApplication: Waiting on God produces strength unavailable through human effort. Sustained dependence on divine power, not self-reliance."
+            "scripture_text": "For evildoers shall be cut off: but those that wait upon the LORD, they shall inherit the earth.\n\nContext: Theodicy psalm (see 37:7). Contrast: wicked cut off vs. righteous inherit. 'Inherit earth/land' repeated (vv. 9, 11, 22, 29, 34). Echoes Abrahamic/Mosaic covenant promises.\n\nThematic fit: Qāwāh qal participle ('those who wait') = characteristic waiters. Inheritance promise contrasts with evildoers' destruction. Patient waiting rewarded with land-possession.\n\nApplication: Meekness/waiting, not violence/scheming, secures inheritance. NT Jesus quotes v. 11 (Matt 5:5). Eschatological fulfillment: new earth."
           },
           {
-            "reference": "Psalm 27:14",
+            "reference": "Psalm 37:34",
             "parsing": "Verb, Qal, Imperative, Masculine Singular",
             "morphology": {
               "part_of_speech": "Verb",
@@ -811,7 +554,24 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD.\n\nContext: Concluding exhortation of confidence psalm amid danger (vv. 1-3, 11-12). David facing enemies/false witnesses. Self-encouragement becoming instruction.\n\nThematic fit: Doubled imperative ('wait...wait') + promise of heart-strengthening. Qal imperative = direct command. Courage vocabulary links waiting to inner fortification.\n\nApplication: Waiting actively produces courage for present trials, not just future deliverance. Commands self/others to maintain posture despite circumstances."
+            "scripture_text": "Wait on the LORD, and keep his way, and he shall exalt thee to inherit the land: when the wicked are cut off, thou shalt see it.\n\nContext: Same psalm, climactic exhortation. Waiting + obedience ('keep his way') = inheritance formula. Witnessing wicked's judgment part of vindication.\n\nThematic fit: Qāwāh qal imperative. Combines waiting with active obedience. Exaltation + inheritance promised. Righteous witness evildoers' demise—vindication visible.\n\nApplication: Waiting not passive but includes keeping God's way. Vindication includes seeing justice done. Obedience + patience = exaltation + inheritance."
+          },
+          {
+            "reference": "Isaiah 49:23",
+            "parsing": "Verb, Qal, Participle, Masculine Plural Construct",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Qal",
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "And kings shall be thy nursing fathers, and their queens thy nursing mothers: they shall bow down to thee with their face toward the earth, and lick up the dust of thy feet; and thou shalt know that I am the LORD: for they shall not be ashamed that wait for me.\n\nContext: Servant Song context (49:1-26). Zion's restoration promised. Gentile kings/queens serve restored Israel. Dramatic reversal: oppressed become honored. Recognition formula: 'you shall know I am LORD.'\n\nThematic fit: Qāwāh qal participle + shame reversal. 'Not ashamed' = vindication of trust. Extreme imagery (licking dust) shows complete reversal of fortunes. Eschatological restoration.\n\nApplication: Those who wait for God will not be disappointed—vindication certain. Shame of present suffering reversed in future glory. Trust honored publicly."
           }
         ]
       },
@@ -823,7 +583,7 @@
         "language": "Greek",
         "occurrences": [
           {
-            "reference": "Romans 8:25",
+            "reference": "Galatians 5:5",
             "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural",
             "morphology": {
               "part_of_speech": "Verb",
@@ -837,7 +597,7 @@
               "voice": "Middle/Passive Deponent",
               "mood": "Indicative"
             },
-            "scripture_text": "But if we hope for that we see not, then do we with patience wait for it.\n\nContext: Creation groaning passage (8:18-30). Present suffering vs. future glory. Hope for unseen glorification (v. 24) requires patient endurance. Cosmic scope: creation, believers, Spirit all waiting.\n\nThematic fit: Ἀπεκδέχομαι (eager waiting) + ὑπομονή (patient endurance). Intensified compound shows NT eschatological tension. Already justified (vv. 1, 30), not yet glorified (v. 30).\n\nApplication: Christian waiting combines confident hope with patient endurance of present suffering. Eschatological certainty enables present perseverance."
+            "scripture_text": "For we through the Spirit wait for the hope of righteousness by faith.\n\nContext: Argument against Judaizers requiring circumcision (5:1-12). Faith vs. works-righteousness. 'Through the Spirit' = pneumatic, not fleshly, existence. 'By faith' = means, not works.\n\nThematic fit: Ἀπεκδέχομαι present indicative = ongoing eager expectation. 'Hope of righteousness' = future vindication/glorification, not justification (already possessed). Spirit-enabled eschatological hope.\n\nApplication: Christian hope is Spirit-empowered, faith-based, future-oriented. Already justified, waiting for final righteousness/glorification. Grace, not law."
           }
         ]
       }
@@ -901,18 +661,83 @@
     ]
   },
   {
-    "theme": "TRUST & HOPE",
+    "theme": "PRAISE & WORSHIP",
     "lexemes": [
       {
-        "word": "דָּמַם",
-        "transliteration": "dāmam",
-        "strongs": "H1826",
-        "twot": "439",
+        "word": "קָוָה",
+        "transliteration": "qāwāh",
+        "strongs": "H6960",
+        "twot": "1994, 1995",
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Psalm 62:5",
-            "parsing": "Verb, Qal, Imperative, Feminine Singular",
+            "reference": "Psalm 52:9",
+            "parsing": "Verb, Piel, Imperfect (cohortative), 1st Common Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Piel",
+              "type": null,
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "I will praise thee for ever, because thou hast done it: and I will wait on thy name; for it is good before thy saints.\n\nContext: Response to Doeg's betrayal (1 Sam 21-22; superscription). Wicked's end contrasted with righteous flourishing (vv. 5-7 vs. 8-9). 'Thou hast done it' = past deliverance. Public testimony ('before thy saints').\n\nThematic fit: Qāwāh piel imperfect (cohortative: 'I will wait'). Waiting on God's 'name' = character/reputation. Communal context ('before saints') makes waiting public testimony. Parallel to eternal praise.\n\nApplication: Waiting as worshipful testimony. Public acknowledgment of God's goodness in community. Past deliverance fuels ongoing trust."
+          },
+          {
+            "reference": "Isaiah 25:9",
+            "parsing": "Verb, Piel, Perfect, 1st Common Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Piel",
+              "type": "Perfect",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "And it shall be said in that day, Lo, this is our God; we have waited for him, and he will save us: this is the LORD; we have waited for him, we will be glad and rejoice in his salvation.\n\nContext: Eschatological banquet (25:6-12) following judgment on nations (24:1-23). Death swallowed up (v. 8). Tears wiped away (v. 8). Vindication of Israel. Moab humiliated (vv. 10-12). Salvation hymn.\n\nThematic fit: Qāwāh piel perfect doubled ('we have waited...we have waited'). Eschatological fulfillment: waiting rewarded with salvation/gladness. Communal worship response. Recognition formula repeated ('this is our God...this is LORD').\n\nApplication: Waiting culminates in worship/rejoicing when God acts. Eschatological hope enables present endurance. Vindication includes joyful recognition."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "FAITHFULNESS & DEVOTION",
+    "lexemes": [
+      {
+        "word": "קָוָה",
+        "transliteration": "qāwāh",
+        "strongs": "H6960",
+        "twot": "1994, 1995",
+        "language": "Hebrew",
+        "occurrences": [
+          {
+            "reference": "Isaiah 26:8",
+            "parsing": "Verb, Piel, Perfect, 1st Common Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Piel",
+              "type": "Perfect",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "Yea, in the way of thy judgments, O LORD, have we waited for thee; the desire of our soul is to thy name, and to the remembrance of thee.\n\nContext: Prophetic song of redeemed Judah after eschatological judgment (ch. 25-26). 'Way of thy judgments' = God's ordained paths/statutes, not judgment upon speakers. Walking obediently while longing for God.\n\nThematic fit: Devotional waiting during faithful obedience, not crisis. Emphasis on desire for God's name/presence while following His ways. 'Way of judgments' = righteous living.\n\nApplication: Waiting combines active obedience to Scripture with heartfelt desire for God's presence. Not passive inactivity but devoted alignment with divine purpose."
+          },
+          {
+            "reference": "Hosea 12:6",
+            "parsing": "Verb, Qal, Imperative, Masculine Singular",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": "Qal",
@@ -925,24 +750,29 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "My soul, wait thou only upon God; for my expectation is from him.\n\nContext: David addressing own soul during betrayal/attack (vv. 3-4). Self-exhortation to silence/stillness. Contrasts human threats (vv. 3-4, 9-10) with divine refuge (vv. 1-2, 5-8).\n\nThematic fit: Dāmam (be silent/still) = unique waiting verb emphasizing cessation, not activity. 'Only upon God' = exclusive trust. Feminine imperative addresses nephesh (soul).\n\nApplication: Waiting requires silencing competing voices/anxieties. Exclusive dependence on God, not multiple securities."
+            "scripture_text": "Therefore turn thou to thy God: keep mercy and judgment, and wait on thy God continually.\n\nContext: Indictment of Israel using Jacob typology (12:2-14). Call to repentance (v. 6). Ethical living ('mercy and judgment') paired with continual waiting. Covenant loyalty demanded.\n\nThematic fit: Qāwāh qal imperative + 'continually' (תָּמִיד = always, perpetually). Waiting not episodic but constant posture. Paired with ethical living (mercy/justice). Repentance includes ongoing devotion.\n\nApplication: Faithful waiting is continual, not intermittent. Combines ethics (mercy/justice) with piety (waiting on God). Whole-life devotion."
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "theme": "GOODNESS OF GOD",
+    "lexemes": [
       {
-        "word": "יָחַל / חוּל",
-        "transliteration": "yāḥal / ḥûl",
-        "strongs": "H3176",
-        "twot": "858",
+        "word": "חָכָה",
+        "transliteration": "ḥākāh",
+        "strongs": "H2442",
+        "twot": "648",
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Lamentations 3:26",
-            "parsing": "Piel Imperfect 3MS / Qal Sequential Imperfect 3MS",
+            "reference": "Isaiah 64:4",
+            "parsing": "Verb, Piel, Participle, Masculine Singular",
             "morphology": {
-              "part_of_speech": "Piel Imperfect 3MS / Qal Sequential Imperfect 3MS",
-              "stem": null,
-              "type": null,
+              "part_of_speech": "Verb",
+              "stem": "Piel",
+              "type": "Participle",
               "person": null,
               "gender": null,
               "number": null,
@@ -951,7 +781,7 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "It is good that a man should both hope and quietly wait for the salvation of the LORD.\n\nContext: Center of Lamentations' acrostic. Personal lament (vv. 1-20) turns to hope (vv. 21-42) based on God's faithfulness/mercy (vv. 22-23). Corporate application follows (vv. 40-66).\n\nThematic fit: Yāḥal (hope) + ḥûl (writhe/wait quietly) = complex pairing. Combines confident expectation with patient endurance. 'Good' affirms value of waiting despite suffering.\n\nApplication: Hope and patient endurance together. Waiting through suffering is 'good'—produces character, aligns with divine purpose."
+            "scripture_text": "For since the beginning of the world men have not heard, nor perceived by the ear, neither hath the eye seen, O God, beside thee, what he hath prepared for him that waiteth for him.\n\nContext: Corporate lament (64:1-12) following confession (63:7-64:12). Petition for divine intervention (vv. 1-5). God's incomparability affirmed. What God prepares exceeds human comprehension. Paul quotes (1 Cor 2:9).\n\nThematic fit: Ḥākāh piel participle ('one who waits'). God prepares incomprehensible blessings for waiters. Unique God (incomparable) acts for unique people (those who wait). Reward exceeds imagination.\n\nApplication: What God prepares for those who wait exceeds human comprehension. Reward unfathomable. Worth any present suffering."
           }
         ]
       },
@@ -963,12 +793,12 @@
         "language": "Hebrew",
         "occurrences": [
           {
-            "reference": "Psalm 130:5",
-            "parsing": "Verb, Piel, Perfect, 1st Common Singular",
+            "reference": "Lamentations 3:25",
+            "parsing": "Verb, Qal, Participle, Masculine Plural",
             "morphology": {
               "part_of_speech": "Verb",
-              "stem": "Piel",
-              "type": "Perfect",
+              "stem": "Qal",
+              "type": "Participle",
               "person": null,
               "gender": null,
               "number": null,
@@ -977,50 +807,220 @@
               "voice": null,
               "mood": null
             },
-            "scripture_text": "I wait for the LORD, my soul doth wait, and in his word do I hope.\n\nContext: Penitential psalm ('Out of the depths,' v. 1). Confession of sin (vv. 1-3) leads to hopeful waiting for forgiveness (vv. 4-6). Communal application (vv. 7-8).\n\nThematic fit: Qāwāh doubled (verb + soul waits) + hope in God's word. Piel perfect = completed/intensive waiting. Waiting grounded in revealed promise, not wishful thinking.\n\nApplication: Waiting for God includes trusting His word/promises. Penitent waiting expects mercy based on divine character revealed in Scripture."
-          },
-          {
-            "reference": "Psalm 39:7",
-            "parsing": "Verb, Piel, Perfect, 1st Common Singular",
-            "morphology": {
-              "part_of_speech": "Verb",
-              "stem": "Piel",
-              "type": "Perfect",
-              "person": null,
-              "gender": null,
-              "number": null,
-              "state": null,
-              "tense": null,
-              "voice": null,
-              "mood": null
-            },
-            "scripture_text": "And now, Lord, what wait I for? my hope is in thee.\n\nContext: Lament over life's brevity and divine discipline (vv. 4-11). Rhetorical question acknowledges futility of earthly hopes. Human frailty (vv. 4-6) drives exclusive hope in God.\n\nThematic fit: Rhetorical question + exclusive hope statement. Qāwāh piel perfect. Context of suffering/discipline makes hope in God only viable option.\n\nApplication: Life's transience eliminates false securities, forcing choice: despair or exclusive hope in God. Suffering clarifies hope's object."
+            "scripture_text": "The LORD is good unto them that wait for him, to the soul that seeketh him.\n\nContext: Center of Lamentations (see 3:26). Follows affirmation of God's faithfulness/mercy (vv. 22-24). 'Good' = God's character proven through experience. Waiting + seeking paired. Personal testimony ('I said,' v. 24).\n\nThematic fit: Qāwāh qal participle ('those who wait') + seeking. Divine goodness experienced by waiters. Parallel construction: waiting//seeking. Character affirmation amid suffering.\n\nApplication: God's goodness revealed to those who wait/seek. Suffering doesn't negate divine character. Experience confirms theology."
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "theme": "JUDGMENT & JUSTICE",
+    "lexemes": [
       {
-        "word": "ἐλπίζω",
-        "transliteration": "elpizō",
-        "strongs": "G1679",
+        "word": "חָכָה",
+        "transliteration": "ḥākāh",
+        "strongs": "H2442",
+        "twot": "648",
+        "language": "Hebrew",
+        "occurrences": [
+          {
+            "reference": "Zephaniah 3:8",
+            "parsing": "Verb, Piel, Imperative, Masculine Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": "Piel",
+              "type": "Imperative",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": null,
+              "voice": null,
+              "mood": null
+            },
+            "scripture_text": "Therefore wait ye upon me, saith the LORD, until the day that I rise up to the prey: for my determination is to gather the nations, that I may assemble the kingdoms, to pour upon them mine indignation, even all my fierce anger: for all the earth shall be devoured with the fire of my jealousy.\n\nContext: Judgment oracle on Jerusalem/nations (3:1-8). Follows indictment of corrupt leaders/prophets/priests (vv. 1-7). Command to wait precedes universal judgment. Restoration follows (vv. 9-20).\n\nThematic fit: Ḥākāh piel imperative. Waiting for divine judgment on nations. 'Day that I rise up' = eschatological intervention. God's people wait while He gathers nations for judgment.\n\nApplication: Waiting for divine justice when human justice fails. Eschatological judgment certain. Present patience vindicated by future intervention."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "MESSIANIC EXPECTATION",
+    "lexemes": [
+      {
+        "word": "προσδέχομαι",
+        "transliteration": "prosdechomai",
+        "strongs": "G4327",
         "twot": null,
         "language": "Greek",
         "occurrences": [
           {
-            "reference": "1 Peter 1:13",
-            "parsing": "Verb, Aorist, Active, Imperative, 2nd Person Plural",
+            "reference": "Luke 2:25",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular",
             "morphology": {
               "part_of_speech": "Verb",
               "stem": null,
-              "type": "Imperative",
-              "person": "2nd Person Plural",
+              "type": "Participle",
+              "person": null,
               "gender": null,
               "number": null,
               "state": null,
-              "tense": "Aorist",
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": null
+            },
+            "scripture_text": "And, behold, there was a man in Jerusalem, whose name was Simeon; and the same man was just and devout, waiting for the consolation of Israel: and the Holy Ghost was upon him.\n\nContext: Nativity narrative. Simeon's encounter with infant Jesus in temple. 'Consolation of Israel' = messianic deliverance (cf. Isa 40:1). Spirit-led righteous man embodying faithful remnant. Nunc Dimittis follows (vv. 29-32).\n\nThematic fit: Προσδέχομαι present participle = characteristic waiting posture. Messianic expectation based on OT promises. Simeon represents faithful Israel awaiting redemption. Waiting rewarded: sees Messiah.\n\nApplication: Faithful waiting for God's promises ultimately rewarded. Spirit-enabled messianic expectation. Patient hope spanning lifetime."
+          },
+          {
+            "reference": "Mark 15:43",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": null
+            },
+            "scripture_text": "Joseph of Arimathaea, an honourable counseller, which also waited for the kingdom of God, came, and went in boldly unto Pilate, and craved the body of Jesus.\n\nContext: Crucifixion narrative. Joseph (Sanhedrin member) requests Jesus' body. 'Waited for kingdom' explains his bold action. Secret disciple (John 19:38) going public. Risk-taking motivated by kingdom hope.\n\nThematic fit: Προσδέχομαι present participle. Kingdom expectation motivates burial act. Waiting for kingdom includes acting when opportunity arises. Faith becomes visible at crisis moment.\n\nApplication: Kingdom waiting not passive—produces bold action at critical moments. Hope motivates risk-taking. Secret faith going public."
+          },
+          {
+            "reference": "Luke 2:38",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Dative Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": null
+            },
+            "scripture_text": "And she coming in that instant gave thanks likewise unto the Lord, and spake of him to all them that looked for redemption in Jerusalem.\n\nContext: Anna the prophetess (84 years old, widow, temple-dweller) encounters infant Jesus. Worship/fasting lifestyle. Speaks to others 'looking for redemption.' Community of expectant faithful.\n\nThematic fit: Προσδέχομαι present participle (dative plural). Community of expectant believers in Jerusalem. Waiting expressed through worship, fasting, testimony. Anna evangelizes fellow waiters.\n\nApplication: Waiting creates community of shared hope. Testimony passed between expectant believers. Worship/fasting lifestyle sustained by messianic hope."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "theme": "ESCHATOLOGICAL HOPE",
+    "lexemes": [
+      {
+        "word": "προσδέχομαι",
+        "transliteration": "prosdechomai",
+        "strongs": "G4327",
+        "twot": null,
+        "language": "Greek",
+        "occurrences": [
+          {
+            "reference": "Titus 2:13",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": null
+            },
+            "scripture_text": "Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ.\n\nContext: Practical theology section (2:11-14). Grace trains for godly living (v. 12) while awaiting Christ's return. 'Blessed hope' = second advent. High Christology: 'great God and Savior.'\n\nThematic fit: Προσδέχομαι present participle. Eschatological waiting as Christian norm. 'Blessed hope' (μακαρίαν ἐλπίδα) = happy expectation, not fearful dread. Present holiness motivated by future appearing.\n\nApplication: Christian life lived between two advents. Present godliness fueled by future hope. Eschatology produces ethics."
+          }
+        ]
+      },
+      {
+        "word": "ἀναμένω",
+        "transliteration": "anamenō",
+        "strongs": "G362",
+        "twot": null,
+        "language": "Greek",
+        "occurrences": [
+          {
+            "reference": "1 Thessalonians 1:10",
+            "parsing": "Verb, Present, Active, Infinitive",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": "Infinitive",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
               "voice": "Active",
               "mood": null
             },
-            "scripture_text": "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ.\n\nContext: Exhortation following salvation praise (vv. 3-12). Persecution context (v. 6; 4:12-19). Hope grounded in resurrection (v. 3) and future inheritance (v. 4). Command to mental discipline + eschatological hope.\n\nThematic fit: Ἐλπίζω aorist imperative = decisive hope-act. 'To the end' (τελείως) = completely, perfectly. Mental/spiritual readiness for Christ's revelation.\n\nApplication: Hope requires mental discipline ('gird up loins of mind'). Eschatological hope shapes present holiness (vv. 14-16)."
+            "scripture_text": "And to wait for his Son from heaven, whom he raised from the dead, even Jesus, which delivered us from the wrath to come.\n\nContext: Thessalonian conversion recounted (1:9-10). Turn from idols to serve living God (v. 9) and wait for Son from heaven (v. 10). Eschatological deliverance from wrath. Jesus' resurrection grounds hope.\n\nThematic fit: Ἀναμένω present infinitive (purpose: 'in order to wait'). Conversion includes eschatological reorientation: from idols to waiting for Christ. Deliverance from wrath, not just wrath's postponement.\n\nApplication: Conversion fundamentally eschatological: turning toward Christ's return. Waiting for Son from heaven essential to Christian identity. Hope grounded in resurrection."
+          }
+        ]
+      },
+      {
+        "word": "ἀπεκδέχομαι",
+        "transliteration": "apekdechomai",
+        "strongs": "G553",
+        "twot": null,
+        "language": "Greek",
+        "occurrences": [
+          {
+            "reference": "Philippians 3:20",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": null,
+              "person": "1st Person Plural",
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": "Indicative"
+            },
+            "scripture_text": "For our conversation is in heaven; from whence also we look for the Saviour, the Lord Jesus Christ.\n\nContext: Warning against enemies of cross—earthly minded (vv. 18-19). Contrast: citizenship in heaven, awaiting Savior. Body transformation promised (v. 21). Present suffering vs. future glory.\n\nThematic fit: Ἀπεκδέχομαι present indicative = ongoing eager expectation. Heavenly citizenship produces earthly distinctiveness. Christ as Savior returning from heaven. Body transformation (v. 21) = physical resurrection hope.\n\nApplication: Heavenly citizenship shapes earthly conduct. Eager expectation of Savior's return from heaven. Physical resurrection, not disembodied escape."
+          },
+          {
+            "reference": "Romans 8:19",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Indicative, 3rd Person Singular",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": null,
+              "person": "3rd Person Singular",
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": "Indicative"
+            },
+            "scripture_text": "For the earnest expectation of the creature waiteth for the manifestation of the sons of God.\n\nContext: Creation groaning (8:18-25, see v. 23). Personified creation (κτίσις) subjected to futility (v. 20), awaiting liberation (v. 21). Cosmic scope of redemption. Believers' glorification liberates creation.\n\nThematic fit: Ἀπεκδέχομαι present indicative. 'Earnest expectation' (ἀποκαραδοκία) = head-straining anticipation. Creation waits for believers' glorification ('manifestation of sons of God'). Cosmic redemption tied to human redemption.\n\nApplication: Redemption cosmic, not just individual. Creation's liberation awaits believers' glorification. Ecological hope grounded in eschatology."
+          },
+          {
+            "reference": "1 Corinthians 1:7",
+            "parsing": "Verb, Present, Middle/Passive Deponent, Participle, Accusative Plural",
+            "morphology": {
+              "part_of_speech": "Verb",
+              "stem": null,
+              "type": "Participle",
+              "person": null,
+              "gender": null,
+              "number": null,
+              "state": null,
+              "tense": "Present",
+              "voice": "Middle/Passive Deponent",
+              "mood": null
+            },
+            "scripture_text": "So that ye come behind in no gift; waiting for the coming of our Lord Jesus Christ.\n\nContext: Thanksgiving for Corinthian church (1:4-9) despite later problems. Spiritual gifts abundant. Waiting for revelation (ἀποκάλυψιν) of Christ. Eschatological confirmation/blamelessness promised (v. 8).\n\nThematic fit: Ἀπεκδέχομαι present participle. Spiritual gifts sustain community while awaiting Christ's revelation. 'Coming' (ἀποκάλυψις) = unveiling, disclosure. Eschatological perseverance promised (v. 8).\n\nApplication: Spiritual gifts for present ministry while awaiting Christ's return. Gifts equip church for witness during waiting period. Final vindication certain."
           }
         ]
       }

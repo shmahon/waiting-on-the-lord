@@ -1,56 +1,14 @@
 ================================================================================
 CONTENT INVENTORY BASELINE
-Generated: 2025-10-31T13:13:57.154Z
+Generated: 2025-11-01T10:36:09.433Z
 ================================================================================
 
 ## THEMES AND STRUCTURE
 --------------------------------------------------------------------------------
 Total Themes: 12
 
-Theme 1: BLESSING & INHERITANCE
+Theme 1: STRENGTH & RENEWAL
   Lexemes: 3
-    - חָכָה (ḥākāh) H2442
-      Language: Hebrew
-      Occurrences: 1
-    - קָוָה (qāwāh) H6960
-      Language: Hebrew
-      Occurrences: 3
-    - ἀπεκδέχομαι (apekdechomai) G553
-      Language: Greek
-      Occurrences: 1
-
-Theme 2: ESCHATOLOGICAL HOPE
-  Lexemes: 3
-    - προσδέχομαι (prosdechomai) G4327
-      Language: Greek
-      Occurrences: 1
-    - ἀναμένω (anamenō) G362
-      Language: Greek
-      Occurrences: 1
-    - ἀπεκδέχομαι (apekdechomai) G553
-      Language: Greek
-      Occurrences: 3
-
-Theme 3: FAITHFULNESS & DEVOTION
-  Lexemes: 1
-    - קָוָה (qāwāh) H6960
-      Language: Hebrew
-      Occurrences: 2
-
-Theme 4: GOODNESS OF GOD
-  Lexemes: 2
-    - חָכָה (ḥākāh) H2442
-      Language: Hebrew
-      Occurrences: 1
-    - קָוָה (qāwāh) H6960
-      Language: Hebrew
-      Occurrences: 1
-
-Theme 5: HELP & DELIVERANCE
-  Lexemes: 4
-    - חָכָה (ḥākāh) H2442
-      Language: Hebrew
-      Occurrences: 1
     - יָחַל (yāḥal) H3176
       Language: Hebrew
       Occurrences: 1
@@ -61,19 +19,22 @@ Theme 5: HELP & DELIVERANCE
       Language: Greek
       Occurrences: 1
 
-Theme 6: JUDGMENT & JUSTICE
-  Lexemes: 1
-    - חָכָה (ḥākāh) H2442
+Theme 2: TRUST & HOPE
+  Lexemes: 4
+    - דָּמַם (dāmam) H1826
       Language: Hebrew
       Occurrences: 1
-
-Theme 7: MESSIANIC EXPECTATION
-  Lexemes: 1
-    - προσδέχομαι (prosdechomai) G4327
+    - יָחַל / חוּל (yāḥal / ḥûl) H3176
+      Language: Hebrew
+      Occurrences: 1
+    - קָוָה (qāwāh) H6960
+      Language: Hebrew
+      Occurrences: 2
+    - ἐλπίζω (elpizō) G1679
       Language: Greek
-      Occurrences: 3
+      Occurrences: 1
 
-Theme 8: PATIENCE & ENDURANCE
+Theme 3: PATIENCE & ENDURANCE
   Lexemes: 5
     - μακροθυμέω (makrothymeō) G3114
       Language: Greek
@@ -91,14 +52,11 @@ Theme 8: PATIENCE & ENDURANCE
       Language: Greek
       Occurrences: 1
 
-Theme 9: PRAISE & WORSHIP
-  Lexemes: 1
-    - קָוָה (qāwāh) H6960
+Theme 4: HELP & DELIVERANCE
+  Lexemes: 4
+    - חָכָה (ḥākāh) H2442
       Language: Hebrew
-      Occurrences: 2
-
-Theme 10: STRENGTH & RENEWAL
-  Lexemes: 3
+      Occurrences: 1
     - יָחַל (yāḥal) H3176
       Language: Hebrew
       Occurrences: 1
@@ -109,7 +67,19 @@ Theme 10: STRENGTH & RENEWAL
       Language: Greek
       Occurrences: 1
 
-Theme 11: TEACHING & GUIDANCE
+Theme 5: BLESSING & INHERITANCE
+  Lexemes: 3
+    - חָכָה (ḥākāh) H2442
+      Language: Hebrew
+      Occurrences: 1
+    - קָוָה (qāwāh) H6960
+      Language: Hebrew
+      Occurrences: 3
+    - ἀπεκδέχομαι (apekdechomai) G553
+      Language: Greek
+      Occurrences: 1
+
+Theme 6: TEACHING & GUIDANCE
   Lexemes: 2
     - חָכָה (ḥākāh) H2442
       Language: Hebrew
@@ -118,67 +88,97 @@ Theme 11: TEACHING & GUIDANCE
       Language: Hebrew
       Occurrences: 1
 
-Theme 12: TRUST & HOPE
-  Lexemes: 4
-    - דָּמַם (dāmam) H1826
+Theme 7: PRAISE & WORSHIP
+  Lexemes: 1
+    - קָוָה (qāwāh) H6960
       Language: Hebrew
-      Occurrences: 1
-    - יָחַל / חוּל (yāḥal / ḥûl) H3176
+      Occurrences: 2
+
+Theme 8: FAITHFULNESS & DEVOTION
+  Lexemes: 1
+    - קָוָה (qāwāh) H6960
+      Language: Hebrew
+      Occurrences: 2
+
+Theme 9: GOODNESS OF GOD
+  Lexemes: 2
+    - חָכָה (ḥākāh) H2442
       Language: Hebrew
       Occurrences: 1
     - קָוָה (qāwāh) H6960
       Language: Hebrew
-      Occurrences: 2
-    - ἐλπίζω (elpizō) G1679
+      Occurrences: 1
+
+Theme 10: JUDGMENT & JUSTICE
+  Lexemes: 1
+    - חָכָה (ḥākāh) H2442
+      Language: Hebrew
+      Occurrences: 1
+
+Theme 11: MESSIANIC EXPECTATION
+  Lexemes: 1
+    - προσδέχομαι (prosdechomai) G4327
+      Language: Greek
+      Occurrences: 3
+
+Theme 12: ESCHATOLOGICAL HOPE
+  Lexemes: 3
+    - προσδέχομαι (prosdechomai) G4327
       Language: Greek
       Occurrences: 1
+    - ἀναμένω (anamenō) G362
+      Language: Greek
+      Occurrences: 1
+    - ἀπεκδέχομαι (apekdechomai) G553
+      Language: Greek
+      Occurrences: 3
 
 ## SCRIPTURE REFERENCES
 --------------------------------------------------------------------------------
 Total Scripture References: 41
 
-1. Isaiah 30:18 - חָכָה (H2442)
-   Parsing: Verb, Piel, Participle, Masculine Plural Construct
-   Theme: BLESSING & INHERITANCE
-2. Psalm 37:9 - קָוָה (H6960)
+1. Psalm 31:24 - יָחַל (H3176)
+   Parsing: Verb, Piel, Participle, Masculine Plural
+   Theme: STRENGTH & RENEWAL
+2. Isaiah 40:31 - קָוָה (H6960)
    Parsing: Verb, Qal, Participle, Masculine Plural Construct
-   Theme: BLESSING & INHERITANCE
-3. Psalm 37:34 - קָוָה (H6960)
+   Theme: STRENGTH & RENEWAL
+3. Psalm 27:14 - קָוָה (H6960)
    Parsing: Verb, Qal, Imperative, Masculine Singular
-   Theme: BLESSING & INHERITANCE
-4. Isaiah 49:23 - קָוָה (H6960)
-   Parsing: Verb, Qal, Participle, Masculine Plural Construct
-   Theme: BLESSING & INHERITANCE
-5. Galatians 5:5 - ἀπεκδέχομαι (G553)
+   Theme: STRENGTH & RENEWAL
+4. Romans 8:25 - ἀπεκδέχομαι (G553)
    Parsing: Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural
-   Theme: BLESSING & INHERITANCE
-6. Titus 2:13 - προσδέχομαι (G4327)
-   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural
-   Theme: ESCHATOLOGICAL HOPE
-7. 1 Thessalonians 1:10 - ἀναμένω (G362)
-   Parsing: Verb, Present, Active, Infinitive
-   Theme: ESCHATOLOGICAL HOPE
-8. Philippians 3:20 - ἀπεκδέχομαι (G553)
-   Parsing: Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural
-   Theme: ESCHATOLOGICAL HOPE
-9. Romans 8:19 - ἀπεκδέχομαι (G553)
-   Parsing: Verb, Present, Middle/Passive Deponent, Indicative, 3rd Person Singular
-   Theme: ESCHATOLOGICAL HOPE
-10. 1 Corinthians 1:7 - ἀπεκδέχομαι (G553)
-   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Accusative Plural
-   Theme: ESCHATOLOGICAL HOPE
-11. Isaiah 26:8 - קָוָה (H6960)
-   Parsing: Verb, Piel, Perfect, 1st Common Plural
-   Theme: FAITHFULNESS & DEVOTION
-12. Hosea 12:6 - קָוָה (H6960)
-   Parsing: Verb, Qal, Imperative, Masculine Singular
-   Theme: FAITHFULNESS & DEVOTION
-13. Isaiah 64:4 - חָכָה (H2442)
-   Parsing: Verb, Piel, Participle, Masculine Singular
-   Theme: GOODNESS OF GOD
-14. Lamentations 3:25 - קָוָה (H6960)
-   Parsing: Verb, Qal, Participle, Masculine Plural
-   Theme: GOODNESS OF GOD
+   Theme: STRENGTH & RENEWAL
+5. Psalm 62:5 - דָּמַם (H1826)
+   Parsing: Verb, Qal, Imperative, Feminine Singular
+   Theme: TRUST & HOPE
+6. Lamentations 3:26 - יָחַל / חוּל (H3176)
+   Parsing: Piel Imperfect 3MS / Qal Sequential Imperfect 3MS
+   Theme: TRUST & HOPE
+7. Psalm 130:5 - קָוָה (H6960)
+   Parsing: Verb, Piel, Perfect, 1st Common Singular
+   Theme: TRUST & HOPE
+8. Psalm 39:7 - קָוָה (H6960)
+   Parsing: Verb, Piel, Perfect, 1st Common Singular
+   Theme: TRUST & HOPE
+9. 1 Peter 1:13 - ἐλπίζω (G1679)
+   Parsing: Verb, Aorist, Active, Imperative, 2nd Person Plural
+   Theme: TRUST & HOPE
+10. James 5:7-8 - μακροθυμέω (G3114)
+   Parsing: Verb, Aorist, Active, Imperative, 2nd Person Plural
+   Theme: PATIENCE & ENDURANCE
+11. Psalm 37:7 - חוּל (H2342)
+   Parsing: Verb, Hithpolel, Imperative, Masculine Singular
+   Theme: PATIENCE & ENDURANCE
+12. Psalm 69:3 - יָחַל (H3176)
+   Parsing: Verb, Piel, Infinitive Construct, 1st Common Singular
+   Theme: PATIENCE & ENDURANCE
+13. Psalm 40:1 - קָוָה (H6960)
+   Parsing: Verb, Piel, Infinitive Absolute
+   Theme: PATIENCE & ENDURANCE
+14. Hebrews 10:36 - ὑπομονή (G5281)
+   Parsing: Noun, Genitive, Feminine, Singular
+   Theme: PATIENCE & ENDURANCE
 15. Psalm 33:20 - חָכָה (H2442)
    Parsing: Verb, Piel, Perfect, 3rd Feminine Singular
    Theme: HELP & DELIVERANCE
@@ -194,72 +194,72 @@ Total Scripture References: 41
 19. Romans 8:23 - ἀπεκδέχομαι (G553)
    Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural
    Theme: HELP & DELIVERANCE
-20. Zephaniah 3:8 - חָכָה (H2442)
-   Parsing: Verb, Piel, Imperative, Masculine Plural
-   Theme: JUDGMENT & JUSTICE
-21. Luke 2:25 - προσδέχομαι (G4327)
-   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular
-   Theme: MESSIANIC EXPECTATION
-22. Mark 15:43 - προσδέχομαι (G4327)
-   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular
-   Theme: MESSIANIC EXPECTATION
-23. Luke 2:38 - προσδέχομαι (G4327)
-   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Dative Plural
-   Theme: MESSIANIC EXPECTATION
-24. James 5:7-8 - μακροθυμέω (G3114)
-   Parsing: Verb, Aorist, Active, Imperative, 2nd Person Plural
-   Theme: PATIENCE & ENDURANCE
-25. Psalm 37:7 - חוּל (H2342)
-   Parsing: Verb, Hithpolel, Imperative, Masculine Singular
-   Theme: PATIENCE & ENDURANCE
-26. Psalm 69:3 - יָחַל (H3176)
-   Parsing: Verb, Piel, Infinitive Construct, 1st Common Singular
-   Theme: PATIENCE & ENDURANCE
-27. Psalm 40:1 - קָוָה (H6960)
-   Parsing: Verb, Piel, Infinitive Absolute
-   Theme: PATIENCE & ENDURANCE
-28. Hebrews 10:36 - ὑπομονή (G5281)
-   Parsing: Noun, Genitive, Feminine, Singular
-   Theme: PATIENCE & ENDURANCE
-29. Psalm 52:9 - קָוָה (H6960)
-   Parsing: Verb, Piel, Imperfect (cohortative), 1st Common Singular
-   Theme: PRAISE & WORSHIP
-30. Isaiah 25:9 - קָוָה (H6960)
-   Parsing: Verb, Piel, Perfect, 1st Common Plural
-   Theme: PRAISE & WORSHIP
-31. Psalm 31:24 - יָחַל (H3176)
-   Parsing: Verb, Piel, Participle, Masculine Plural
-   Theme: STRENGTH & RENEWAL
-32. Isaiah 40:31 - קָוָה (H6960)
+20. Isaiah 30:18 - חָכָה (H2442)
+   Parsing: Verb, Piel, Participle, Masculine Plural Construct
+   Theme: BLESSING & INHERITANCE
+21. Psalm 37:9 - קָוָה (H6960)
    Parsing: Verb, Qal, Participle, Masculine Plural Construct
-   Theme: STRENGTH & RENEWAL
-33. Psalm 27:14 - קָוָה (H6960)
+   Theme: BLESSING & INHERITANCE
+22. Psalm 37:34 - קָוָה (H6960)
    Parsing: Verb, Qal, Imperative, Masculine Singular
-   Theme: STRENGTH & RENEWAL
-34. Romans 8:25 - ἀπεκδέχομαι (G553)
+   Theme: BLESSING & INHERITANCE
+23. Isaiah 49:23 - קָוָה (H6960)
+   Parsing: Verb, Qal, Participle, Masculine Plural Construct
+   Theme: BLESSING & INHERITANCE
+24. Galatians 5:5 - ἀπεκδέχομαι (G553)
    Parsing: Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural
-   Theme: STRENGTH & RENEWAL
-35. Isaiah 8:17 - חָכָה (H2442)
+   Theme: BLESSING & INHERITANCE
+25. Isaiah 8:17 - חָכָה (H2442)
    Parsing: Verb, Piel, Sequential Perfect, 1st Common Singular
    Theme: TEACHING & GUIDANCE
-36. Psalm 25:5 - קָוָה (H6960)
+26. Psalm 25:5 - קָוָה (H6960)
    Parsing: Verb, Piel, Perfect, 1st Common Singular
    Theme: TEACHING & GUIDANCE
-37. Psalm 62:5 - דָּמַם (H1826)
-   Parsing: Verb, Qal, Imperative, Feminine Singular
-   Theme: TRUST & HOPE
-38. Lamentations 3:26 - יָחַל / חוּל (H3176)
-   Parsing: Piel Imperfect 3MS / Qal Sequential Imperfect 3MS
-   Theme: TRUST & HOPE
-39. Psalm 130:5 - קָוָה (H6960)
-   Parsing: Verb, Piel, Perfect, 1st Common Singular
-   Theme: TRUST & HOPE
-40. Psalm 39:7 - קָוָה (H6960)
-   Parsing: Verb, Piel, Perfect, 1st Common Singular
-   Theme: TRUST & HOPE
-41. 1 Peter 1:13 - ἐλπίζω (G1679)
-   Parsing: Verb, Aorist, Active, Imperative, 2nd Person Plural
-   Theme: TRUST & HOPE
+27. Psalm 52:9 - קָוָה (H6960)
+   Parsing: Verb, Piel, Imperfect (cohortative), 1st Common Singular
+   Theme: PRAISE & WORSHIP
+28. Isaiah 25:9 - קָוָה (H6960)
+   Parsing: Verb, Piel, Perfect, 1st Common Plural
+   Theme: PRAISE & WORSHIP
+29. Isaiah 26:8 - קָוָה (H6960)
+   Parsing: Verb, Piel, Perfect, 1st Common Plural
+   Theme: FAITHFULNESS & DEVOTION
+30. Hosea 12:6 - קָוָה (H6960)
+   Parsing: Verb, Qal, Imperative, Masculine Singular
+   Theme: FAITHFULNESS & DEVOTION
+31. Isaiah 64:4 - חָכָה (H2442)
+   Parsing: Verb, Piel, Participle, Masculine Singular
+   Theme: GOODNESS OF GOD
+32. Lamentations 3:25 - קָוָה (H6960)
+   Parsing: Verb, Qal, Participle, Masculine Plural
+   Theme: GOODNESS OF GOD
+33. Zephaniah 3:8 - חָכָה (H2442)
+   Parsing: Verb, Piel, Imperative, Masculine Plural
+   Theme: JUDGMENT & JUSTICE
+34. Luke 2:25 - προσδέχομαι (G4327)
+   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular
+   Theme: MESSIANIC EXPECTATION
+35. Mark 15:43 - προσδέχομαι (G4327)
+   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Singular
+   Theme: MESSIANIC EXPECTATION
+36. Luke 2:38 - προσδέχομαι (G4327)
+   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Dative Plural
+   Theme: MESSIANIC EXPECTATION
+37. Titus 2:13 - προσδέχομαι (G4327)
+   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Nominative Plural
+   Theme: ESCHATOLOGICAL HOPE
+38. 1 Thessalonians 1:10 - ἀναμένω (G362)
+   Parsing: Verb, Present, Active, Infinitive
+   Theme: ESCHATOLOGICAL HOPE
+39. Philippians 3:20 - ἀπεκδέχομαι (G553)
+   Parsing: Verb, Present, Middle/Passive Deponent, Indicative, 1st Person Plural
+   Theme: ESCHATOLOGICAL HOPE
+40. Romans 8:19 - ἀπεκδέχομαι (G553)
+   Parsing: Verb, Present, Middle/Passive Deponent, Indicative, 3rd Person Singular
+   Theme: ESCHATOLOGICAL HOPE
+41. 1 Corinthians 1:7 - ἀπεκδέχομαι (G553)
+   Parsing: Verb, Present, Middle/Passive Deponent, Participle, Accusative Plural
+   Theme: ESCHATOLOGICAL HOPE
 
 ## LEXEMES
 --------------------------------------------------------------------------------

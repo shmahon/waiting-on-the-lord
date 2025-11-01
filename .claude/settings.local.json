@@ -9,7 +9,22 @@
       "Bash(node --check:*)",
       "Bash(git check-ignore:*)",
       "Bash(node src/generator.js:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(md5:*)",
+      "WebSearch",
+      "Bash(git checkout:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(node scripts/content-inventory.js:*)",
+      "Bash(validation/content-inventory-baseline.txt)",
+      "Bash(node scripts/validate-content.js:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(node scripts/reorder-themes.js:*)"
     ],
     "deny": [],
     "ask": []
