@@ -50,12 +50,6 @@ generate_diagram \
     "study/output/option-a-grammar-first-tree.png" \
     1600 2200
 
-# Generate Option B: Heatmap Matrix
-generate_diagram \
-    "study/diagrams/option-b-heatmap-matrix.md" \
-    "study/output/option-b-heatmap-matrix.png" \
-    1400 1800
-
 # Generate Option C: Sankey Flow
 generate_diagram \
     "study/diagrams/option-c-sankey-flow.md" \
