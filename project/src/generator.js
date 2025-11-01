@@ -6,7 +6,7 @@ const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, UnderlineType,
   Table, TableRow, TableCell, WidthType, BorderStyle, Shading, VerticalAlign,
   Footer, FootnoteReferenceRun, convertInchesToTwip, PageNumber, NumberFormat,
-  Media, ImageRun
+  Media, ImageRun, PageOrientation, ExternalHyperlink
 } = require('docx');
 
 // Mature Scholastic Color Palette
@@ -55,6 +55,124 @@ function getLexemeDefinition(word, strongs, language) {
 function getConceptExplanation(term, language) {
   const concepts = language === 'Hebrew' ? hebrewConcepts.concepts : greekConcepts.concepts;
   return concepts.find(c => c.term === term || c.term.includes(term));
+}
+
+// Helper to convert Bible reference to Blue Letter Bible Interlinear URL
+function getBlueletterBibleUrl(reference) {
+  // Format: "Book Chapter:Verse" -> https://www.blueletterbible.org/[translation]/[book]/[chapter]/[verse]
+  // Example: "Psalm 25:3" -> https://www.blueletterbible.org/esv/psa/25/3/
+
+  // Parse the reference
+  const match = reference.match(/^(\d?\s?[A-Za-z]+)\s+(\d+):(\d+)/);
+  if (!match) return null;
+
+  const [, book, chapter, verse] = match;
+
+  // Map book names to BLB abbreviations
+  const bookMap = {
+    'Genesis': 'gen', 'Exodus': 'exo', 'Leviticus': 'lev', 'Numbers': 'num', 'Deuteronomy': 'deu',
+    'Joshua': 'jos', 'Judges': 'jdg', 'Ruth': 'rut', '1 Samuel': '1sa', '2 Samuel': '2sa',
+    '1 Kings': '1ki', '2 Kings': '2ki', '1 Chronicles': '1ch', '2 Chronicles': '2ch',
+    'Ezra': 'ezr', 'Nehemiah': 'neh', 'Esther': 'est', 'Job': 'job', 'Psalm': 'psa', 'Psalms': 'psa',
+    'Proverbs': 'pro', 'Ecclesiastes': 'ecc', 'Song of Solomon': 'sng', 'Isaiah': 'isa',
+    'Jeremiah': 'jer', 'Lamentations': 'lam', 'Ezekiel': 'eze', 'Daniel': 'dan', 'Hosea': 'hos',
+    'Joel': 'joe', 'Amos': 'amo', 'Obadiah': 'oba', 'Jonah': 'jon', 'Micah': 'mic', 'Nahum': 'nah',
+    'Habakkuk': 'hab', 'Zephaniah': 'zep', 'Haggai': 'hag', 'Zechariah': 'zec', 'Malachi': 'mal',
+    'Matthew': 'mat', 'Mark': 'mar', 'Luke': 'luk', 'John': 'jhn', 'Acts': 'act',
+    'Romans': 'rom', '1 Corinthians': '1co', '2 Corinthians': '2co', 'Galatians': 'gal',
+    'Ephesians': 'eph', 'Philippians': 'phi', 'Colossians': 'col', '1 Thessalonians': '1th',
+    '2 Thessalonians': '2th', '1 Timothy': '1ti', '2 Timothy': '2ti', 'Titus': 'tit',
+    'Philemon': 'phm', 'Hebrews': 'heb', 'James': 'jam', '1 Peter': '1pe', '2 Peter': '2pe',
+    '1 John': '1jo', '2 John': '2jo', '3 John': '3jo', 'Jude': 'jud', 'Revelation': 'rev'
+  };
+
+  const bookAbbr = bookMap[book.trim()];
+  if (!bookAbbr) {
+    console.warn(`Unknown book: ${book}`);
+    return null;
+  }
+
+  return `https://www.blueletterbible.org/esv/${bookAbbr}/${chapter}/${verse}/`;
+}
+
+// Helper to format scripture text with special styling for Context, Thematic fit, and Application
+function formatScriptureText(text) {
+  const paragraphs = text.split('\n\n');
+  const formattedParagraphs = [];
+
+  for (const para of paragraphs) {
+    const children = [];
+
+    // Check if paragraph starts with a label
+    if (para.startsWith('Context:')) {
+      children.push(
+        new TextRun({
+          text: 'Context:',
+          bold: true,
+          color: COLORS.ACCENT,
+          size: 16,
+          font: 'Calibri'
+        }),
+        new TextRun({
+          text: para.substring(8), // Rest of text after "Context:"
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    } else if (para.startsWith('Thematic fit:')) {
+      children.push(
+        new TextRun({
+          text: 'Thematic fit:',
+          bold: true,
+          color: COLORS.SUPPORTING,
+          size: 16,
+          font: 'Calibri'
+        }),
+        new TextRun({
+          text: para.substring(13), // Rest of text after "Thematic fit:"
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    } else if (para.startsWith('Application:')) {
+      children.push(
+        new TextRun({
+          text: 'Application:',
+          bold: true,
+          color: COLORS.PRIMARY,
+          size: 16,
+          font: 'Calibri'
+        }),
+        new TextRun({
+          text: para.substring(12), // Rest of text after "Application:"
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    } else {
+      // Regular text (scripture quote)
+      children.push(
+        new TextRun({
+          text: para,
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    }
+
+    formattedParagraphs.push(
+      new Paragraph({
+        children: children,
+        spacing: { line: 260, after: 120 }
+      })
+    );
+  }
+
+  return formattedParagraphs;
 }
 
 // Helper to create callout box for learner's notes (professional textbook sidebar style)
@@ -933,6 +1051,171 @@ for (const concept of greekConcepts.concepts) {
   }
 }
 
+// Appendix: Source Table (separate section for landscape orientation)
+const sourceData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../study/source/source_data.json'), 'utf8'));
+const appendixSections = [];
+
+appendixSections.push(
+  new Paragraph({
+    text: 'Appendix: Source Reference Table',
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 600, after: 300 },
+    border: {
+      left: {
+        color: COLORS.ACCENT,
+        space: 8,
+        style: BorderStyle.SINGLE,
+        size: 40
+      }
+    },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 26
+    }
+  }),
+  new Paragraph({
+    text: 'This appendix reproduces the original source table from which this analysis was generated, preserving all 41 Scripture references with their thematic organization, lexical parsing details, and contextual notes.',
+    spacing: { after: 400, line: 360 },
+    run: {
+      color: COLORS.TEXT_SECONDARY,
+      italics: true,
+      font: 'Times New Roman',
+      size: 20
+    }
+  })
+);
+
+// Create source table
+const sourceTable = new Table({
+  width: { size: 100, type: WidthType.PERCENTAGE },
+  rows: [
+    // Header row
+    new TableRow({
+      tableHeader: true,
+      children: [
+        new TableCell({
+          width: { size: 15, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Theme',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        }),
+        new TableCell({
+          width: { size: 15, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Reference',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        }),
+        new TableCell({
+          width: { size: 25, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Lexeme & Parsing',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        }),
+        new TableCell({
+          width: { size: 45, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Scripture Text & Context',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        })
+      ]
+    }),
+    // Data rows
+    ...sourceData.map((entry, index) => new TableRow({
+      children: [
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: entry.theme,
+              size: 18,
+              font: 'Calibri',
+              color: COLORS.ACCENT,
+              bold: true
+            })],
+            spacing: { line: 276 }
+          })]
+        }),
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: [new Paragraph({
+            children: [
+              new ExternalHyperlink({
+                children: [
+                  new TextRun({
+                    text: entry.reference,
+                    size: 18,
+                    font: 'Times New Roman',
+                    color: COLORS.PRIMARY,
+                    bold: true,
+                    underline: { type: UnderlineType.SINGLE }
+                  })
+                ],
+                link: getBlueletterBibleUrl(entry.reference) || '#'
+              })
+            ],
+            spacing: { line: 276 }
+          })]
+        }),
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: entry.lexeme_parsing.split('\n').map(line => new Paragraph({
+            children: [new TextRun({
+              text: line,
+              size: 16,
+              font: 'Times New Roman',
+              color: COLORS.TEXT_PRIMARY
+            })],
+            spacing: { line: 260 }
+          }))
+        }),
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: formatScriptureText(entry.scripture_text)
+        })
+      ]
+    }))
+  ]
+});
+
+appendixSections.push(sourceTable);
+
 // Lexeme Summary Section
 const lexemeSummary = JSON.parse(fs.readFileSync(path.join(dataDir, 'lexeme_summary.json'), 'utf8'));
 
@@ -1096,22 +1379,41 @@ const pageNumberFooter = new Footer({
 });
 
 // Create the document with footnotes and page numbers
+// Split into two sections: main content (portrait) and appendix (landscape)
 const doc = new Document({
   footnotes: footnotes,
-  sections: [{
-    properties: {
-      page: {
-        pageNumbers: {
-          start: 1,
-          formatType: NumberFormat.DECIMAL
+  sections: [
+    {
+      properties: {
+        page: {
+          pageNumbers: {
+            start: 1,
+            formatType: NumberFormat.DECIMAL
+          },
+          size: {
+            orientation: PageOrientation.PORTRAIT
+          }
         }
-      }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: sections
     },
-    footers: {
-      default: pageNumberFooter
-    },
-    children: sections
-  }]
+    {
+      properties: {
+        page: {
+          size: {
+            orientation: PageOrientation.LANDSCAPE
+          }
+        }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: appendixSections
+    }
+  ]
 });
 
 // Write to file
