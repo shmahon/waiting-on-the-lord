@@ -60,7 +60,7 @@ function getConceptExplanation(term, language) {
 // Helper to convert Bible reference to Blue Letter Bible Interlinear URL
 function getBlueletterBibleUrl(reference) {
   // Format: "Book Chapter:Verse" -> https://www.blueletterbible.org/[translation]/[book]/[chapter]/[verse]
-  // Example: "Psalm 25:3" -> https://www.blueletterbible.org/kjv/psa/25/3/
+  // Example: "Psalm 25:3" -> https://www.blueletterbible.org/esv/psa/25/3/
 
   // Parse the reference
   const match = reference.match(/^(\d?\s?[A-Za-z]+)\s+(\d+):(\d+)/);
@@ -92,7 +92,7 @@ function getBlueletterBibleUrl(reference) {
     return null;
   }
 
-  return `https://www.blueletterbible.org/kjv/${bookAbbr}/${chapter}/${verse}/`;
+  return `https://www.blueletterbible.org/esv/${bookAbbr}/${chapter}/${verse}/`;
 }
 
 // Helper to format scripture text with special styling for Context, Thematic fit, and Application
