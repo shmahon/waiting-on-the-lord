@@ -160,7 +160,9 @@ sections.push(
     },
     run: {
       color: 'FFFFFF',
-      bold: true
+      bold: true,
+      font: 'Garamond',  // Classic serif for title
+      size: 32
     }
   }),
   new Paragraph({
@@ -170,7 +172,8 @@ sections.push(
     run: {
       color: COLORS.PRIMARY,
       italics: true,
-      size: 24
+      size: 26,
+      font: 'Garamond'
     }
   })
 );
@@ -190,42 +193,54 @@ sections.push(
       }
     },
     run: {
-      color: COLORS.PRIMARY
+      color: COLORS.PRIMARY,
+      font: 'Calibri',  // Sans-serif for headings
+      size: 28
     }
   }),
   new Paragraph({
     text: 'This study examines the Hebrew and Greek vocabulary used in Scripture to describe "waiting on the Lord." Through careful morphological analysis, we discover that biblical "waiting" is not a monolithic concept but encompasses a rich variety of postures, emotions, and expectations.',
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },  // 1.5 line spacing
     run: {
-      color: COLORS.TEXT_PRIMARY
+      color: COLORS.TEXT_PRIMARY,
+      font: 'Times New Roman',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'The Hebrew Old Testament employs multiple words for waiting—from the silent trust of דָּמַם (dāmam) to the writhing intensity of חוּל (ḥûl), from patient tarrying חָכָה (ḥākāh) to active expectation קָוָה (qāwāh). Each captures a different facet of the experience of depending on God through time.',
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },
     run: {
-      color: COLORS.TEXT_PRIMARY
+      color: COLORS.TEXT_PRIMARY,
+      font: 'Times New Roman',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'The Greek New Testament emphasizes eschatological anticipation, with ἀπεκδέχομαι (apekdechomai) dominating the vocabulary—eager, confident awaiting of Christ\'s return. Yet patient endurance (ὑπομονή, hypomonē) and longsuffering forbearance (μακροθυμέω, makrothymeō) also feature prominently.',
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },
     run: {
-      color: COLORS.TEXT_PRIMARY
+      color: COLORS.TEXT_PRIMARY,
+      font: 'Times New Roman',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'Morphology matters. When Hebrew uses participles, it transforms waiting from action to identity—"those who wait" are characterized by this posture. When Greek uses deponent verbs (middle/passive form with active meaning), it emphasizes personal investment in hope. The Hebrew stem system (Qal, Piel, Hiphil) modifies intensity and causation, adding theological nuance.',
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },
     run: {
-      color: COLORS.TEXT_PRIMARY
+      color: COLORS.TEXT_PRIMARY,
+      font: 'Times New Roman',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'This analysis proceeds thematically, examining how morphological details illuminate the theological meaning of waiting in various contexts. Technical terms are explained in callout boxes for immediate reference, with detailed grammatical explanations provided in the reference section.',
-    spacing: { after: 400 },
+    spacing: { after: 400, line: 360 },
     run: {
-      color: COLORS.TEXT_PRIMARY
+      color: COLORS.TEXT_PRIMARY,
+      font: 'Times New Roman',
+      size: 24
     }
   })
 );
@@ -248,8 +263,11 @@ for (const themeData of structuredData) {
       },
       run: {
         color: COLORS.PRIMARY,
-        bold: true
-      }
+        bold: true,
+        font: 'Calibri',  // Sans-serif for headings
+        size: 28
+      },
+      pageBreakBefore: true  // Start each theme on new page
     })
   );
 
@@ -264,8 +282,9 @@ for (const themeData of structuredData) {
           new TextRun({
             text: `${lexeme.word} (${lexeme.transliteration}) — ${lexeme.strongs}`,
             bold: true,
-            size: 28,
-            color: COLORS.ACCENT
+            size: 26,
+            color: COLORS.ACCENT,
+            font: 'Times New Roman'
           })
         ],
         spacing: { before: 300, after: 100 }
@@ -277,10 +296,21 @@ for (const themeData of structuredData) {
       sections.push(
         new Paragraph({
           children: [
-            new TextRun({ text: 'Definition: ', italics: true, color: COLORS.GRAY_DARK }),
-            new TextRun({ text: lexDef.primary_theological_meaning || lexDef.root_meaning, color: COLORS.TEXT_PRIMARY })
+            new TextRun({
+              text: 'Definition: ',
+              italics: true,
+              color: COLORS.GRAY_DARK,
+              font: 'Times New Roman',
+              size: 24
+            }),
+            new TextRun({
+              text: lexDef.primary_theological_meaning || lexDef.root_meaning,
+              color: COLORS.TEXT_PRIMARY,
+              font: 'Times New Roman',
+              size: 24
+            })
           ],
-          spacing: { after: 200 }
+          spacing: { after: 200, line: 360 }
         })
       );
     }
@@ -297,7 +327,9 @@ for (const themeData of structuredData) {
               text: occ.reference,
               bold: true,
               underline: { type: UnderlineType.SINGLE },
-              color: COLORS.PRIMARY
+              color: COLORS.PRIMARY,
+              font: 'Times New Roman',
+              size: 24
             })
           ],
           spacing: { before: 200, after: 100 }
@@ -308,10 +340,21 @@ for (const themeData of structuredData) {
       sections.push(
         new Paragraph({
           children: [
-            new TextRun({ text: 'Parsing: ', bold: true, color: COLORS.GRAY_DARK }),
-            new TextRun({ text: occ.parsing || 'Not available', color: COLORS.TEXT_PRIMARY })
+            new TextRun({
+              text: 'Parsing: ',
+              bold: true,
+              color: COLORS.GRAY_DARK,
+              font: 'Times New Roman',
+              size: 22
+            }),
+            new TextRun({
+              text: occ.parsing || 'Not available',
+              color: COLORS.TEXT_PRIMARY,
+              font: 'Times New Roman',
+              size: 22
+            })
           ],
-          spacing: { after: 100 }
+          spacing: { after: 100, line: 360 }
         })
       );
 
@@ -334,10 +377,11 @@ for (const themeData of structuredData) {
           sections.push(
             new Paragraph({
               text: morphParts.join(' • '),
-              spacing: { after: 100 },
+              spacing: { after: 100, line: 360 },
               run: {
                 color: COLORS.TEXT_SECONDARY,
-                size: 20
+                size: 20,
+                font: 'Times New Roman'
               }
             })
           );
@@ -424,7 +468,9 @@ for (const themeData of structuredData) {
                   new TextRun({
                     text: `Stem: ${morph.stem}`,
                     italics: true,
-                    color: COLORS.GRAY_DARK
+                    color: COLORS.GRAY_DARK,
+                    font: 'Times New Roman',
+                    size: 22
                   }),
                   new FootnoteReferenceRun(footnoteId)
                 ],
@@ -452,19 +498,28 @@ for (const themeData of structuredData) {
               text: truncated,
               italics: true,
               color: COLORS.TEXT_SECONDARY,
-              size: 20
+              size: 22,
+              font: 'Times New Roman'
             })
           ],
           indent: {
-            left: convertInchesToTwip(0.5),
-            right: convertInchesToTwip(0.5)
+            left: convertInchesToTwip(0.6),
+            right: convertInchesToTwip(0.6)
           },
           shading: {
             fill: COLORS.GRAY_VERY_LIGHT,
             type: 'clear',
             color: 'auto'
           },
-          spacing: { after: 200, before: 100 }
+          spacing: { after: 200, before: 120, line: 345 },  // Slightly tighter line spacing for quotes
+          border: {
+            left: {
+              color: COLORS.GRAY_LIGHT,
+              space: 4,
+              style: BorderStyle.SINGLE,
+              size: 12
+            }
+          }
         })
       );
     }
@@ -487,15 +542,19 @@ sections.push(
       }
     },
     run: {
-      color: COLORS.PRIMARY
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 28
     }
   }),
   new Paragraph({
     text: 'This section provides comprehensive explanations of grammatical concepts referenced throughout the analysis. These concepts apply generally across multiple passages.',
-    spacing: { after: 400 },
+    spacing: { after: 400, line: 360 },
     run: {
       color: COLORS.TEXT_SECONDARY,
-      italics: true
+      italics: true,
+      font: 'Times New Roman',
+      size: 22
     }
   })
 );
@@ -507,14 +566,18 @@ sections.push(
     heading: HeadingLevel.HEADING_2,
     spacing: { before: 300, after: 200 },
     run: {
-      color: COLORS.ACCENT
+      color: COLORS.ACCENT,
+      font: 'Calibri',
+      size: 24
     }
   }),
   new Paragraph({
     text: hebrewStems.description,
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },
     run: {
-      color: COLORS.TEXT_PRIMARY
+      color: COLORS.TEXT_PRIMARY,
+      font: 'Times New Roman',
+      size: 22
     }
   })
 );
@@ -523,22 +586,46 @@ for (const stem of hebrewStems.stems) {
   sections.push(
     new Paragraph({
       children: [
-        new TextRun({ text: `${stem.name} (${stem.category}): `, bold: true, color: COLORS.ACCENT }),
-        new TextRun({ text: stem.meaning, color: COLORS.TEXT_PRIMARY })
+        new TextRun({
+          text: `${stem.name} (${stem.category}): `,
+          bold: true,
+          color: COLORS.ACCENT,
+          font: 'Times New Roman',
+          size: 22
+        }),
+        new TextRun({
+          text: stem.meaning,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
       spacing: { after: 100 }
     }),
     new Paragraph({
       text: stem.description,
-      spacing: { after: 100 },
+      spacing: { after: 100, line: 360 },
       run: {
-        color: COLORS.TEXT_PRIMARY
+        color: COLORS.TEXT_PRIMARY,
+        font: 'Times New Roman',
+        size: 20
       }
     }),
     new Paragraph({
       children: [
-        new TextRun({ text: 'Example: ', italics: true, color: COLORS.GRAY_DARK }),
-        new TextRun({ text: stem.example.explanation, color: COLORS.TEXT_SECONDARY })
+        new TextRun({
+          text: 'Example: ',
+          italics: true,
+          color: COLORS.GRAY_DARK,
+          font: 'Times New Roman',
+          size: 20
+        }),
+        new TextRun({
+          text: stem.example.explanation,
+          color: COLORS.TEXT_SECONDARY,
+          font: 'Times New Roman',
+          size: 20
+        })
       ],
       spacing: { after: 200 }
     })
@@ -552,15 +639,19 @@ sections.push(
     heading: HeadingLevel.HEADING_2,
     spacing: { before: 400, after: 200 },
     run: {
-      color: COLORS.ACCENT
+      color: COLORS.ACCENT,
+      font: 'Calibri',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'Detailed explanations of Hebrew grammatical concepts that appear in the morphological analysis.',
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },
     run: {
       color: COLORS.TEXT_SECONDARY,
-      italics: true
+      italics: true,
+      font: 'Times New Roman',
+      size: 22
     }
   })
 );
@@ -569,23 +660,48 @@ for (const concept of hebrewConcepts.concepts) {
   sections.push(
     new Paragraph({
       children: [
-        new TextRun({ text: concept.term, bold: true, size: 26, color: COLORS.ACCENT }),
-        new TextRun({ text: ` (${concept.category})`, italics: true, color: COLORS.GRAY_MEDIUM })
+        new TextRun({
+          text: concept.term,
+          bold: true,
+          size: 24,
+          color: COLORS.ACCENT,
+          font: 'Times New Roman'
+        }),
+        new TextRun({
+          text: ` (${concept.category})`,
+          italics: true,
+          color: COLORS.GRAY_MEDIUM,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
       spacing: { before: 200, after: 100 }
     }),
     new Paragraph({
       children: [
-        new TextRun({ text: 'Definition: ', bold: true, color: COLORS.GRAY_DARK }),
-        new TextRun({ text: concept.simple_explanation, color: COLORS.TEXT_PRIMARY })
+        new TextRun({
+          text: 'Definition: ',
+          bold: true,
+          color: COLORS.GRAY_DARK,
+          font: 'Times New Roman',
+          size: 22
+        }),
+        new TextRun({
+          text: concept.simple_explanation,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
-      spacing: { after: 100 }
+      spacing: { after: 100, line: 360 }
     }),
     new Paragraph({
       text: concept.detailed_explanation,
-      spacing: { after: 100 },
+      spacing: { after: 100, line: 360 },
       run: {
-        color: COLORS.TEXT_PRIMARY
+        color: COLORS.TEXT_PRIMARY,
+        font: 'Times New Roman',
+        size: 22
       }
     })
   );
@@ -594,10 +710,21 @@ for (const concept of hebrewConcepts.concepts) {
     sections.push(
       new Paragraph({
         children: [
-          new TextRun({ text: 'Example: ', italics: true, color: COLORS.GRAY_DARK }),
-          new TextRun({ text: concept.example, color: COLORS.TEXT_SECONDARY })
+          new TextRun({
+            text: 'Example: ',
+            italics: true,
+            color: COLORS.GRAY_DARK,
+            font: 'Times New Roman',
+            size: 20
+          }),
+          new TextRun({
+            text: concept.example,
+            color: COLORS.TEXT_SECONDARY,
+            font: 'Times New Roman',
+            size: 20
+          })
         ],
-        spacing: { after: 100 }
+        spacing: { after: 100, line: 360 }
       })
     );
   }
@@ -606,10 +733,21 @@ for (const concept of hebrewConcepts.concepts) {
     sections.push(
       new Paragraph({
         children: [
-          new TextRun({ text: 'Why This Matters: ', bold: true, color: COLORS.GRAY_DARK }),
-          new TextRun({ text: concept.why_relevant, color: COLORS.TEXT_PRIMARY })
+          new TextRun({
+            text: 'Why This Matters: ',
+            bold: true,
+            color: COLORS.GRAY_DARK,
+            font: 'Times New Roman',
+            size: 22
+          }),
+          new TextRun({
+            text: concept.why_relevant,
+            color: COLORS.TEXT_PRIMARY,
+            font: 'Times New Roman',
+            size: 22
+          })
         ],
-        spacing: { after: 200 }
+        spacing: { after: 200, line: 360 }
       })
     );
   }
@@ -622,15 +760,19 @@ sections.push(
     heading: HeadingLevel.HEADING_2,
     spacing: { before: 400, after: 200 },
     run: {
-      color: COLORS.ACCENT
+      color: COLORS.ACCENT,
+      font: 'Calibri',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'Detailed explanations of Greek grammatical concepts that appear in the morphological analysis.',
-    spacing: { after: 200 },
+    spacing: { after: 200, line: 360 },
     run: {
       color: COLORS.TEXT_SECONDARY,
-      italics: true
+      italics: true,
+      font: 'Times New Roman',
+      size: 22
     }
   })
 );
@@ -639,23 +781,48 @@ for (const concept of greekConcepts.concepts) {
   sections.push(
     new Paragraph({
       children: [
-        new TextRun({ text: concept.term, bold: true, size: 26, color: COLORS.ACCENT }),
-        new TextRun({ text: ` (${concept.category})`, italics: true, color: COLORS.GRAY_MEDIUM })
+        new TextRun({
+          text: concept.term,
+          bold: true,
+          size: 24,
+          color: COLORS.ACCENT,
+          font: 'Times New Roman'
+        }),
+        new TextRun({
+          text: ` (${concept.category})`,
+          italics: true,
+          color: COLORS.GRAY_MEDIUM,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
       spacing: { before: 200, after: 100 }
     }),
     new Paragraph({
       children: [
-        new TextRun({ text: 'Definition: ', bold: true, color: COLORS.GRAY_DARK }),
-        new TextRun({ text: concept.simple_explanation, color: COLORS.TEXT_PRIMARY })
+        new TextRun({
+          text: 'Definition: ',
+          bold: true,
+          color: COLORS.GRAY_DARK,
+          font: 'Times New Roman',
+          size: 22
+        }),
+        new TextRun({
+          text: concept.simple_explanation,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
-      spacing: { after: 100 }
+      spacing: { after: 100, line: 360 }
     }),
     new Paragraph({
       text: concept.detailed_explanation,
-      spacing: { after: 100 },
+      spacing: { after: 100, line: 360 },
       run: {
-        color: COLORS.TEXT_PRIMARY
+        color: COLORS.TEXT_PRIMARY,
+        font: 'Times New Roman',
+        size: 22
       }
     })
   );
@@ -664,10 +831,21 @@ for (const concept of greekConcepts.concepts) {
     sections.push(
       new Paragraph({
         children: [
-          new TextRun({ text: 'Example: ', italics: true, color: COLORS.GRAY_DARK }),
-          new TextRun({ text: concept.example, color: COLORS.TEXT_SECONDARY })
+          new TextRun({
+            text: 'Example: ',
+            italics: true,
+            color: COLORS.GRAY_DARK,
+            font: 'Times New Roman',
+            size: 20
+          }),
+          new TextRun({
+            text: concept.example,
+            color: COLORS.TEXT_SECONDARY,
+            font: 'Times New Roman',
+            size: 20
+          })
         ],
-        spacing: { after: 100 }
+        spacing: { after: 100, line: 360 }
       })
     );
   }
@@ -676,10 +854,21 @@ for (const concept of greekConcepts.concepts) {
     sections.push(
       new Paragraph({
         children: [
-          new TextRun({ text: 'Why This Matters: ', bold: true, color: COLORS.GRAY_DARK }),
-          new TextRun({ text: concept.why_relevant, color: COLORS.TEXT_PRIMARY })
+          new TextRun({
+            text: 'Why This Matters: ',
+            bold: true,
+            color: COLORS.GRAY_DARK,
+            font: 'Times New Roman',
+            size: 22
+          }),
+          new TextRun({
+            text: concept.why_relevant,
+            color: COLORS.TEXT_PRIMARY,
+            font: 'Times New Roman',
+            size: 22
+          })
         ],
-        spacing: { after: 200 }
+        spacing: { after: 200, line: 360 }
       })
     );
   }
@@ -694,15 +883,19 @@ sections.push(
     heading: HeadingLevel.HEADING_2,
     spacing: { before: 400, after: 200 },
     run: {
-      color: COLORS.ACCENT
+      color: COLORS.ACCENT,
+      font: 'Calibri',
+      size: 24
     }
   }),
   new Paragraph({
     text: 'Quick reference of all Hebrew and Greek words analyzed in this study.',
-    spacing: { after: 300 },
+    spacing: { after: 300, line: 360 },
     run: {
       color: COLORS.TEXT_SECONDARY,
-      italics: true
+      italics: true,
+      font: 'Times New Roman',
+      size: 22
     }
   })
 );
@@ -714,7 +907,9 @@ sections.push(
     heading: HeadingLevel.HEADING_3,
     spacing: { before: 200, after: 100 },
     run: {
-      color: COLORS.PRIMARY
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 22
     }
   })
 );
@@ -724,21 +919,41 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
   sections.push(
     new Paragraph({
       children: [
-        new TextRun({ text: `${lex.word} (${lex.transliteration}) — ${lex.strongs}`, bold: true, color: COLORS.ACCENT })
+        new TextRun({
+          text: `${lex.word} (${lex.transliteration}) — ${lex.strongs}`,
+          bold: true,
+          color: COLORS.ACCENT,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
       spacing: { before: 150, after: 50 }
     }),
     new Paragraph({
       text: lexDef ? lexDef.primary_theological_meaning : 'Definition not available',
-      spacing: { after: 50 },
+      spacing: { after: 50, line: 360 },
       run: {
-        color: COLORS.TEXT_PRIMARY
+        color: COLORS.TEXT_PRIMARY,
+        font: 'Times New Roman',
+        size: 22
       }
     }),
     new Paragraph({
       children: [
-        new TextRun({ text: `Occurrences: ${lex.occurrence_count} | Themes: `, italics: true, color: COLORS.GRAY_DARK }),
-        new TextRun({ text: lex.themes.join(', '), italics: true, color: COLORS.TEXT_SECONDARY })
+        new TextRun({
+          text: `Occurrences: ${lex.occurrence_count} | Themes: `,
+          italics: true,
+          color: COLORS.GRAY_DARK,
+          font: 'Times New Roman',
+          size: 20
+        }),
+        new TextRun({
+          text: lex.themes.join(', '),
+          italics: true,
+          color: COLORS.TEXT_SECONDARY,
+          font: 'Times New Roman',
+          size: 20
+        })
       ],
       spacing: { after: 150 }
     })
@@ -752,7 +967,9 @@ sections.push(
     heading: HeadingLevel.HEADING_3,
     spacing: { before: 200, after: 100 },
     run: {
-      color: COLORS.PRIMARY
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 22
     }
   })
 );
@@ -762,21 +979,41 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
   sections.push(
     new Paragraph({
       children: [
-        new TextRun({ text: `${lex.word} (${lex.transliteration}) — ${lex.strongs}`, bold: true, color: COLORS.ACCENT })
+        new TextRun({
+          text: `${lex.word} (${lex.transliteration}) — ${lex.strongs}`,
+          bold: true,
+          color: COLORS.ACCENT,
+          font: 'Times New Roman',
+          size: 22
+        })
       ],
       spacing: { before: 150, after: 50 }
     }),
     new Paragraph({
       text: lexDef ? lexDef.primary_theological_meaning : 'Definition not available',
-      spacing: { after: 50 },
+      spacing: { after: 50, line: 360 },
       run: {
-        color: COLORS.TEXT_PRIMARY
+        color: COLORS.TEXT_PRIMARY,
+        font: 'Times New Roman',
+        size: 22
       }
     }),
     new Paragraph({
       children: [
-        new TextRun({ text: `Occurrences: ${lex.occurrence_count} | Themes: `, italics: true, color: COLORS.GRAY_DARK }),
-        new TextRun({ text: lex.themes.join(', '), italics: true, color: COLORS.TEXT_SECONDARY })
+        new TextRun({
+          text: `Occurrences: ${lex.occurrence_count} | Themes: `,
+          italics: true,
+          color: COLORS.GRAY_DARK,
+          font: 'Times New Roman',
+          size: 20
+        }),
+        new TextRun({
+          text: lex.themes.join(', '),
+          italics: true,
+          color: COLORS.TEXT_SECONDARY,
+          font: 'Times New Roman',
+          size: 20
+        })
       ],
       spacing: { after: 150 }
     })
