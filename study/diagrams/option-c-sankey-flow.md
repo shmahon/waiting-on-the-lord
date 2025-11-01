@@ -28,29 +28,30 @@ graph LR
         BI["Blessing &<br/>Inheritance"]
     end
 
-    %% THICK LINES = Strong Pattern (8+ occurrences)
-    Q ====>|"12 occ"| QP
-    QP ====>|"8 occ"| SR
+    %% MEDIUM LINES = Moderate Pattern (4-6 occurrences)
+    Q -->|"6 occ"| PPf
+    PPf -->|"2 occ"| TH
 
-    %% MEDIUM LINES = Moderate Pattern (4-7 occurrences)
-    Q -->|"8 occ"| PPf
-    PPf -->|"6 occ"| TH
-
-    Y -->|"6 occ"| PPa
-    PPa -->|"4 occ"| SR
+    Q -->|"4 occ"| QP
+    QP -->|"1 occ"| SR
+    QP -->|"2 occ"| BI
+    QP -->|"1 occ"| GG["Goodness<br/>of God"]
 
     %% THIN LINES = Weak Pattern (1-3 occurrences)
-    Q -.->|"4 occ"| PImP
-    PImP -.->|"4 occ"| HD
+    Q -.->|"3 occ"| QI
+    QI -.->|"1 occ"| SR
+    QI -.->|"2 occ"| BI
 
-    H -.->|"4 occ"| PPa
-    PPa -.->|"3 occ"| BI
+    PPf -.->|"1 occ"| HD
+    PPf -.->|"1 occ"| TG["Teaching &<br/>Guidance"]
+    PPf -.->|"1 occ"| PW["Praise &<br/>Worship"]
+    PPf -.->|"1 occ"| FD["Faithfulness &<br/>Devotion"]
 
-    Y -.->|"3 occ"| HI
-    HI -.->|"3 occ"| HD
+    Q -.->|"1 occ"| PImP
+    PImP -.->|"1 occ"| HD
 
-    D -.->|"2 occ"| QI
-    QI -.->|"2 occ"| TH
+    Q -.->|"1 occ"| PImp["Piel<br/>Imperfect"]
+    PImp -.->|"1 occ"| PW
 
     style Q fill:#D6E4E5,stroke:#5F7161,stroke-width:2px
     style H fill:#D6E4E5,stroke:#5F7161,stroke-width:2px
@@ -85,24 +86,37 @@ graph LR
   - Anecdotal or rare connections
   - Avoid generalizing from these
 
-## Key Insights:
+## Key Insights (Based on Actual Source Data):
 
-### STRONGEST CONNECTION (12→8 occurrences):
-**qāwāh + Qal Participle → Strength & Renewal**
-- This is your SIGNATURE finding
-- Grammatically solid (participles = identity)
-- Frequently attested
-- Theologically coherent
+### MODERATE PATTERNS (4-6 occurrences):
+**qāwāh + Piel Perfect (6 total occurrences)**
+- Distributes across multiple themes (no dominant pattern)
+- Trust & Hope: 2
+- Help & Deliverance: 1
+- Teaching & Guidance: 1
+- Praise & Worship: 1
+- Faithfulness & Devotion: 1
+- **Implication**: Piel Perfect doesn't systematically map to single theme
 
-### MODERATE CONNECTIONS (4-8 occurrences):
-- qāwāh + Piel Perfect → Trust & Hope (8→6)
-- yāḥal + Piel Participle → Strength & Renewal (6→4)
-- qāwāh + Piel Imperative → Help & Deliverance (4→4)
+**qāwāh + Qal Participle (4 total occurrences)**
+- Also distributes across themes:
+- Blessing & Inheritance: 2
+- Strength & Renewal: 1
+- Goodness of God: 1
+- **Implication**: Even the participle doesn't have ONE dominant theme
+- But grammatical claim (participle = identity) still holds
 
 ### WEAK/RARE CONNECTIONS (1-3 occurrences):
-- Many lexeme-form-theme paths have only 1-2 instances
-- Use caution when generalizing from these
-- May be context-specific rather than grammatically determined
+- qāwāh + Qal Imperative: 3 occurrences (2 → Blessing, 1 → Strength)
+- qāwāh + Piel Imperative: 1 occurrence
+- qāwāh + Piel Imperfect: 1 occurrence
+- Most form-theme paths have only 1-2 instances
+
+### CRITICAL FINDING:
+**NO STRONG SYSTEMATIC FORM→THEME PATTERN FOR QĀWĀH**
+- Forms distribute across multiple themes
+- Context appears MORE determinative than morphology alone
+- Grammar contributes but doesn't determine theological meaning
 
 ## Methodological Implications:
 
