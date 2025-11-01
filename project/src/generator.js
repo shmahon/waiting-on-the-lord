@@ -251,7 +251,7 @@ sections.push(
   new Paragraph({
     text: 'Visual Summary: Lexeme-Form-Theme Overview',
     heading: HeadingLevel.HEADING_1,
-    spacing: { before: 600, after: 300 },
+    spacing: { before: 600, after: 200 },  // Reduced after spacing from 300 to 200
     pageBreakBefore: true,
     border: {
       left: {
@@ -270,7 +270,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'This diagram maps the relationship between Hebrew/Greek lexemes, their grammatical forms, and their thematic significance throughout Scripture.',
-    spacing: { after: 200, line: 360 },
+    spacing: { after: 100, line: 360 },  // Reduced after spacing from 200 to 100
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
@@ -293,13 +293,13 @@ sections.push(
       new ImageRun({
         data: diagramImage,
         transformation: {
-          width: 600,  // Reduced from 650 to help fit on same page
-          height: 830  // Reduced from 900 to help fit on same page
+          width: 580,  // Reduced from 600 to help fit on same page
+          height: 800  // Reduced from 830 to help fit on same page
         }
       })
     ],
     alignment: AlignmentType.CENTER,
-    spacing: { after: 400, before: 100 },
+    spacing: { after: 400, before: 50 },  // Reduced before spacing from 100 to 50
     keepLines: true  // Keep image from breaking across pages
   })
 );
