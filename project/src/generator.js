@@ -933,6 +933,171 @@ for (const concept of greekConcepts.concepts) {
   }
 }
 
+// Appendix: Source Table
+const sourceData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../study/source/source_data.json'), 'utf8'));
+
+sections.push(
+  new Paragraph({
+    text: 'Appendix: Source Reference Table',
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 600, after: 300 },
+    pageBreakBefore: true,
+    border: {
+      left: {
+        color: COLORS.ACCENT,
+        space: 8,
+        style: BorderStyle.SINGLE,
+        size: 40
+      }
+    },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 26
+    }
+  }),
+  new Paragraph({
+    text: 'This appendix reproduces the original source table from which this analysis was generated, preserving all 41 Scripture references with their thematic organization, lexical parsing details, and contextual notes.',
+    spacing: { after: 400, line: 360 },
+    run: {
+      color: COLORS.TEXT_SECONDARY,
+      italics: true,
+      font: 'Times New Roman',
+      size: 20
+    }
+  })
+);
+
+// Create source table
+const sourceTable = new Table({
+  width: { size: 100, type: WidthType.PERCENTAGE },
+  rows: [
+    // Header row
+    new TableRow({
+      tableHeader: true,
+      children: [
+        new TableCell({
+          width: { size: 15, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Theme',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        }),
+        new TableCell({
+          width: { size: 15, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Reference',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        }),
+        new TableCell({
+          width: { size: 25, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Lexeme & Parsing',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        }),
+        new TableCell({
+          width: { size: 45, type: WidthType.PERCENTAGE },
+          shading: { fill: COLORS.PRIMARY },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: 'Scripture Text & Context',
+              bold: true,
+              color: 'FFFFFF',
+              size: 20,
+              font: 'Calibri'
+            })],
+            alignment: AlignmentType.CENTER
+          })]
+        })
+      ]
+    }),
+    // Data rows
+    ...sourceData.map((entry, index) => new TableRow({
+      children: [
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: entry.theme,
+              size: 18,
+              font: 'Calibri',
+              color: COLORS.ACCENT,
+              bold: true
+            })],
+            spacing: { line: 276 }
+          })]
+        }),
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: [new Paragraph({
+            children: [new TextRun({
+              text: entry.reference,
+              size: 18,
+              font: 'Times New Roman',
+              color: COLORS.PRIMARY,
+              bold: true
+            })],
+            spacing: { line: 276 }
+          })]
+        }),
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: entry.lexeme_parsing.split('\n').map(line => new Paragraph({
+            children: [new TextRun({
+              text: line,
+              size: 16,
+              font: 'Times New Roman',
+              color: COLORS.TEXT_PRIMARY
+            })],
+            spacing: { line: 260 }
+          }))
+        }),
+        new TableCell({
+          shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
+          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          children: entry.scripture_text.split('\n\n').map(para => new Paragraph({
+            children: [new TextRun({
+              text: para,
+              size: 16,
+              font: 'Times New Roman',
+              color: COLORS.TEXT_PRIMARY
+            })],
+            spacing: { line: 260, after: 120 }
+          }))
+        })
+      ]
+    }))
+  ]
+});
+
+sections.push(sourceTable);
+
 // Lexeme Summary Section
 const lexemeSummary = JSON.parse(fs.readFileSync(path.join(dataDir, 'lexeme_summary.json'), 'utf8'));
 
