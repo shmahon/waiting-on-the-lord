@@ -6,7 +6,7 @@ const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, UnderlineType,
   Table, TableRow, TableCell, WidthType, BorderStyle, Shading, VerticalAlign,
   Footer, FootnoteReferenceRun, convertInchesToTwip, PageNumber, NumberFormat,
-  Media, ImageRun
+  Media, ImageRun, PageOrientation
 } = require('docx');
 
 // Mature Scholastic Color Palette
@@ -55,6 +55,86 @@ function getLexemeDefinition(word, strongs, language) {
 function getConceptExplanation(term, language) {
   const concepts = language === 'Hebrew' ? hebrewConcepts.concepts : greekConcepts.concepts;
   return concepts.find(c => c.term === term || c.term.includes(term));
+}
+
+// Helper to format scripture text with special styling for Context, Thematic fit, and Application
+function formatScriptureText(text) {
+  const paragraphs = text.split('\n\n');
+  const formattedParagraphs = [];
+
+  for (const para of paragraphs) {
+    const children = [];
+
+    // Check if paragraph starts with a label
+    if (para.startsWith('Context:')) {
+      children.push(
+        new TextRun({
+          text: 'Context:',
+          bold: true,
+          color: COLORS.ACCENT,
+          size: 16,
+          font: 'Calibri'
+        }),
+        new TextRun({
+          text: para.substring(8), // Rest of text after "Context:"
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    } else if (para.startsWith('Thematic fit:')) {
+      children.push(
+        new TextRun({
+          text: 'Thematic fit:',
+          bold: true,
+          color: COLORS.SUPPORTING,
+          size: 16,
+          font: 'Calibri'
+        }),
+        new TextRun({
+          text: para.substring(13), // Rest of text after "Thematic fit:"
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    } else if (para.startsWith('Application:')) {
+      children.push(
+        new TextRun({
+          text: 'Application:',
+          bold: true,
+          color: COLORS.PRIMARY,
+          size: 16,
+          font: 'Calibri'
+        }),
+        new TextRun({
+          text: para.substring(12), // Rest of text after "Application:"
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    } else {
+      // Regular text (scripture quote)
+      children.push(
+        new TextRun({
+          text: para,
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        })
+      );
+    }
+
+    formattedParagraphs.push(
+      new Paragraph({
+        children: children,
+        spacing: { line: 260, after: 120 }
+      })
+    );
+  }
+
+  return formattedParagraphs;
 }
 
 // Helper to create callout box for learner's notes (professional textbook sidebar style)
@@ -933,15 +1013,15 @@ for (const concept of greekConcepts.concepts) {
   }
 }
 
-// Appendix: Source Table
+// Appendix: Source Table (separate section for landscape orientation)
 const sourceData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../study/source/source_data.json'), 'utf8'));
+const appendixSections = [];
 
-sections.push(
+appendixSections.push(
   new Paragraph({
     text: 'Appendix: Source Reference Table',
     heading: HeadingLevel.HEADING_1,
     spacing: { before: 600, after: 300 },
-    pageBreakBefore: true,
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1081,22 +1161,14 @@ const sourceTable = new Table({
         new TableCell({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
           margins: { top: 100, bottom: 100, left: 100, right: 100 },
-          children: entry.scripture_text.split('\n\n').map(para => new Paragraph({
-            children: [new TextRun({
-              text: para,
-              size: 16,
-              font: 'Times New Roman',
-              color: COLORS.TEXT_PRIMARY
-            })],
-            spacing: { line: 260, after: 120 }
-          }))
+          children: formatScriptureText(entry.scripture_text)
         })
       ]
     }))
   ]
 });
 
-sections.push(sourceTable);
+appendixSections.push(sourceTable);
 
 // Lexeme Summary Section
 const lexemeSummary = JSON.parse(fs.readFileSync(path.join(dataDir, 'lexeme_summary.json'), 'utf8'));
@@ -1261,22 +1333,41 @@ const pageNumberFooter = new Footer({
 });
 
 // Create the document with footnotes and page numbers
+// Split into two sections: main content (portrait) and appendix (landscape)
 const doc = new Document({
   footnotes: footnotes,
-  sections: [{
-    properties: {
-      page: {
-        pageNumbers: {
-          start: 1,
-          formatType: NumberFormat.DECIMAL
+  sections: [
+    {
+      properties: {
+        page: {
+          pageNumbers: {
+            start: 1,
+            formatType: NumberFormat.DECIMAL
+          },
+          size: {
+            orientation: PageOrientation.PORTRAIT
+          }
         }
-      }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: sections
     },
-    footers: {
-      default: pageNumberFooter
-    },
-    children: sections
-  }]
+    {
+      properties: {
+        page: {
+          size: {
+            orientation: PageOrientation.LANDSCAPE
+          }
+        }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: appendixSections
+    }
+  ]
 });
 
 // Write to file
