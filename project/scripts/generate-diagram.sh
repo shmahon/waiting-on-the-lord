@@ -78,6 +78,73 @@ generate_diagram \
     1600 2200
 
 echo ""
+echo "Theme-focused diagrams (Approach 1 - for individual theme sections):"
+
+# Major themes (5 occurrences)
+generate_diagram \
+    "study/diagrams/theme-blessing-inheritance.md" \
+    "study/output/theme-blessing-inheritance.png" \
+    800 700
+
+generate_diagram \
+    "study/diagrams/theme-eschatological-hope.md" \
+    "study/output/theme-eschatological-hope.png" \
+    800 700
+
+generate_diagram \
+    "study/diagrams/theme-help-deliverance.md" \
+    "study/output/theme-help-deliverance.png" \
+    800 700
+
+generate_diagram \
+    "study/diagrams/theme-patience-endurance.md" \
+    "study/output/theme-patience-endurance.png" \
+    800 700
+
+generate_diagram \
+    "study/diagrams/theme-trust-hope.md" \
+    "study/output/theme-trust-hope.png" \
+    800 700
+
+# Medium themes (3-4 occurrences)
+generate_diagram \
+    "study/diagrams/theme-strength-renewal.md" \
+    "study/output/theme-strength-renewal.png" \
+    800 700
+
+generate_diagram \
+    "study/diagrams/theme-messianic-expectation.md" \
+    "study/output/theme-messianic-expectation.png" \
+    800 700
+
+# Minor themes (2 occurrences)
+generate_diagram \
+    "study/diagrams/theme-faithfulness-devotion.md" \
+    "study/output/theme-faithfulness-devotion.png" \
+    700 600
+
+generate_diagram \
+    "study/diagrams/theme-goodness-of-god.md" \
+    "study/output/theme-goodness-of-god.png" \
+    700 600
+
+generate_diagram \
+    "study/diagrams/theme-praise-worship.md" \
+    "study/output/theme-praise-worship.png" \
+    700 600
+
+generate_diagram \
+    "study/diagrams/theme-teaching-guidance.md" \
+    "study/output/theme-teaching-guidance.png" \
+    700 600
+
+# Single occurrence theme
+generate_diagram \
+    "study/diagrams/theme-judgment-justice.md" \
+    "study/output/theme-judgment-justice.png" \
+    700 600
+
+echo ""
 echo "✓ All diagrams generated in study/output/"
 echo ""
 echo "Preview diagrams:"
