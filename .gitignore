@@ -8,6 +8,7 @@ package-lock.json
 # Output files (keep directory structure but ignore generated docs)
 output/*.docx
 output/*.pdf
+output/*.png
 
 # OS files
 .DS_Store

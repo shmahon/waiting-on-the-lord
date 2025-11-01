@@ -5,7 +5,8 @@ const path = require('path');
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, UnderlineType,
   Table, TableRow, TableCell, WidthType, BorderStyle, Shading, VerticalAlign,
-  Footer, FootnoteReferenceRun, convertInchesToTwip, PageNumber, NumberFormat
+  Footer, FootnoteReferenceRun, convertInchesToTwip, PageNumber, NumberFormat,
+  Media, ImageRun
 } = require('docx');
 
 // Mature Scholastic Color Palette
@@ -275,269 +276,26 @@ sections.push(
       font: 'Times New Roman',
       size: 20
     }
-  }),
+  })
+);
+
+// Load and prepare the lexeme overview diagram image
+const diagramPath = path.join(__dirname, '../output/lexeme-overview.png');
+const diagramImage = fs.readFileSync(diagramPath);
+
+// Add the diagram image centered on the page
+sections.push(
   new Paragraph({
     children: [
-      new TextRun({
-        text: '═══════════════════════════════════════════════════════════════════════════════\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.GRAY_DARK
-      }),
-      new TextRun({
-        text: 'HEBREW LEXEMES\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.PRIMARY
-      }),
-      new TextRun({
-        text: '═══════════════════════════════════════════════════════════════════════════════\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.GRAY_DARK
-      }),
-      new TextRun({
-        text: 'קָוָה (qāwāh)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  ├─ Qal Participle ────────────────→ Strength & Renewal, Blessing & Inheritance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Piel Perfect ──────────────────→ Trust & Hope, Help & Deliverance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Piel Imperative ───────────────→ Help & Deliverance, Faithfulness & Devotion\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  └─ Piel Imperfect ────────────────→ Praise & Worship\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'חָכָה (ḥākāh)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  ├─ Piel Perfect ──────────────────→ Help & Deliverance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Piel Participle ───────────────→ Blessing & Inheritance, Goodness of God\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Piel Sequential Perfect ───────→ Teaching & Guidance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  └─ Piel Imperative ───────────────→ Judgment & Justice\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'יָחַל (yāḥal)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  ├─ Piel Participle ───────────────→ Strength & Renewal\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Piel Infinitive Construct ─────→ Patience & Endurance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Hiphil Imperfect ──────────────→ Help & Deliverance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  └─ Qal Participle ────────────────→ Goodness of God\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'חוּל (ḥûl)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  └─ Hithpolel Imperative ──────────→ Patience & Endurance\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'דָּמַם (dāmam)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  └─ Qal Imperative ────────────────→ Trust & Hope\n\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '═══════════════════════════════════════════════════════════════════════════════\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.GRAY_DARK
-      }),
-      new TextRun({
-        text: 'GREEK LEXEMES\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.PRIMARY
-      }),
-      new TextRun({
-        text: '═══════════════════════════════════════════════════════════════════════════════\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.GRAY_DARK
-      }),
-      new TextRun({
-        text: 'ἀπεκδέχομαι (apekdechomai)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  ├─ Present Deponent Indicative ────→ Strength & Renewal, Help & Deliverance\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  ├─ Present Deponent Participle ────→ Eschatological Hope (multiple)\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  └─ Present Deponent Indicative ────→ Blessing & Inheritance\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'προσδέχομαι (prosdechomai)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  ├─ Present Deponent Participle ────→ Messianic Expectation (multiple)\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '  └─ Present Deponent Participle ────→ Eschatological Hope\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'ἐλπίζω (elpizō)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  └─ Aorist Active Imperative ───────→ Trust & Hope\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'μακροθυμέω (makrothymeō)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  └─ Aorist Active Imperative ───────→ Patience & Endurance\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'ὑπομονή (hypomonē)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  └─ Noun, Genitive ────────────────→ Patience & Endurance\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: 'ἀναμένω (anamenō)\n',
-        font: 'Courier New',
-        size: 18,
-        bold: true,
-        color: COLORS.ACCENT
-      }),
-      new TextRun({
-        text: '  │\n  └─ Present Active Infinitive ──────→ Eschatological Hope\n\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.TEXT_PRIMARY
-      }),
-      new TextRun({
-        text: '═══════════════════════════════════════════════════════════════════════════════\n',
-        font: 'Courier New',
-        size: 18,
-        color: COLORS.GRAY_DARK
+      new ImageRun({
+        data: diagramImage,
+        transformation: {
+          width: 650,  // Width in points (adjust as needed)
+          height: 900  // Height in points (adjust as needed)
+        }
       })
     ],
+    alignment: AlignmentType.CENTER,
     spacing: { after: 400, before: 200 }
   })
 );

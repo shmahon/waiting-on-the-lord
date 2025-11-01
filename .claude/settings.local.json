@@ -24,7 +24,9 @@
       "Bash(validation/content-inventory-baseline.txt)",
       "Bash(node scripts/validate-content.js:*)",
       "WebFetch(domain:github.com)",
-      "Bash(node scripts/reorder-themes.js:*)"
+      "Bash(node scripts/reorder-themes.js:*)",
+      "Bash(npm install:*)",
+      "Bash(npx mmdc:*)"
     ],
     "deny": [],
     "ask": []
