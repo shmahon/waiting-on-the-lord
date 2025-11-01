@@ -34,6 +34,33 @@ const COLORS = {
   TEXT_SECONDARY: '5A5A5A'
 };
 
+// Spacing configuration for page count compression
+// Values in twips (1/20 of a point, 1440 twips = 1 inch)
+const SPACING = {
+  // Line spacing (multiply by 240 for docx line spacing value)
+  LINE_TIGHT: 240,      // 1.0x (single)
+  LINE_NORMAL: 260,     // ~1.08x (slightly above single)
+  LINE_RELAXED: 300,    // 1.25x
+
+  // Paragraph spacing (before/after in twips)
+  PARA_NONE: 0,
+  PARA_MINIMAL: 60,     // ~4pt
+  PARA_SMALL: 100,      // ~7pt
+  PARA_MEDIUM: 140,     // ~10pt
+  PARA_LARGE: 200,      // ~14pt
+
+  // Heading spacing
+  H1_BEFORE: 300,       // Reduced from 600
+  H1_AFTER: 140,        // Reduced from 200
+  H2_BEFORE: 200,       // Reduced from 400
+  H2_AFTER: 100,        // Reduced from 200
+  H3_BEFORE: 140,       // Reduced from 300
+  H3_AFTER: 80,         // Reduced from 100-200
+
+  // Table cell margins
+  CELL_MARGIN: 80       // Reduced from 100
+};
+
 // Load all data files
 const dataDir = path.join(__dirname, '../data');
 const structuredData = JSON.parse(fs.readFileSync(path.join(dataDir, 'structured_by_theme.json'), 'utf8'));
@@ -343,7 +370,7 @@ function formatScriptureText(text, lexemeInfo = null) {
     formattedParagraphs.push(
       new Paragraph({
         children: children,
-        spacing: { line: 260, after: 120 }
+        spacing: { line: SPACING.LINE_NORMAL, after: SPACING.PARA_SMALL }
       })
     );
   }
@@ -352,22 +379,32 @@ function formatScriptureText(text, lexemeInfo = null) {
 }
 
 // Helper to create callout box for learner's notes (professional textbook sidebar style)
-// Based on academic publishing standards: sans-serif font, clear borders, subtle styling
+// Compressed and narrowed to save vertical space - floated right with text wrapping
 function createCalloutBox(title, content) {
   return new Table({
-    width: { size: 85, type: WidthType.PERCENTAGE },
+    width: { size: 3.5, type: WidthType.INCHES },  // Fixed width for better control
+    float: {
+      horizontalAnchor: 'text',
+      verticalAnchor: 'text',
+      relativeHorizontalPosition: 'right',
+      relativeVerticalPosition: 'top',
+      leftFromText: convertInchesToTwip(0.15),  // Space between text and box
+      rightFromText: 0,
+      topFromText: 0,
+      bottomFromText: convertInchesToTwip(0.1)
+    },
     margins: {
-      top: 120,
-      bottom: 120,
-      left: convertInchesToTwip(0.4),
-      right: convertInchesToTwip(0.4)
+      top: SPACING.PARA_MINIMAL,
+      bottom: SPACING.PARA_MINIMAL,
+      left: convertInchesToTwip(0.2),
+      right: convertInchesToTwip(0.2)
     },
     borders: {
       // Professional frame: subtle top/bottom, prominent left accent
-      left: { style: BorderStyle.SINGLE, size: 24, color: COLORS.SUPPORTING },
-      top: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
-      bottom: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
-      right: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      left: { style: BorderStyle.SINGLE, size: 20, color: COLORS.SUPPORTING },  // Reduced from 24
+      top: { style: BorderStyle.SINGLE, size: 4, color: COLORS.GRAY_MEDIUM },  // Reduced from 6
+      bottom: { style: BorderStyle.SINGLE, size: 4, color: COLORS.GRAY_MEDIUM },  // Reduced from 6
+      right: { style: BorderStyle.SINGLE, size: 4, color: COLORS.GRAY_MEDIUM },  // Reduced from 6
       insideHorizontal: { style: BorderStyle.NONE, size: 0 },
       insideVertical: { style: BorderStyle.NONE, size: 0 }
     },
@@ -376,35 +413,35 @@ function createCalloutBox(title, content) {
         children: [
           new TableCell({
             shading: {
-              fill: 'FAFBFC',  // Extremely subtle gray (better than pure white for print)
+              fill: 'FAFBFC',  // Extremely subtle gray
               type: 'clear',
               color: 'auto'
             },
             margins: {
-              top: 140,
-              bottom: 140,
-              left: 200,
-              right: 200
+              top: SPACING.PARA_MINIMAL,  // Reduced from 140
+              bottom: SPACING.PARA_MINIMAL,  // Reduced from 140
+              left: SPACING.PARA_SMALL,  // Reduced from 200
+              right: SPACING.PARA_SMALL  // Reduced from 200
             },
             verticalAlign: VerticalAlign.TOP,
             children: [
               new Paragraph({
                 children: [
                   new TextRun({
-                    text: `${title}`,  // Removed emoji for professional appearance
+                    text: `${title}`,
                     bold: true,
                     color: COLORS.SUPPORTING,
-                    size: 20,  // Reduced from 22
-                    font: 'Calibri'  // Sans-serif for sidebars (publishing standard)
+                    size: 18,  // Reduced from 20
+                    font: 'Calibri'
                   })
                 ],
-                spacing: { after: 140 },
+                spacing: { after: SPACING.PARA_MINIMAL },  // Reduced from H1_AFTER
                 border: {
                   bottom: {
                     color: COLORS.GRAY_LIGHT,
                     space: 1,
                     style: BorderStyle.SINGLE,
-                    size: 6
+                    size: 4  // Reduced from 6
                   }
                 }
               }),
@@ -413,11 +450,11 @@ function createCalloutBox(title, content) {
                   new TextRun({
                     text: content,
                     color: COLORS.TEXT_PRIMARY,
-                    size: 18,  // Reduced from 20
-                    font: 'Calibri'  // Sans-serif to distinguish from body text
+                    size: 16,  // Reduced from 18
+                    font: 'Calibri'
                   })
                 ],
-                spacing: { line: 276 }  // 1.15 line spacing for readability
+                spacing: { line: SPACING.LINE_TIGHT }  // Tighter line spacing
               })
             ]
           })
@@ -425,8 +462,126 @@ function createCalloutBox(title, content) {
       })
     ],
     spacing: {
-      before: 240,
-      after: 240
+      before: SPACING.PARA_SMALL,  // Reduced from PARA_LARGE
+      after: SPACING.PARA_SMALL  // Reduced from PARA_LARGE
+    }
+  });
+}
+
+// Create statistical summary table for pattern analysis
+function createStatisticalSummaryTable() {
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: {
+      top: SPACING.CELL_MARGIN,
+      bottom: SPACING.CELL_MARGIN,
+      left: SPACING.CELL_MARGIN,
+      right: SPACING.CELL_MARGIN
+    },
+    borders: {
+      top: { style: BorderStyle.SINGLE, size: 8, color: COLORS.PRIMARY },
+      bottom: { style: BorderStyle.SINGLE, size: 8, color: COLORS.PRIMARY },
+      left: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      right: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      insideHorizontal: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT },
+      insideVertical: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT }
+    },
+    rows: [
+      // Header row
+      new TableRow({
+        tableHeader: true,
+        children: [
+          new TableCell({
+            width: { size: 18, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Lexeme', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 10, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Total', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 30, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Form with Strongest Pattern', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 27, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Theme Correlation', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 15, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Strength', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          })
+        ]
+      }),
+      // prosdechomai - STRONG pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'προσδέχομαι', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (prosdechomai)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '4', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Present Participle (4)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Messianic Expectation (75%)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: '90EE90', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Strong ✓', size: 18, font: 'Times New Roman', bold: true, color: '228B22' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // apekdechomai - MILD pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'ἀπεκδέχομαι', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (apekdechomai)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '6', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Present Indicative (4)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Eschatological Hope (50%)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'FFF8DC', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Mild', size: 18, font: 'Times New Roman', color: 'DAA520' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // qāwāh - WEAK pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'קָוָה', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (qāwāh)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '16', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Piel Perfect (6)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Scattered across 6 themes', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'FFE4E4', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Weak ✗', size: 18, font: 'Times New Roman', color: 'CC0000' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // ḥākāh - WEAK pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'חָכָה', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (ḥākāh)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '5', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Piel Participle (2)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'No pattern (2 themes)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'FFE4E4', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Weak ✗', size: 18, font: 'Times New Roman', color: 'CC0000' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // yāḥal - Cannot assess
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'יָחַל', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (yāḥal)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '4', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'All singles (1 each)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Cannot assess', size: 18, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'F5F5F5', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'N/A', size: 18, font: 'Times New Roman', color: '999999' })], alignment: AlignmentType.CENTER })] })
+        ]
+      })
+    ],
+    spacing: {
+      before: SPACING.PARA_MEDIUM,
+      after: SPACING.PARA_LARGE
     }
   });
 }
@@ -447,7 +602,7 @@ sections.push(
     text: 'Waiting on the Lord',
     heading: HeadingLevel.TITLE,
     alignment: AlignmentType.CENTER,
-    spacing: { after: 200 },
+    spacing: { after: SPACING.PARA_LARGE },
     shading: {
       fill: COLORS.PRIMARY,
       type: 'clear',
@@ -463,7 +618,7 @@ sections.push(
   new Paragraph({
     text: 'A Lexical and Morphological Analysis',
     alignment: AlignmentType.CENTER,
-    spacing: { after: 400 },
+    spacing: { after: SPACING.PARA_LARGE },
     run: {
       color: COLORS.PRIMARY,
       italics: true,
@@ -478,7 +633,7 @@ sections.push(
   new Paragraph({
     text: 'Introduction',
     heading: HeadingLevel.HEADING_1,
-    spacing: { before: 400, after: 200 },
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -495,7 +650,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'This study examines the Hebrew and Greek vocabulary used in Scripture to describe "waiting on the Lord." Through careful morphological analysis, we discover that biblical "waiting" is not a monolithic concept but encompasses a rich variety of postures, emotions, and expectations.',
-    spacing: { after: 200, line: 360 },  // 1.5 line spacing
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },  // 1.5 line spacing
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
@@ -504,7 +659,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'The Hebrew Old Testament employs multiple words for waiting—from the silent trust of דָּמַם (dāmam) to the writhing intensity of חוּל (ḥûl), from patient tarrying חָכָה (ḥākāh) to active expectation קָוָה (qāwāh). Each captures a different facet of the experience of depending on God through time.',
-    spacing: { after: 200, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
@@ -513,7 +668,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'The Greek New Testament emphasizes eschatological anticipation, with ἀπεκδέχομαι (apekdechomai) dominating the vocabulary—eager, confident awaiting of Christ\'s return. Yet patient endurance (ὑπομονή, hypomonē) and longsuffering forbearance (μακροθυμέω, makrothymeō) also feature prominently.',
-    spacing: { after: 200, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
@@ -522,7 +677,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'Morphology matters. When Hebrew uses participles, it transforms waiting from action to identity—"those who wait" are characterized by this posture. When Greek uses deponent verbs (middle/passive form with active meaning), it emphasizes personal investment in hope. The Hebrew stem system (Qal, Piel, Hiphil) modifies intensity and causation, adding theological nuance.',
-    spacing: { after: 200, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
@@ -531,7 +686,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'This analysis proceeds thematically, examining how morphological details illuminate the theological meaning of waiting in various contexts. Technical terms are explained in callout boxes for immediate reference, with detailed grammatical explanations provided in the reference section.',
-    spacing: { after: 400, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
@@ -540,12 +695,12 @@ sections.push(
   })
 );
 
-// Visual Summary: Lexeme Overview
+// Visual Summary: Pattern Analysis
 sections.push(
   new Paragraph({
-    text: 'Visual Summary: Lexeme-Form-Theme Overview',
+    text: 'Visual Summary: Grammar→Theme Pattern Analysis',
     heading: HeadingLevel.HEADING_1,
-    spacing: { before: 600, after: 200 },  // Reduced after spacing from 300 to 200
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
     pageBreakBefore: true,
     border: {
       left: {
@@ -560,43 +715,108 @@ sections.push(
       font: 'Calibri',
       size: 26
     },
-    keepNext: true  // Keep heading with next paragraph
+    keepNext: true
   }),
   new Paragraph({
-    text: 'This diagram maps the relationship between Hebrew/Greek lexemes, their grammatical forms, and their thematic significance throughout Scripture.',
-    spacing: { after: 100, line: 360 },  // Reduced after spacing from 200 to 100
+    text: 'Statistical analysis reveals that only ONE strong grammatical pattern exists: prosdechomai Present Participle → Messianic Expectation (75%). Most lexemes show distributed patterns where context determines theme more than morphology.',
+    spacing: { after: SPACING.PARA_MEDIUM, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
       size: 20
     },
-    keepNext: true,  // Keep description with diagram
-    keepLines: true  // Don't break this paragraph across pages
+    keepNext: true
   })
 );
 
-// Load and prepare the lexeme overview diagram image
-const diagramPath = path.join(__dirname, '../../study/output/lexeme-overview.png');
-const diagramImage = fs.readFileSync(diagramPath);
+// Statistical Summary Table
+sections.push(createStatisticalSummaryTable());
 
-// Add the diagram image centered on the page
+// Strong Pattern Diagram
+sections.push(
+  new Paragraph({
+    text: 'Strong Pattern: prosdechomai (75% Correlation)',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H2_AFTER },
+    run: {
+      color: COLORS.SUPPORTING,
+      font: 'Calibri',
+      size: 22
+    },
+    keepNext: true
+  })
+);
+
+const strongPatternImage = fs.readFileSync(path.join(__dirname, '../../study/output/pattern-strong-prosdechomai.png'));
 sections.push(
   new Paragraph({
     children: [
       new ImageRun({
-        data: diagramImage,
+        data: strongPatternImage,
         transformation: {
-          width: 580,  // Reduced from 600 to help fit on same page
-          height: 800  // Reduced from 830 to help fit on same page
+          width: 480,
+          height: 380
         }
       })
     ],
     alignment: AlignmentType.CENTER,
-    spacing: { after: 400, before: 50 },  // Reduced before spacing from 100 to 50
-    keepLines: true  // Keep image from breaking across pages
+    spacing: { after: SPACING.PARA_MEDIUM, before: SPACING.PARA_MINIMAL },
+    keepLines: true
   })
 );
+
+// Weak Pattern Diagram
+sections.push(
+  new Paragraph({
+    text: 'Distributed Pattern: qāwāh (No Dominant Theme)',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H2_AFTER },
+    run: {
+      color: COLORS.SUPPORTING,
+      font: 'Calibri',
+      size: 22
+    },
+    keepNext: true
+  })
+);
+
+const weakPatternImage = fs.readFileSync(path.join(__dirname, '../../study/output/pattern-weak-qawah.png'));
+sections.push(
+  new Paragraph({
+    children: [
+      new ImageRun({
+        data: weakPatternImage,
+        transformation: {
+          width: 480,
+          height: 430
+        }
+      })
+    ],
+    alignment: AlignmentType.CENTER,
+    spacing: { after: SPACING.PARA_LARGE, before: SPACING.PARA_MINIMAL },
+    keepLines: true
+  })
+);
+
+// Helper function to get theme diagram filename
+function getThemeDiagramFilename(themeName) {
+  const themeMap = {
+    'STRENGTH & RENEWAL': 'theme-strength-renewal.png',
+    'TRUST & HOPE': 'theme-trust-hope.png',
+    'HELP & DELIVERANCE': 'theme-help-deliverance.png',
+    'PATIENCE & ENDURANCE': 'theme-patience-endurance.png',
+    'BLESSING & INHERITANCE': 'theme-blessing-inheritance.png',
+    'ESCHATOLOGICAL HOPE': 'theme-eschatological-hope.png',
+    'MESSIANIC EXPECTATION': 'theme-messianic-expectation.png',
+    'GOODNESS OF GOD': 'theme-goodness-of-god.png',
+    'FAITHFULNESS & DEVOTION': 'theme-faithfulness-devotion.png',
+    'PRAISE & WORSHIP': 'theme-praise-worship.png',
+    'TEACHING & GUIDANCE': 'theme-teaching-guidance.png',
+    'JUDGMENT & JUSTICE': 'theme-judgment-justice.png'
+  };
+  return themeMap[themeName.toUpperCase()];
+}
 
 // Process each theme
 for (const themeData of structuredData) {
@@ -605,7 +825,7 @@ for (const themeData of structuredData) {
     new Paragraph({
       text: themeData.theme,
       heading: HeadingLevel.HEADING_1,
-      spacing: { before: 400, after: 200 },
+      spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
       border: {
         left: {
           color: COLORS.PRIMARY,
@@ -619,10 +839,36 @@ for (const themeData of structuredData) {
         bold: true,
         font: 'Calibri',  // Sans-serif for headings
         size: 26  // Reduced from 28
-      },
-      pageBreakBefore: true  // Start each theme on new page
+      }
     })
   );
+
+  // Add theme-specific grammar→theme diagram
+  const themeDiagramFile = getThemeDiagramFilename(themeData.theme);
+  if (themeDiagramFile) {
+    const themeDiagramPath = path.join(__dirname, '../../study/output', themeDiagramFile);
+    try {
+      const themeDiagramImage = fs.readFileSync(themeDiagramPath);
+      sections.push(
+        new Paragraph({
+          children: [
+            new ImageRun({
+              data: themeDiagramImage,
+              transformation: {
+                width: 400,
+                height: 350
+              }
+            })
+          ],
+          alignment: AlignmentType.CENTER,
+          spacing: { after: SPACING.PARA_MEDIUM, before: SPACING.PARA_SMALL },
+          keepLines: true
+        })
+      );
+    } catch (err) {
+      // Diagram file doesn't exist, skip silently
+    }
+  }
 
   // Process each lexeme in theme
   for (const lexeme of themeData.lexemes) {
@@ -640,7 +886,7 @@ for (const themeData of structuredData) {
             font: 'Times New Roman'
           })
         ],
-        spacing: { before: 300, after: 100 }
+        spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER }
       })
     );
 
@@ -663,7 +909,7 @@ for (const themeData of structuredData) {
               size: 22  // Reduced from 24
             })
           ],
-          spacing: { after: 200, line: 360 }
+          spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED }
         })
       );
     }
@@ -685,7 +931,7 @@ for (const themeData of structuredData) {
               size: 22  // Reduced from 24
             })
           ],
-          spacing: { before: 200, after: 100 }
+          spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER }
         })
       );
 
@@ -707,7 +953,7 @@ for (const themeData of structuredData) {
               size: 20  // Reduced from 22
             })
           ],
-          spacing: { after: 100, line: 360 }
+          spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED }
         })
       );
 
@@ -730,7 +976,7 @@ for (const themeData of structuredData) {
           sections.push(
             new Paragraph({
               text: morphParts.join(' • '),
-              spacing: { after: 100, line: 360 },
+              spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED },
               run: {
                 color: COLORS.TEXT_SECONDARY,
                 size: 18,  // Reduced from 20
@@ -827,7 +1073,7 @@ for (const themeData of structuredData) {
                   }),
                   new FootnoteReferenceRun(footnoteId)
                 ],
-                spacing: { after: 100 }
+                spacing: { after: SPACING.H2_AFTER }
               })
             );
 
@@ -864,7 +1110,7 @@ for (const themeData of structuredData) {
             type: 'clear',
             color: 'auto'
           },
-          spacing: { after: 200, before: 120, line: 345 },  // Slightly tighter line spacing for quotes
+          spacing: { after: SPACING.PARA_LARGE, before: SPACING.PARA_SMALL, line: SPACING.LINE_RELAXED },  // Slightly tighter line spacing for quotes
           border: {
             left: {
               color: COLORS.GRAY_LIGHT,
@@ -884,7 +1130,7 @@ sections.push(
   new Paragraph({
     text: 'Reference: Grammatical Concepts',
     heading: HeadingLevel.HEADING_1,
-    spacing: { before: 600, after: 300 },
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
     pageBreakBefore: true,
     border: {
       left: {
@@ -902,7 +1148,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'This section provides comprehensive explanations of grammatical concepts referenced throughout the analysis. These concepts apply generally across multiple passages.',
-    spacing: { after: 400, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
@@ -917,7 +1163,7 @@ sections.push(
   new Paragraph({
     text: 'Hebrew Verb Stem System',
     heading: HeadingLevel.HEADING_2,
-    spacing: { before: 300, after: 200 },
+    spacing: { before: SPACING.H3_BEFORE, after: SPACING.H1_AFTER },
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -926,7 +1172,7 @@ sections.push(
   }),
   new Paragraph({
     text: hebrewStems.description,
-    spacing: { after: 200, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_PRIMARY,
       font: 'Times New Roman',
@@ -953,11 +1199,11 @@ for (const stem of hebrewStems.stems) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { after: 100 }
+      spacing: { after: SPACING.H2_AFTER }
     }),
     new Paragraph({
       text: stem.description,
-      spacing: { after: 100, line: 360 },
+      spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED },
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
@@ -980,7 +1226,7 @@ for (const stem of hebrewStems.stems) {
           size: 18  // Reduced from 20
         })
       ],
-      spacing: { after: 200 }
+      spacing: { after: SPACING.PARA_LARGE }
     })
   );
 }
@@ -990,7 +1236,7 @@ sections.push(
   new Paragraph({
     text: 'Hebrew Grammatical Concepts',
     heading: HeadingLevel.HEADING_2,
-    spacing: { before: 400, after: 200 },
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -999,7 +1245,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'Detailed explanations of Hebrew grammatical concepts that appear in the morphological analysis.',
-    spacing: { after: 200, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
@@ -1028,7 +1274,7 @@ for (const concept of hebrewConcepts.concepts) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { before: 200, after: 100 }
+      spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER }
     }),
     new Paragraph({
       children: [
@@ -1046,11 +1292,11 @@ for (const concept of hebrewConcepts.concepts) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { after: 100, line: 360 }
+      spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED }
     }),
     new Paragraph({
       text: concept.detailed_explanation,
-      spacing: { after: 100, line: 360 },
+      spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED },
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
@@ -1077,7 +1323,7 @@ for (const concept of hebrewConcepts.concepts) {
             size: 18  // Reduced from 20
           })
         ],
-        spacing: { after: 100, line: 360 }
+        spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED }
       })
     );
   }
@@ -1100,7 +1346,7 @@ for (const concept of hebrewConcepts.concepts) {
             size: 20  // Reduced from 22
           })
         ],
-        spacing: { after: 200, line: 360 }
+        spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED }
       })
     );
   }
@@ -1111,7 +1357,7 @@ sections.push(
   new Paragraph({
     text: 'Greek Grammatical Concepts',
     heading: HeadingLevel.HEADING_2,
-    spacing: { before: 400, after: 200 },
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -1120,7 +1366,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'Detailed explanations of Greek grammatical concepts that appear in the morphological analysis.',
-    spacing: { after: 200, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
@@ -1149,7 +1395,7 @@ for (const concept of greekConcepts.concepts) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { before: 200, after: 100 }
+      spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER }
     }),
     new Paragraph({
       children: [
@@ -1167,11 +1413,11 @@ for (const concept of greekConcepts.concepts) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { after: 100, line: 360 }
+      spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED }
     }),
     new Paragraph({
       text: concept.detailed_explanation,
-      spacing: { after: 100, line: 360 },
+      spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED },
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
@@ -1198,7 +1444,7 @@ for (const concept of greekConcepts.concepts) {
             size: 18  // Reduced from 20
           })
         ],
-        spacing: { after: 100, line: 360 }
+        spacing: { after: SPACING.H2_AFTER, line: SPACING.LINE_RELAXED }
       })
     );
   }
@@ -1221,7 +1467,7 @@ for (const concept of greekConcepts.concepts) {
             size: 20  // Reduced from 22
           })
         ],
-        spacing: { after: 200, line: 360 }
+        spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED }
       })
     );
   }
@@ -1235,7 +1481,7 @@ appendixSections.push(
   new Paragraph({
     text: 'Appendix: Source Reference Table',
     heading: HeadingLevel.HEADING_1,
-    spacing: { before: 600, after: 300 },
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1252,7 +1498,7 @@ appendixSections.push(
   }),
   new Paragraph({
     text: 'This appendix reproduces the original source table from which this analysis was generated, preserving all 41 Scripture references with their thematic organization, lexical parsing details, and contextual notes.',
-    spacing: { after: 400, line: 360 },
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
@@ -1271,7 +1517,7 @@ const sourceTable = new Table({
       tableHeader: true,
       children: [
         new TableCell({
-          width: { size: 15, type: WidthType.PERCENTAGE },
+          width: { size: 10, type: WidthType.PERCENTAGE },
           shading: { fill: COLORS.PRIMARY },
           children: [new Paragraph({
             children: [new TextRun({
@@ -1285,7 +1531,7 @@ const sourceTable = new Table({
           })]
         }),
         new TableCell({
-          width: { size: 15, type: WidthType.PERCENTAGE },
+          width: { size: 12, type: WidthType.PERCENTAGE },
           shading: { fill: COLORS.PRIMARY },
           children: [new Paragraph({
             children: [new TextRun({
@@ -1299,7 +1545,7 @@ const sourceTable = new Table({
           })]
         }),
         new TableCell({
-          width: { size: 25, type: WidthType.PERCENTAGE },
+          width: { size: 18, type: WidthType.PERCENTAGE },
           shading: { fill: COLORS.PRIMARY },
           children: [new Paragraph({
             children: [new TextRun({
@@ -1313,7 +1559,7 @@ const sourceTable = new Table({
           })]
         }),
         new TableCell({
-          width: { size: 45, type: WidthType.PERCENTAGE },
+          width: { size: 60, type: WidthType.PERCENTAGE },
           shading: { fill: COLORS.PRIMARY },
           children: [new Paragraph({
             children: [new TextRun({
@@ -1333,7 +1579,7 @@ const sourceTable = new Table({
       children: [
         new TableCell({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
-          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
           children: [new Paragraph({
             children: [new TextRun({
               text: entry.theme,
@@ -1342,12 +1588,12 @@ const sourceTable = new Table({
               color: COLORS.ACCENT,
               bold: true
             })],
-            spacing: { line: 276 }
+            spacing: { line: SPACING.LINE_NORMAL }
           })]
         }),
         new TableCell({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
-          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
           children: [new Paragraph({
             children: [
               new ExternalHyperlink({
@@ -1364,12 +1610,12 @@ const sourceTable = new Table({
                 link: getBlueletterBibleUrl(entry.reference) || '#'
               })
             ],
-            spacing: { line: 276 }
+            spacing: { line: SPACING.LINE_NORMAL }
           })]
         }),
         new TableCell({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
-          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
           children: entry.lexeme_parsing.split('\n').map(line => new Paragraph({
             children: [new TextRun({
               text: line,
@@ -1377,12 +1623,12 @@ const sourceTable = new Table({
               font: 'Times New Roman',
               color: COLORS.TEXT_PRIMARY
             })],
-            spacing: { line: 260 }
+            spacing: { line: SPACING.LINE_NORMAL }
           }))
         }),
         new TableCell({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
-          margins: { top: 100, bottom: 100, left: 100, right: 100 },
+          margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
           children: formatScriptureText(entry.scripture_text, parseLexemeInfo(entry.lexeme_parsing))
         })
       ]
@@ -1399,7 +1645,7 @@ sections.push(
   new Paragraph({
     text: 'Lexeme Summary',
     heading: HeadingLevel.HEADING_2,
-    spacing: { before: 400, after: 200 },
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -1408,7 +1654,7 @@ sections.push(
   }),
   new Paragraph({
     text: 'Quick reference of all Hebrew and Greek words analyzed in this study.',
-    spacing: { after: 300, line: 360 },
+    spacing: { after: SPACING.H1_AFTER, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
@@ -1423,7 +1669,7 @@ sections.push(
   new Paragraph({
     text: 'Hebrew Words',
     heading: HeadingLevel.HEADING_3,
-    spacing: { before: 200, after: 100 },
+    spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER },
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
@@ -1445,11 +1691,11 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { before: 150, after: 50 }
+      spacing: { before: SPACING.PARA_MEDIUM, after: SPACING.PARA_MINIMAL }
     }),
     new Paragraph({
       text: lexDef ? lexDef.primary_theological_meaning : 'Definition not available',
-      spacing: { after: 50, line: 360 },
+      spacing: { after: SPACING.PARA_MINIMAL, line: SPACING.LINE_RELAXED },
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
@@ -1473,7 +1719,7 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Hebrew')) {
           size: 18  // Reduced from 20
         })
       ],
-      spacing: { after: 150 }
+      spacing: { after: SPACING.PARA_MEDIUM }
     })
   );
 }
@@ -1483,7 +1729,7 @@ sections.push(
   new Paragraph({
     text: 'Greek Words',
     heading: HeadingLevel.HEADING_3,
-    spacing: { before: 200, after: 100 },
+    spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER },
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
@@ -1505,11 +1751,11 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
           size: 20  // Reduced from 22
         })
       ],
-      spacing: { before: 150, after: 50 }
+      spacing: { before: SPACING.PARA_MEDIUM, after: SPACING.PARA_MINIMAL }
     }),
     new Paragraph({
       text: lexDef ? lexDef.primary_theological_meaning : 'Definition not available',
-      spacing: { after: 50, line: 360 },
+      spacing: { after: SPACING.PARA_MINIMAL, line: SPACING.LINE_RELAXED },
       run: {
         color: COLORS.TEXT_PRIMARY,
         font: 'Times New Roman',
@@ -1533,7 +1779,7 @@ for (const lex of lexemeSummary.filter(l => l.language === 'Greek')) {
           size: 18  // Reduced from 20
         })
       ],
-      spacing: { after: 150 }
+      spacing: { after: SPACING.PARA_MEDIUM }
     })
   );
 }
