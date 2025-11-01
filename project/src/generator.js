@@ -468,6 +468,124 @@ function createCalloutBox(title, content) {
   });
 }
 
+// Create statistical summary table for pattern analysis
+function createStatisticalSummaryTable() {
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: {
+      top: SPACING.CELL_MARGIN,
+      bottom: SPACING.CELL_MARGIN,
+      left: SPACING.CELL_MARGIN,
+      right: SPACING.CELL_MARGIN
+    },
+    borders: {
+      top: { style: BorderStyle.SINGLE, size: 8, color: COLORS.PRIMARY },
+      bottom: { style: BorderStyle.SINGLE, size: 8, color: COLORS.PRIMARY },
+      left: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      right: { style: BorderStyle.SINGLE, size: 6, color: COLORS.GRAY_MEDIUM },
+      insideHorizontal: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT },
+      insideVertical: { style: BorderStyle.SINGLE, size: 3, color: COLORS.GRAY_LIGHT }
+    },
+    rows: [
+      // Header row
+      new TableRow({
+        tableHeader: true,
+        children: [
+          new TableCell({
+            width: { size: 18, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Lexeme', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 10, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Total', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 30, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Form with Strongest Pattern', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 27, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Theme Correlation', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          }),
+          new TableCell({
+            width: { size: 15, type: WidthType.PERCENTAGE },
+            shading: { fill: COLORS.PRIMARY, type: 'clear' },
+            margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [new Paragraph({ children: [new TextRun({ text: 'Strength', bold: true, color: 'FFFFFF', size: 18, font: 'Calibri' })], alignment: AlignmentType.CENTER })]
+          })
+        ]
+      }),
+      // prosdechomai - STRONG pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'προσδέχομαι', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (prosdechomai)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '4', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Present Participle (4)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Messianic Expectation (75%)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: '90EE90', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Strong ✓', size: 18, font: 'Times New Roman', bold: true, color: '228B22' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // apekdechomai - MILD pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'ἀπεκδέχομαι', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (apekdechomai)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '6', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Present Indicative (4)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Eschatological Hope (50%)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'FFF8DC', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Mild', size: 18, font: 'Times New Roman', color: 'DAA520' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // qāwāh - WEAK pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'קָוָה', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (qāwāh)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '16', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Piel Perfect (6)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Scattered across 6 themes', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'FFE4E4', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Weak ✗', size: 18, font: 'Times New Roman', color: 'CC0000' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // ḥākāh - WEAK pattern
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'חָכָה', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (ḥākāh)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '5', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Piel Participle (2)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'No pattern (2 themes)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'FFE4E4', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'Weak ✗', size: 18, font: 'Times New Roman', color: 'CC0000' })], alignment: AlignmentType.CENTER })] })
+        ]
+      }),
+      // yāḥal - Cannot assess
+      new TableRow({
+        children: [
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'יָחַל', size: 18, font: 'Times New Roman' }), new TextRun({ text: ' (yāḥal)', size: 16, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: '4', size: 18, font: 'Times New Roman' })], alignment: AlignmentType.CENTER })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'All singles (1 each)', size: 18, font: 'Times New Roman' })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, children: [new Paragraph({ children: [new TextRun({ text: 'Cannot assess', size: 18, font: 'Times New Roman', italics: true })], spacing: { line: SPACING.LINE_TIGHT } })] }),
+          new TableCell({ margins: { top: SPACING.CELL_MARGIN, bottom: SPACING.CELL_MARGIN, left: SPACING.CELL_MARGIN, right: SPACING.CELL_MARGIN }, shading: { fill: 'F5F5F5', type: 'clear' }, verticalAlign: VerticalAlign.CENTER, children: [new Paragraph({ children: [new TextRun({ text: 'N/A', size: 18, font: 'Times New Roman', color: '999999' })], alignment: AlignmentType.CENTER })] })
+        ]
+      })
+    ],
+    spacing: {
+      before: SPACING.PARA_MEDIUM,
+      after: SPACING.PARA_LARGE
+    }
+  });
+}
+
 // Create document sections and footnotes
 const sections = [];
 const footnotes = {};
@@ -577,12 +695,12 @@ sections.push(
   })
 );
 
-// Visual Summary: Lexeme Overview
+// Visual Summary: Pattern Analysis
 sections.push(
   new Paragraph({
-    text: 'Visual Summary: Lexeme-Form-Theme Overview',
+    text: 'Visual Summary: Grammar→Theme Pattern Analysis',
     heading: HeadingLevel.HEADING_1,
-    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },  // Reduced after spacing from 300 to 200
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
     pageBreakBefore: true,
     border: {
       left: {
@@ -597,41 +715,87 @@ sections.push(
       font: 'Calibri',
       size: 26
     },
-    keepNext: true  // Keep heading with next paragraph
+    keepNext: true
   }),
   new Paragraph({
-    text: 'This diagram maps the relationship between Hebrew/Greek lexemes, their grammatical forms, and their thematic significance throughout Scripture.',
-    spacing: { after: SPACING.PARA_SMALL, line: SPACING.LINE_RELAXED },  // Reduced after spacing from 200 to 100
+    text: 'Statistical analysis reveals that only ONE strong grammatical pattern exists: prosdechomai Present Participle → Messianic Expectation (75%). Most lexemes show distributed patterns where context determines theme more than morphology.',
+    spacing: { after: SPACING.PARA_MEDIUM, line: SPACING.LINE_RELAXED },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
       size: 20
     },
-    keepNext: true,  // Keep description with diagram
-    keepLines: true  // Don't break this paragraph across pages
+    keepNext: true
   })
 );
 
-// Load and prepare the lexeme overview diagram image
-const diagramPath = path.join(__dirname, '../../study/output/lexeme-overview.png');
-const diagramImage = fs.readFileSync(diagramPath);
+// Statistical Summary Table
+sections.push(createStatisticalSummaryTable());
 
-// Add the diagram image centered on the page
+// Strong Pattern Diagram
+sections.push(
+  new Paragraph({
+    text: 'Strong Pattern: prosdechomai (75% Correlation)',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H2_AFTER },
+    run: {
+      color: COLORS.SUPPORTING,
+      font: 'Calibri',
+      size: 22
+    },
+    keepNext: true
+  })
+);
+
+const strongPatternImage = fs.readFileSync(path.join(__dirname, '../../study/output/pattern-strong-prosdechomai.png'));
 sections.push(
   new Paragraph({
     children: [
       new ImageRun({
-        data: diagramImage,
+        data: strongPatternImage,
         transformation: {
-          width: 580,  // Reduced from 600 to help fit on same page
-          height: 800  // Reduced from 830 to help fit on same page
+          width: 480,
+          height: 380
         }
       })
     ],
     alignment: AlignmentType.CENTER,
-    spacing: { after: SPACING.PARA_LARGE, before: SPACING.PARA_MINIMAL },  // Reduced before spacing from 100 to 50
-    keepLines: true  // Keep image from breaking across pages
+    spacing: { after: SPACING.PARA_MEDIUM, before: SPACING.PARA_MINIMAL },
+    keepLines: true
+  })
+);
+
+// Weak Pattern Diagram
+sections.push(
+  new Paragraph({
+    text: 'Distributed Pattern: qāwāh (No Dominant Theme)',
+    heading: HeadingLevel.HEADING_2,
+    spacing: { before: SPACING.H2_BEFORE, after: SPACING.H2_AFTER },
+    run: {
+      color: COLORS.SUPPORTING,
+      font: 'Calibri',
+      size: 22
+    },
+    keepNext: true
+  })
+);
+
+const weakPatternImage = fs.readFileSync(path.join(__dirname, '../../study/output/pattern-weak-qawah.png'));
+sections.push(
+  new Paragraph({
+    children: [
+      new ImageRun({
+        data: weakPatternImage,
+        transformation: {
+          width: 480,
+          height: 430
+        }
+      })
+    ],
+    alignment: AlignmentType.CENTER,
+    spacing: { after: SPACING.PARA_LARGE, before: SPACING.PARA_MINIMAL },
+    keepLines: true
   })
 );
 
