@@ -799,6 +799,25 @@ sections.push(
   })
 );
 
+// Helper function to get theme diagram filename
+function getThemeDiagramFilename(themeName) {
+  const themeMap = {
+    'STRENGTH & RENEWAL': 'theme-strength-renewal.png',
+    'TRUST & HOPE': 'theme-trust-hope.png',
+    'HELP & DELIVERANCE': 'theme-help-deliverance.png',
+    'PATIENCE & ENDURANCE': 'theme-patience-endurance.png',
+    'BLESSING & INHERITANCE': 'theme-blessing-inheritance.png',
+    'ESCHATOLOGICAL HOPE': 'theme-eschatological-hope.png',
+    'MESSIANIC EXPECTATION': 'theme-messianic-expectation.png',
+    'GOODNESS OF GOD': 'theme-goodness-of-god.png',
+    'FAITHFULNESS & DEVOTION': 'theme-faithfulness-devotion.png',
+    'PRAISE & WORSHIP': 'theme-praise-worship.png',
+    'TEACHING & GUIDANCE': 'theme-teaching-guidance.png',
+    'JUDGMENT & JUSTICE': 'theme-judgment-justice.png'
+  };
+  return themeMap[themeName.toUpperCase()];
+}
+
 // Process each theme
 for (const themeData of structuredData) {
   // Theme heading with colored sidebar
@@ -823,6 +842,33 @@ for (const themeData of structuredData) {
       }
     })
   );
+
+  // Add theme-specific grammar→theme diagram
+  const themeDiagramFile = getThemeDiagramFilename(themeData.theme);
+  if (themeDiagramFile) {
+    const themeDiagramPath = path.join(__dirname, '../../study/output', themeDiagramFile);
+    try {
+      const themeDiagramImage = fs.readFileSync(themeDiagramPath);
+      sections.push(
+        new Paragraph({
+          children: [
+            new ImageRun({
+              data: themeDiagramImage,
+              transformation: {
+                width: 400,
+                height: 350
+              }
+            })
+          ],
+          alignment: AlignmentType.CENTER,
+          spacing: { after: SPACING.PARA_MEDIUM, before: SPACING.PARA_SMALL },
+          keepLines: true
+        })
+      );
+    } catch (err) {
+      // Diagram file doesn't exist, skip silently
+    }
+  }
 
   // Process each lexeme in theme
   for (const lexeme of themeData.lexemes) {
