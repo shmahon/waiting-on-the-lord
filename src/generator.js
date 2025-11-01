@@ -265,17 +265,20 @@ sections.push(
       color: COLORS.PRIMARY,
       font: 'Calibri',
       size: 26
-    }
+    },
+    keepNext: true  // Keep heading with next paragraph
   }),
   new Paragraph({
     text: 'This diagram maps the relationship between Hebrew/Greek lexemes, their grammatical forms, and their thematic significance throughout Scripture.',
-    spacing: { after: 300, line: 360 },
+    spacing: { after: 200, line: 360 },
     run: {
       color: COLORS.TEXT_SECONDARY,
       italics: true,
       font: 'Times New Roman',
       size: 20
-    }
+    },
+    keepNext: true,  // Keep description with diagram
+    keepLines: true  // Don't break this paragraph across pages
   })
 );
 
@@ -290,13 +293,14 @@ sections.push(
       new ImageRun({
         data: diagramImage,
         transformation: {
-          width: 650,  // Width in points (adjust as needed)
-          height: 900  // Height in points (adjust as needed)
+          width: 600,  // Reduced from 650 to help fit on same page
+          height: 830  // Reduced from 900 to help fit on same page
         }
       })
     ],
     alignment: AlignmentType.CENTER,
-    spacing: { after: 400, before: 200 }
+    spacing: { after: 400, before: 100 },
+    keepLines: true  // Keep image from breaking across pages
   })
 );
 
