@@ -6,7 +6,7 @@ const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, UnderlineType,
   Table, TableRow, TableCell, WidthType, BorderStyle, Shading, VerticalAlign,
   Footer, FootnoteReferenceRun, convertInchesToTwip, PageNumber, NumberFormat,
-  Media, ImageRun, PageOrientation
+  Media, ImageRun, PageOrientation, ExternalHyperlink
 } = require('docx');
 
 // Mature Scholastic Color Palette
@@ -55,6 +55,44 @@ function getLexemeDefinition(word, strongs, language) {
 function getConceptExplanation(term, language) {
   const concepts = language === 'Hebrew' ? hebrewConcepts.concepts : greekConcepts.concepts;
   return concepts.find(c => c.term === term || c.term.includes(term));
+}
+
+// Helper to convert Bible reference to Blue Letter Bible Interlinear URL
+function getBlueletterBibleUrl(reference) {
+  // Format: "Book Chapter:Verse" -> https://www.blueletterbible.org/[translation]/[book]/[chapter]/[verse]
+  // Example: "Psalm 25:3" -> https://www.blueletterbible.org/kjv/psa/25/3/
+
+  // Parse the reference
+  const match = reference.match(/^(\d?\s?[A-Za-z]+)\s+(\d+):(\d+)/);
+  if (!match) return null;
+
+  const [, book, chapter, verse] = match;
+
+  // Map book names to BLB abbreviations
+  const bookMap = {
+    'Genesis': 'gen', 'Exodus': 'exo', 'Leviticus': 'lev', 'Numbers': 'num', 'Deuteronomy': 'deu',
+    'Joshua': 'jos', 'Judges': 'jdg', 'Ruth': 'rut', '1 Samuel': '1sa', '2 Samuel': '2sa',
+    '1 Kings': '1ki', '2 Kings': '2ki', '1 Chronicles': '1ch', '2 Chronicles': '2ch',
+    'Ezra': 'ezr', 'Nehemiah': 'neh', 'Esther': 'est', 'Job': 'job', 'Psalm': 'psa', 'Psalms': 'psa',
+    'Proverbs': 'pro', 'Ecclesiastes': 'ecc', 'Song of Solomon': 'sng', 'Isaiah': 'isa',
+    'Jeremiah': 'jer', 'Lamentations': 'lam', 'Ezekiel': 'eze', 'Daniel': 'dan', 'Hosea': 'hos',
+    'Joel': 'joe', 'Amos': 'amo', 'Obadiah': 'oba', 'Jonah': 'jon', 'Micah': 'mic', 'Nahum': 'nah',
+    'Habakkuk': 'hab', 'Zephaniah': 'zep', 'Haggai': 'hag', 'Zechariah': 'zec', 'Malachi': 'mal',
+    'Matthew': 'mat', 'Mark': 'mar', 'Luke': 'luk', 'John': 'jhn', 'Acts': 'act',
+    'Romans': 'rom', '1 Corinthians': '1co', '2 Corinthians': '2co', 'Galatians': 'gal',
+    'Ephesians': 'eph', 'Philippians': 'phi', 'Colossians': 'col', '1 Thessalonians': '1th',
+    '2 Thessalonians': '2th', '1 Timothy': '1ti', '2 Timothy': '2ti', 'Titus': 'tit',
+    'Philemon': 'phm', 'Hebrews': 'heb', 'James': 'jam', '1 Peter': '1pe', '2 Peter': '2pe',
+    '1 John': '1jo', '2 John': '2jo', '3 John': '3jo', 'Jude': 'jud', 'Revelation': 'rev'
+  };
+
+  const bookAbbr = bookMap[book.trim()];
+  if (!bookAbbr) {
+    console.warn(`Unknown book: ${book}`);
+    return null;
+  }
+
+  return `https://www.blueletterbible.org/kjv/${bookAbbr}/${chapter}/${verse}/`;
 }
 
 // Helper to format scripture text with special styling for Context, Thematic fit, and Application
@@ -1135,13 +1173,21 @@ const sourceTable = new Table({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
           margins: { top: 100, bottom: 100, left: 100, right: 100 },
           children: [new Paragraph({
-            children: [new TextRun({
-              text: entry.reference,
-              size: 18,
-              font: 'Times New Roman',
-              color: COLORS.PRIMARY,
-              bold: true
-            })],
+            children: [
+              new ExternalHyperlink({
+                children: [
+                  new TextRun({
+                    text: entry.reference,
+                    size: 18,
+                    font: 'Times New Roman',
+                    color: COLORS.PRIMARY,
+                    bold: true,
+                    underline: { type: UnderlineType.SINGLE }
+                  })
+                ],
+                link: getBlueletterBibleUrl(entry.reference) || '#'
+              })
+            ],
             spacing: { line: 276 }
           })]
         }),
