@@ -283,7 +283,7 @@ sections.push(
 );
 
 // Load and prepare the lexeme overview diagram image
-const diagramPath = path.join(__dirname, '../output/lexeme-overview.png');
+const diagramPath = path.join(__dirname, '../../study/output/lexeme-overview.png');
 const diagramImage = fs.readFileSync(diagramPath);
 
 // Add the diagram image centered on the page
@@ -1115,7 +1115,7 @@ const doc = new Document({
 });
 
 // Write to file
-const outputDir = path.join(__dirname, '../output');
+const outputDir = path.join(__dirname, '../../study/output');
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }

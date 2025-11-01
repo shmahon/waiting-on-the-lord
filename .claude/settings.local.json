@@ -26,7 +26,12 @@
       "WebFetch(domain:github.com)",
       "Bash(node scripts/reorder-themes.js:*)",
       "Bash(npm install:*)",
-      "Bash(npx mmdc:*)"
+      "Bash(npx mmdc:*)",
+      "Bash(git mv:*)",
+      "Bash(./project/scripts/generate-diagram.sh:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(./build.sh:*)"
     ],
     "deny": [],
     "ask": []

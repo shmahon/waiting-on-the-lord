@@ -8,10 +8,10 @@ echo ""
 # Check if Docker is available
 if command -v docker &> /dev/null; then
     echo "Building with Docker..."
-    docker build -t waiting-on-the-lord:latest .
-    docker run --rm -v "$(pwd)/output:/app/output" waiting-on-the-lord:latest
+    docker build -f project/config/Dockerfile -t waiting-on-the-lord:latest .
+    docker run --rm -v "$(pwd)/study/output:/app/study/output" waiting-on-the-lord:latest
     echo ""
-    echo "✓ Document generated in output/waiting_on_the_lord_analysis.docx"
+    echo "✓ Document generated in study/output/waiting_on_the_lord_analysis.docx"
 else
     echo "Docker not found. Building with local Node.js..."
 
@@ -23,19 +23,19 @@ else
     fi
 
     # Install dependencies if needed
-    if [ ! -d "node_modules" ]; then
+    if [ ! -d "project/config/node_modules" ]; then
         echo "Installing dependencies..."
-        npm install
+        cd project/config && npm install && cd ../..
     fi
 
     # Generate lexeme overview diagram
     echo "Generating lexeme overview diagram..."
-    ./scripts/generate-diagram.sh
+    ./project/scripts/generate-diagram.sh
     echo ""
 
     # Run the generator
     echo "Generating document..."
-    node src/generator.js
+    node project/src/generator.js
     echo ""
-    echo "✓ Document generated in output/waiting_on_the_lord_analysis.docx"
+    echo "✓ Document generated in study/output/waiting_on_the_lord_analysis.docx"
 fi

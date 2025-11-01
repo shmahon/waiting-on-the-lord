@@ -25,7 +25,7 @@ async function main() {
   // Generate current inventory
   console.log('Generating current content inventory...');
   try {
-    await execPromise('node scripts/content-inventory.js > validation/content-inventory-current.txt');
+    await execPromise('node project/scripts/content-inventory.js > project/validation/content-inventory-current.txt');
     console.log('✓ Current inventory generated');
   } catch (error) {
     console.error('✗ Failed to generate current inventory:', error.message);
