@@ -870,6 +870,79 @@ for (const themeData of structuredData) {
     }
   }
 
+  // Add theme-level LXX notes for Greek-only themes
+  if (themeData.theme.toUpperCase() === 'ESCHATOLOGICAL HOPE') {
+    sections.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: 'Note on Vocabulary: ',
+            bold: true,
+            color: COLORS.SUPPORTING,
+            size: 20,
+            font: 'Calibri'
+          }),
+          new TextRun({
+            text: 'This theme contains exclusively NT Greek vocabulary. However, the primary words used—προσδέχομαι (prosdechomai), ἀπεκδέχομαι (apekdechomai), and ἀναμένω (anamenō)—all appear in the Septuagint as translations of Hebrew קָוָה (qāwāh), showing continuity with OT expectation vocabulary despite the exclusively Greek textual sources here.',
+            color: COLORS.TEXT_PRIMARY,
+            size: 20,
+            font: 'Times New Roman',
+            italics: true
+          })
+        ],
+        spacing: { after: SPACING.PARA_MEDIUM, before: SPACING.PARA_SMALL },
+        shading: {
+          fill: 'F5F5F5',
+          type: 'clear'
+        },
+        border: {
+          left: {
+            color: COLORS.SUPPORTING,
+            space: 4,
+            style: BorderStyle.SINGLE,
+            size: 12
+          }
+        }
+      })
+    );
+  }
+
+  if (themeData.theme.toUpperCase() === 'MESSIANIC EXPECTATION') {
+    sections.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: 'LXX Background: ',
+            bold: true,
+            color: COLORS.SUPPORTING,
+            size: 20,
+            font: 'Calibri'
+          }),
+          new TextRun({
+            text: 'All three occurrences use προσδέχομαι (prosdechomai), which translates Hebrew קָוָה (qāwāh) in the Septuagint. The Gospel writers\' choice of this word connects these faithful figures (Simeon, Anna, Joseph of Arimathea) to the OT tradition of "those who wait for the LORD."',
+            color: COLORS.TEXT_PRIMARY,
+            size: 20,
+            font: 'Times New Roman',
+            italics: true
+          })
+        ],
+        spacing: { after: SPACING.PARA_MEDIUM, before: SPACING.PARA_SMALL },
+        shading: {
+          fill: 'F5F5F5',
+          type: 'clear'
+        },
+        border: {
+          left: {
+            color: COLORS.SUPPORTING,
+            space: 4,
+            style: BorderStyle.SINGLE,
+            size: 12
+          }
+        }
+      })
+    );
+  }
+
   // Process each lexeme in theme
   for (const lexeme of themeData.lexemes) {
     const lexDef = getLexemeDefinition(lexeme.word, lexeme.strongs, lexeme.language);
