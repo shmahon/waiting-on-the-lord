@@ -42,6 +42,21 @@ generate_diagram \
     1400 2000
 
 echo ""
+echo "Pattern analysis diagrams (Approach 3 - for Visual Summary section):"
+
+# Generate Strong Pattern: prosdechomai
+generate_diagram \
+    "study/diagrams/pattern-strong-prosdechomai.md" \
+    "study/output/pattern-strong-prosdechomai.png" \
+    1000 800
+
+# Generate Weak Pattern: qāwāh
+generate_diagram \
+    "study/diagrams/pattern-weak-qawah.md" \
+    "study/output/pattern-weak-qawah.png" \
+    1000 900
+
+echo ""
 echo "Alternative diagrams (for preview/potential inclusion):"
 
 # Generate Option A: Grammar-First Decision Tree
