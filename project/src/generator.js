@@ -95,8 +95,180 @@ function getBlueletterBibleUrl(reference) {
   return `https://www.blueletterbible.org/esv/${bookAbbr}/${chapter}/${verse}/`;
 }
 
+// Helper to parse lexeme information from lexeme_parsing field
+function parseLexemeInfo(lexemeParsing) {
+  const lines = lexemeParsing.split('\n');
+
+  // Handle cases with multiple lexemes (e.g., "יָחַל / חוּל")
+  const hebrewGreekLine = lines[0];
+  const transliterationLine = lines[1];
+  const morphologyLines = lines.slice(3); // Skip the Strong's number line
+
+  // Get the primary word (first one if multiple)
+  const word = hebrewGreekLine.split('/')[0].trim();
+  const transliteration = transliterationLine.split('/')[0].trim();
+
+  // Parse morphology: "Verb, Qal, Imperative, Masculine Singular"
+  const morphologyText = morphologyLines.join(' ');
+
+  // Extract stem (Qal, Piel, Hiphil, etc.) or tense (Present, Aorist, etc.)
+  let stem = '';
+  const stemPatterns = ['Qal', 'Piel', 'Hiphil', 'Niphal', 'Pual', 'Hithpael', 'Hophal',
+                        'Present', 'Aorist', 'Imperfect', 'Perfect', 'Future'];
+  for (const pattern of stemPatterns) {
+    if (morphologyText.includes(pattern)) {
+      stem = pattern;
+      break;
+    }
+  }
+
+  // Extract form (Participle, Imperative, Indicative, etc.)
+  let form = '';
+  const formPatterns = ['Participle', 'Imperative', 'Indicative', 'Infinitive', 'Subjunctive',
+                        'Optative', 'Sequential'];
+  for (const pattern of formPatterns) {
+    if (morphologyText.includes(pattern)) {
+      form = pattern;
+      break;
+    }
+  }
+
+  return { word, transliteration, stem, form };
+}
+
+// Helper to decorate wait-words with colored lexeme annotations
+function decorateWaitWords(text, lexemeInfo) {
+  const { transliteration, stem, form } = lexemeInfo;
+
+  // Common wait-related words to search for (case-insensitive)
+  // Include alternative translations: "looked for", "look for", "patience"
+  const waitWords = ['wait', 'waited', 'waiting', 'waits', 'waiteth',
+                     'hope', 'hoped', 'hoping', 'hopes', 'hopeth',
+                     'looked for', 'look for', 'looketh for',
+                     'patience', 'patient', 'patiently'];
+
+  const children = [];
+  let remainingText = text;
+  let foundMatch = false;
+
+  for (const waitWord of waitWords) {
+    // Escape special regex characters and handle multi-word phrases
+    const escapedWord = waitWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`\\b(${escapedWord})\\b`, 'i');
+    const match = remainingText.match(regex);
+
+    if (match) {
+      foundMatch = true;
+      const beforeMatch = remainingText.substring(0, match.index);
+      const matchedWord = match[1];
+      const afterMatch = remainingText.substring(match.index + matchedWord.length);
+
+      // Add text before the match
+      if (beforeMatch) {
+        children.push(new TextRun({
+          text: beforeMatch,
+          size: 16,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        }));
+      }
+
+      // Add the matched wait-word
+      children.push(new TextRun({
+        text: matchedWord,
+        size: 16,
+        font: 'Times New Roman',
+        color: COLORS.TEXT_PRIMARY
+      }));
+
+      // Add the decoration (transliteration, stem, form) with different colors
+      children.push(new TextRun({
+        text: ' (',
+        size: 14,
+        font: 'Times New Roman',
+        color: COLORS.TEXT_PRIMARY
+      }));
+
+      children.push(new TextRun({
+        text: transliteration,
+        size: 14,
+        font: 'Times New Roman',
+        color: '8B4513', // Saddle brown for word
+        italics: true
+      }));
+
+      if (stem) {
+        children.push(new TextRun({
+          text: ', ',
+          size: 14,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        }));
+
+        children.push(new TextRun({
+          text: stem,
+          size: 14,
+          font: 'Times New Roman',
+          color: '2E8B57', // Sea green for stem
+          italics: true
+        }));
+      }
+
+      if (form) {
+        children.push(new TextRun({
+          text: ', ',
+          size: 14,
+          font: 'Times New Roman',
+          color: COLORS.TEXT_PRIMARY
+        }));
+
+        children.push(new TextRun({
+          text: form,
+          size: 14,
+          font: 'Times New Roman',
+          color: '4169E1', // Royal blue for form
+          italics: true
+        }));
+      }
+
+      children.push(new TextRun({
+        text: ')',
+        size: 14,
+        font: 'Times New Roman',
+        color: COLORS.TEXT_PRIMARY
+      }));
+
+      // Continue with remaining text
+      remainingText = afterMatch;
+      break; // Only decorate first occurrence in this text segment
+    }
+  }
+
+  // Add any remaining text
+  if (remainingText && foundMatch) {
+    children.push(new TextRun({
+      text: remainingText,
+      size: 16,
+      font: 'Times New Roman',
+      color: COLORS.TEXT_PRIMARY
+    }));
+  }
+
+  // If no match found, return the original text as a single TextRun
+  if (!foundMatch) {
+    children.push(new TextRun({
+      text: text,
+      size: 16,
+      font: 'Times New Roman',
+      color: COLORS.TEXT_PRIMARY
+    }));
+  }
+
+  return children;
+}
+
 // Helper to format scripture text with special styling for Context, Thematic fit, and Application
-function formatScriptureText(text) {
+function formatScriptureText(text, lexemeInfo = null) {
   const paragraphs = text.split('\n\n');
   const formattedParagraphs = [];
 
@@ -153,15 +325,19 @@ function formatScriptureText(text) {
         })
       );
     } else {
-      // Regular text (scripture quote)
-      children.push(
-        new TextRun({
-          text: para,
-          size: 16,
-          font: 'Times New Roman',
-          color: COLORS.TEXT_PRIMARY
-        })
-      );
+      // Regular text (scripture quote) - decorate wait-words if lexeme info provided
+      if (lexemeInfo) {
+        children.push(...decorateWaitWords(para, lexemeInfo));
+      } else {
+        children.push(
+          new TextRun({
+            text: para,
+            size: 16,
+            font: 'Times New Roman',
+            color: COLORS.TEXT_PRIMARY
+          })
+        );
+      }
     }
 
     formattedParagraphs.push(
@@ -1207,7 +1383,7 @@ const sourceTable = new Table({
         new TableCell({
           shading: { fill: index % 2 === 0 ? COLORS.GRAY_VERY_LIGHT : 'FFFFFF' },
           margins: { top: 100, bottom: 100, left: 100, right: 100 },
-          children: formatScriptureText(entry.scripture_text)
+          children: formatScriptureText(entry.scripture_text, parseLexemeInfo(entry.lexeme_parsing))
         })
       ]
     }))
