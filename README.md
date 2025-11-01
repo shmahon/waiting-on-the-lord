@@ -2,6 +2,15 @@
 
 This project generates a comprehensive document analyzing the Hebrew and Greek lexemes used in Scripture to describe "waiting on the Lord."
 
+## Quick Start
+
+```bash
+# Build the document (auto-detects Docker or Node.js)
+./build.sh
+
+# Output: study/output/waiting_on_the_lord_analysis.docx
+```
+
 ## Project Purpose
 
 This document provides:
@@ -19,83 +28,98 @@ The analysis is based on a curated table of 41 Scripture references containing v
 
 ### Prerequisites
 - **Docker** (recommended) OR **Node.js 18+**
-- Git
 
-### Quick Build
+### Quick Build (Recommended)
 
 ```bash
-# Extract the repository
-tar -xzf waiting-on-the-lord-stageX.tar.gz
-cd waiting-on-the-lord
-
-# Build using the build script (works with Docker or Node.js)
 ./build.sh
-
-# Output will be in: output/waiting_on_the_lord_analysis.docx
 ```
 
 The build script automatically detects whether you have Docker or Node.js and uses the appropriate method.
 
 ### Alternative: Manual Build with Node.js
 
-If you prefer to build manually:
-
 ```bash
 # Install dependencies (first time only)
-npm install
+cd project/config && npm install && cd ../..
 
-# Generate the document
-npm run build
-
-# Or run directly
-node src/generator.js
+# Generate diagram and document
+./project/scripts/generate-diagram.sh
+node project/src/generator.js
 ```
 
 ### Alternative: Manual Build with Docker
 
 ```bash
 # Build the Docker image
-docker build -t waiting-on-the-lord:latest .
+docker build -f project/config/Dockerfile -t waiting-on-the-lord:latest .
 
 # Run the generator
-docker run --rm -v "$(pwd)/output:/app/output" waiting-on-the-lord:latest
+docker run --rm -v "$(pwd)/study/output:/app/study/output" waiting-on-the-lord:latest
 ```
 
 ### Output
 
-The generated document will be in `output/waiting_on_the_lord_analysis.docx` and includes:
+The generated document will be in `study/output/waiting_on_the_lord_analysis.docx` and includes:
 - Introduction to the study
+- Visual diagram of lexeme-form-theme relationships
 - 12 thematic sections with lexeme analysis
 - Detailed morphological parsing for each occurrence
 - Inline learners' notes for obscure concepts
-- Endnotes explaining Hebrew stem system
-- Professional formatting
+- Endnotes explaining Hebrew stem system and Greek grammar
+- Professional academic formatting
 
 ## Project Structure
 
 ```
 waiting-on-the-lord/
-├── SESSION.md                      # Project status and resumption guide
 ├── README.md                       # This file
-├── CLAUDE.md                       # Instructions for Claude Code
-├── source_data.json                # Extracted source data (41 entries)
-├── data/                           # Structured data (generated in Stage 2)
-│   ├── structured_by_theme.json    # All entries organized by theme
-│   ├── hebrew_lexemes.json         # Hebrew word definitions
-│   ├── greek_lexemes.json          # Greek word definitions
-│   ├── hebrew_concepts.json        # Hebrew grammatical concepts
-│   ├── greek_concepts.json         # Greek grammatical concepts
-│   ├── hebrew_stems.json           # Hebrew verb stem explanations
-│   ├── lexeme_summary.json         # Summary of all lexemes
-│   ├── parsed_entries.json         # Parsed data entries
-│   ├── grammatical_analysis.json   # Grammatical analysis
-│   └── educational_index.json      # Educational content index
-├── src/                            # Document generator (Stage 4)
-│   └── generator.js                # Complete generator (all-in-one)
-├── Dockerfile                      # Container definition (Stage 5)
-├── build.sh                        # Build script (Stage 5)
-└── output/                         # Generated documents
-    └── waiting_on_the_lord_analysis.docx
+├── build.sh                        # Build script (auto-detects Docker/Node.js)
+├── .gitignore
+│
+├── study/                          # Study materials and output
+│   ├── source/                     # Original source materials
+│   │   ├── source_data.json        # Extracted source data (41 entries)
+│   │   ├── waiting_on_the_lord-table.docx
+│   │   └── Hebrew Grammar for American Readers.md
+│   ├── diagrams/                   # Mermaid diagrams
+│   │   └── lexeme-overview.md      # Visual lexeme-form-theme diagram
+│   ├── summaries/                  # Human-readable summaries
+│   │   └── waiting_on_the_lord_summary.md
+│   └── output/                     # Generated documents
+│       ├── waiting_on_the_lord_analysis.docx
+│       └── lexeme-overview.png
+│
+└── project/                        # Project internals
+    ├── docs/                       # Project documentation
+    │   ├── CLAUDE.md               # Instructions for Claude Code
+    │   ├── SESSION.md              # Project status guide
+    │   ├── CHANGELOG.md
+    │   └── stages/                 # Historical stage documentation
+    │       ├── STAGE1_SUMMARY.md through STAGE6_SUMMARY.md
+    │       ├── COMPLETION.md
+    │       └── generate_document.js (old backup)
+    ├── config/                     # Build configuration
+    │   ├── package.json
+    │   ├── package-lock.json
+    │   └── Dockerfile
+    ├── src/                        # Source code
+    │   └── generator.js            # DOCX document generator
+    ├── scripts/                    # Build automation scripts
+    │   ├── generate-diagram.sh
+    │   ├── reorder-themes.js
+    │   ├── content-inventory.js
+    │   └── validate-content.js
+    ├── data/                       # Structured data (JSON files)
+    │   ├── structured_by_theme.json
+    │   ├── hebrew_lexemes.json
+    │   ├── greek_lexemes.json
+    │   ├── hebrew_concepts.json
+    │   ├── greek_concepts.json
+    │   ├── hebrew_stems.json
+    │   └── lexeme_summary.json
+    └── validation/                 # Content validation baselines
+        └── content-inventory-baseline.txt
 ```
 
 ## Development Stages

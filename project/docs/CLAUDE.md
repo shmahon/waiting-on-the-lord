@@ -17,21 +17,16 @@ The build script auto-detects Docker or Node.js and builds accordingly.
 ### Alternative build methods
 ```bash
 # Using Node.js directly
-npm run build
-# OR
-node src/generator.js
+cd project/config && npm install && cd ../..
+./project/scripts/generate-diagram.sh
+node project/src/generator.js
 
 # Using Docker manually
-docker build -t waiting-on-the-lord:latest .
-docker run --rm -v "$(pwd)/output:/app/output" waiting-on-the-lord:latest
+docker build -f project/config/Dockerfile -t waiting-on-the-lord:latest .
+docker run --rm -v "$(pwd)/study/output:/app/study/output" waiting-on-the-lord:latest
 ```
 
-### Testing
-```bash
-npm test  # Runs the generator (same as npm run build)
-```
-
-Output: `output/waiting_on_the_lord_analysis.docx`
+Output: `study/output/waiting_on_the_lord_analysis.docx`
 
 ## Architecture
 
@@ -39,13 +34,13 @@ Output: `output/waiting_on_the_lord_analysis.docx`
 
 The project follows a **multi-stage data transformation pipeline**:
 
-1. **Source Data** (`source_data.json`) - 41 Scripture references extracted from original table
-2. **Structured Data** (`data/`) - Parsed and organized into multiple JSON files by category
-3. **Generator** (`src/generator.js`) - Consumes all data files to produce DOCX output
+1. **Source Data** (`study/source/source_data.json`) - 41 Scripture references extracted from original table
+2. **Structured Data** (`project/data/`) - Parsed and organized into multiple JSON files by category
+3. **Generator** (`project/src/generator.js`) - Consumes all data files to produce DOCX output
 
 ### Critical Data Files
 
-The generator loads **5 core data files** from `data/`:
+The generator loads **6 core data files** from `project/data/`:
 
 - `structured_by_theme.json` - All 41 entries organized by 12 theological themes
 - `hebrew_lexemes.json` - Hebrew word definitions and morphological details
@@ -54,13 +49,14 @@ The generator loads **5 core data files** from `data/`:
 - `greek_concepts.json` - Explanations of Greek grammatical concepts (voices, moods, etc.)
 - `hebrew_stems.json` - Detailed explanations of the Hebrew verb stem system (Qal, Piel, Hiphil, etc.)
 
-**Important**: The generator (`src/generator.js`) expects all these files to exist. Missing files will cause runtime errors.
+**Important**: The generator (`project/src/generator.js`) expects all these files to exist. Missing files will cause runtime errors.
 
 ### Generator Architecture
 
-The generator (`src/generator.js`) uses the `docx` npm package (v8.5.0) to programmatically construct Word documents with:
+The generator (`project/src/generator.js`) uses the `docx` npm package (v8.5.0) to programmatically construct Word documents with:
 
 - Title and introduction sections
+- Visual lexeme-form-theme overview diagram
 - 12 thematic sections with lexeme analysis
 - Morphological parsing explanations for each occurrence
 - Inline learners' notes for obscure grammatical concepts
@@ -70,9 +66,9 @@ Key functions in generator:
 - `getLexemeDefinition(word, strongs, language)` - Retrieves lexeme data
 - `getConceptExplanation(term, language)` - Finds grammatical concept explanations
 
-### Alternative Generator
+### Historical Note
 
-There is also `generate_document.js` in the root directory - this appears to be an older/alternate implementation that embeds lexical data inline rather than loading from JSON files. The primary generator is `src/generator.js`.
+There is also `generate_document.js` in `project/docs/stages/` - this is an older implementation that embeds lexical data inline rather than loading from JSON files. The primary generator is `project/src/generator.js`.
 
 ## Data Structure Patterns
 
@@ -102,13 +98,14 @@ The source data is organized into 12 themes:
 
 ## Docker Build System
 
-The Dockerfile uses `node:18-alpine` for minimal image size. Build process:
-1. Copies package files and installs production dependencies
-2. Copies source code (`src/`) and data files (`data/`)
-3. Creates output directory
-4. Runs `node src/generator.js` which writes to `/app/output`
+The Dockerfile (located in `project/config/Dockerfile`) uses `node:18-alpine` for minimal image size. Build process:
+1. Copies package files from `project/config/` and installs all dependencies
+2. Copies project structure (`project/src/`, `project/data/`, `project/scripts/`)
+3. Copies study materials (`study/diagrams/`)
+4. Creates output directory at `/app/study/output`
+5. Generates Mermaid diagram and runs `node project/src/generator.js`
 
-The volume mount `-v "$(pwd)/output:/app/output"` ensures generated files appear in the host's `output/` directory.
+The volume mount `-v "$(pwd)/study/output:/app/study/output"` ensures generated files appear in the host's `study/output/` directory.
 
 ## Development Workflow
 
@@ -120,7 +117,7 @@ This project was developed incrementally across 6 stages:
 5. Docker build system & documentation
 6. Final delivery
 
-See `SESSION.md` for stage details and `STAGE*_SUMMARY.md` files for historical records.
+See `project/docs/SESSION.md` for stage details and `project/docs/stages/STAGE*_SUMMARY.md` files for historical records.
 
 ## Content Philosophy
 
@@ -137,25 +134,34 @@ Educational notes explain concepts like:
 
 ## Modifying the Generator
 
-When editing `src/generator.js`:
+When editing `project/src/generator.js`:
 - The script is executable (`#!/usr/bin/env node`) and can run directly
 - Uses `docx` package for document construction - refer to its API for formatting options
-- All data is loaded synchronously at startup (lines 8-14)
+- All data is loaded synchronously at startup from `../data/` (relative to src/)
 - The `sections` array accumulates all document paragraphs before packing
-- Output path is `../output/waiting_on_the_lord_analysis.docx` (relative to src/)
+- Output path is `../../study/output/waiting_on_the_lord_analysis.docx` (relative to src/)
 
 ## Adding New Data
 
 To add new lexemes or concepts:
-1. Update relevant JSON file in `data/` directory
+1. Update relevant JSON file in `project/data/` directory
 2. Ensure structure matches existing entries
-3. Run generator to verify output
-4. For Hebrew stems, update `hebrew_stems.json` with new stem explanations
-5. For grammatical concepts, update `hebrew_concepts.json` or `greek_concepts.json`
+3. Run generator to verify output: `node project/src/generator.js`
+4. For Hebrew stems, update `project/data/hebrew_stems.json` with new stem explanations
+5. For grammatical concepts, update `project/data/hebrew_concepts.json` or `project/data/greek_concepts.json`
+
+## Repository Organization
+
+The repository is organized for clarity:
+- **Root**: Only `README.md`, `build.sh`, and `.gitignore`
+- **study/**: All study materials, source documents, diagrams, and generated output
+- **project/**: All code, configuration, data, and documentation
+
+This structure separates study content from project internals, making it easy to navigate.
 
 ## Version Control Notes
 
 - The repository uses Git with commits tracking each development stage
 - Each stage (1-6) has dedicated commits for traceability
-- See `CHANGELOG.md` for change history
+- See `project/docs/CHANGELOG.md` for change history
 - The main branch is `master`
