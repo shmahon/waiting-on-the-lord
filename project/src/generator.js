@@ -602,8 +602,8 @@ const footnoteResetInterval = 3; // Reset tracking after N lexeme occurrences (a
 // TITLE PAGE WITH BACKGROUND IMAGE
 // ========================================
 
-// Load title page background image
-const titleBackgroundPath = path.join(__dirname, '../assets/title-background.png');
+// Load title page background image (pre-scaled to exact page dimensions)
+const titleBackgroundPath = path.join(__dirname, '../assets/title-background-scaled.png');
 const titleBackgroundImage = fs.readFileSync(titleBackgroundPath);
 
 // Create full-page background image filling entire page edge-to-edge
