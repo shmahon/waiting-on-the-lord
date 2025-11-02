@@ -647,46 +647,53 @@ titlePageSections.push(
 // Typography selected to match 19th-century Romantic/Academic painting aesthetic
 // Colors: warm creams/ivories harmonizing with golden sky palette
 titlePageSections.push(
-  // Top spacing to position text in golden sky area (avoiding figure)
+  // Top spacing to position text in lower rapids area (bottom 2/5ths of page, avoiding figure)
+  // Page height: 11 inches; bottom 2/5ths starts at ~6.6 inches from top
   new Paragraph({
     text: '',
-    spacing: { before: convertInchesToTwip(1.5), after: 0 }
+    spacing: { before: convertInchesToTwip(6.8), after: 0 }
   }),
   new Paragraph({
-    text: 'Waiting on the Lord',
     alignment: AlignmentType.CENTER,
     spacing: {
       before: convertInchesToTwip(0.15),
       after: convertInchesToTwip(0.25)
     },
-    run: {
-      color: 'FFF8DC',  // Cornsilk - warm cream, harmonizes with golden palette
-      bold: true,
-      font: 'Garamond',  // Classical serif with 19th-century elegance, universally available
-      size: 48
-    }
+    children: [
+      new TextRun({
+        text: 'Waiting on the Lord',
+        color: 'FFF8DC',  // Cornsilk - warm cream, harmonizes with golden palette
+        bold: true,
+        font: 'Garamond',  // Classical serif with 19th-century elegance, universally available
+        size: 96  // Font size in half-points (48pt = 96 half-points)
+      })
+    ]
   }),
   new Paragraph({
-    text: 'A Lexical and Morphological Analysis',
     alignment: AlignmentType.CENTER,
     spacing: { after: convertInchesToTwip(0.1) },
-    run: {
-      color: 'FFFAF0',   // Floral white - slightly lighter for hierarchy
-      italics: true,
-      size: 24,
-      font: 'Garamond'  // Consistent font family
-    }
+    children: [
+      new TextRun({
+        text: 'A Lexical and Morphological Analysis',
+        color: 'FFFAF0',   // Floral white - slightly lighter for hierarchy
+        italics: true,
+        size: 48,  // Font size in half-points (24pt = 48 half-points)
+        font: 'Garamond'  // Consistent font family
+      })
+    ]
   }),
   new Paragraph({
-    text: 'Hebrew and Greek Waiting Vocabulary',
     alignment: AlignmentType.CENTER,
     spacing: { after: convertInchesToTwip(0.3) },
-    run: {
-      color: 'F5F5DC',   // Beige - softest tone for tertiary text
-      size: 20,
-      font: 'Garamond',
-      italics: true
-    }
+    children: [
+      new TextRun({
+        text: 'Hebrew and Greek Waiting Vocabulary',
+        color: 'F5F5DC',   // Beige - softest tone for tertiary text
+        size: 40,  // Font size in half-points (20pt = 40 half-points)
+        font: 'Garamond',
+        italics: true
+      })
+    ]
   })
 );
 
