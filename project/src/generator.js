@@ -607,29 +607,27 @@ const titleBackgroundPath = path.join(__dirname, '../assets/title-background.png
 const titleBackgroundImage = fs.readFileSync(titleBackgroundPath);
 
 // Create full-page background image filling entire page edge-to-edge
-// Letter size: 8.5" x 11" = 612 x 792 points (72 points per inch)
-// Note: Original image is 1024x1536 (2:3 ratio), we're stretching to 8.5:11 ratio to fill page
-// Using EMUs (English Metric Units): 914400 EMUs = 1 inch
-// 8.5" = 7772400 EMUs, 11" = 10058400 EMUs
+// Letter size: 8.5" x 11" in pixels at 96 DPI = 816 x 1056
+// Using pixel dimensions which docx library should handle correctly
 titlePageSections.push(
   new Paragraph({
     children: [
       new ImageRun({
         data: titleBackgroundImage,
         transformation: {
-          width: 7772400,   // 8.5 inches in EMUs (914400 * 8.5)
-          height: 10058400  // 11 inches in EMUs (914400 * 11)
+          width: 816,   // 8.5 inches at 96 DPI
+          height: 1056  // 11 inches at 96 DPI
         },
         floating: {
           horizontalPosition: {
             relative: 'page',
-            offset: 0  // Position at left edge of page (not margin)
+            offset: 0
           },
           verticalPosition: {
             relative: 'page',
-            offset: 0  // Position at top edge of page (not margin)
+            offset: 0
           },
-          behindDocument: true,  // Place behind text
+          behindDocument: true,
           lockAnchor: true,
           margins: {
             top: 0,
