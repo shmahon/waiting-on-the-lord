@@ -606,26 +606,35 @@ const footnoteResetInterval = 3; // Reset tracking after N lexeme occurrences (a
 const titleBackgroundPath = path.join(__dirname, '../assets/title-background.png');
 const titleBackgroundImage = fs.readFileSync(titleBackgroundPath);
 
-// Create full-page background image filling entire page
+// Create full-page background image filling entire page edge-to-edge
 // Letter size: 8.5" x 11" = 612 x 792 points (72 points per inch)
+// Standard margins are 1" = 72 points, so we need to extend image beyond margins
 titlePageSections.push(
   new Paragraph({
     children: [
       new ImageRun({
         data: titleBackgroundImage,
         transformation: {
-          width: 612,   // 8.5 inches in points
-          height: 792   // 11 inches in points
+          width: 612,   // 8.5 inches in points (full page width)
+          height: 792   // 11 inches in points (full page height)
         },
         floating: {
           horizontalPosition: {
-            offset: 0
+            relative: 'page',
+            offset: 0  // Position at left edge of page (not margin)
           },
           verticalPosition: {
-            offset: 0
+            relative: 'page',
+            offset: 0  // Position at top edge of page (not margin)
           },
           behindDocument: true,  // Place behind text
-          lockAnchor: true
+          lockAnchor: true,
+          margins: {
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0
+          }
         }
       })
     ],
