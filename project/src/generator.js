@@ -1610,9 +1610,10 @@ for (const concept of greekConcepts.concepts) {
 
 // Appendix: Source Table (separate section for landscape orientation)
 const sourceData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../study/source/source_data.json'), 'utf8'));
-const appendixSections = [];
+const appendixASections = [];
+const appendixBSections = [];
 
-appendixSections.push(
+appendixASections.push(
   new Paragraph({
     text: 'Appendix: Source Reference Table',
     heading: HeadingLevel.HEADING_1,
@@ -1771,19 +1772,18 @@ const sourceTable = new Table({
   ]
 });
 
-appendixSections.push(sourceTable);
+appendixASections.push(sourceTable);
 
 // Appendix B: Paraenetic and Protreptic Analysis
 const paraeneticAnalysisPath = path.join(__dirname, '../../study/source/paraenetic_protreptic_analysis.md');
 const paraeneticContent = fs.readFileSync(paraeneticAnalysisPath, 'utf8');
 
 // Add appendix header
-appendixSections.push(
+appendixBSections.push(
   new Paragraph({
     text: 'Appendix B: Paraenetic and Protreptic Implications',
     heading: HeadingLevel.HEADING_1,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
-    pageBreakBefore: true,
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1830,7 +1830,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Handle H2 headings (## ...)
   if (line.startsWith('## ')) {
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: line.substring(3),
         heading: HeadingLevel.HEADING_2,
@@ -1847,7 +1847,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Handle H3 headings (### ...)
   if (line.startsWith('### ')) {
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: line.substring(4),
         heading: HeadingLevel.HEADING_3,
@@ -1864,7 +1864,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Handle H4 headings (#### ...)
   if (line.startsWith('#### ')) {
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: line.substring(5),
         spacing: { before: SPACING.PARA_MEDIUM, after: SPACING.PARA_SMALL },
@@ -1882,7 +1882,7 @@ for (let i = 0; i < lines.length; i++) {
   // Handle block quotes (> ...)
   if (line.startsWith('> ')) {
     const quoteText = line.substring(2);
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: quoteText,
         indent: {
@@ -1916,7 +1916,7 @@ for (let i = 0; i < lines.length; i++) {
   // Handle bold text markers (**text:**)
   if (line.match(/^\*\*.*\*\*:?$/)) {
     const boldText = line.replace(/\*\*/g, '').replace(/:$/, '');
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: boldText,
         spacing: { after: SPACING.PARA_SMALL, before: SPACING.PARA_SMALL },
@@ -1938,7 +1938,7 @@ for (let i = 0; i < lines.length; i++) {
     if (match) {
       const author = match[1];
       const source = match[2];
-      appendixSections.push(
+      appendixBSections.push(
         new Paragraph({
           children: [
             new TextRun({
@@ -2000,7 +2000,7 @@ for (let i = 0; i < lines.length; i++) {
     }
 
     if (children.length > 0) {
-      appendixSections.push(
+      appendixBSections.push(
         new Paragraph({
           children: children,
           spacing: { after: SPACING.PARA_MEDIUM, line: SPACING.LINE_RELAXED }
@@ -2429,7 +2429,7 @@ const doc = new Document({
       },
       children: sections
     },
-    // Appendix Section (landscape)
+    // Appendix A Section (landscape)
     {
       properties: {
         type: 'nextPage',  // Force new page section break
@@ -2450,7 +2450,30 @@ const doc = new Document({
       footers: {
         default: pageNumberFooter
       },
-      children: appendixSections
+      children: appendixASections
+    },
+    // Appendix B Section (portrait)
+    {
+      properties: {
+        type: 'nextPage',  // Force new page section break
+        page: {
+          size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
+            orientation: PageOrientation.PORTRAIT
+          },
+          margin: {
+            top: convertInchesToTwip(1),
+            right: convertInchesToTwip(1),
+            bottom: convertInchesToTwip(1),
+            left: convertInchesToTwip(1)
+          }
+        }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: appendixBSections
     }
   ]
 });
