@@ -2250,20 +2250,39 @@ tocSections.push(
 );
 
 const tableEntries = [
-  'Statistical Summary: Grammar→Theme Correlation Strength',
-  'Appendix A: Complete Source Reference Table'
+  { title: 'Statistical Summary: Grammar→Theme Correlation Strength', page: '21' },
+  { title: 'Appendix A: Complete Source Reference Table', page: 'A-1' }
 ];
 
 for (const entry of tableEntries) {
   tocSections.push(
     new Paragraph({
-      text: `• ${entry}`,
+      children: [
+        new TextRun({
+          text: entry.title,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        }),
+        new TextRun({
+          text: '\t',
+          font: 'Palatino Linotype'
+        }),
+        new TextRun({
+          text: entry.page,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        })
+      ],
       spacing: { after: SPACING.PARA_SMALL },
-      run: {
-        color: COLORS.TEXT_PRIMARY,
-        font: 'Times New Roman',
-        size: 20
-      }
+      tabStops: [
+        {
+          type: 'right',
+          position: convertInchesToTwip(6),
+          leader: 'dot'
+        }
+      ]
     })
   );
 }
@@ -2288,32 +2307,51 @@ tocSections.push(
 );
 
 const figureEntries = [
-  'Strong Grammatical Pattern: προσδέχομαι Present Participle → Messianic Expectation',
-  'Weak Grammatical Pattern: קָוָה (qāwāh) Distribution Across Themes',
-  'Theme Diagram: Blessing & Inheritance',
-  'Theme Diagram: Eschatological Hope',
-  'Theme Diagram: Help & Deliverance',
-  'Theme Diagram: Patience & Endurance',
-  'Theme Diagram: Trust & Hope',
-  'Theme Diagram: Strength & Renewal',
-  'Theme Diagram: Messianic Expectation',
-  'Theme Diagram: Faithfulness & Devotion',
-  'Theme Diagram: Goodness of God',
-  'Theme Diagram: Praise & Worship',
-  'Theme Diagram: Teaching & Guidance',
-  'Theme Diagram: Judgment & Justice'
+  { title: 'Strong Grammatical Pattern: προσδέχομαι Present Participle → Messianic Expectation', page: '21' },
+  { title: 'Weak Grammatical Pattern: קָוָה (qāwāh) Distribution Across Themes', page: '22' },
+  { title: 'Theme Diagram: Blessing & Inheritance', page: '4' },
+  { title: 'Theme Diagram: Eschatological Hope', page: '6' },
+  { title: 'Theme Diagram: Help & Deliverance', page: '8' },
+  { title: 'Theme Diagram: Patience & Endurance', page: '10' },
+  { title: 'Theme Diagram: Trust & Hope', page: '12' },
+  { title: 'Theme Diagram: Strength & Renewal', page: '14' },
+  { title: 'Theme Diagram: Messianic Expectation', page: '15' },
+  { title: 'Theme Diagram: Faithfulness & Devotion', page: '16' },
+  { title: 'Theme Diagram: Goodness of God', page: '17' },
+  { title: 'Theme Diagram: Praise & Worship', page: '18' },
+  { title: 'Theme Diagram: Teaching & Guidance', page: '19' },
+  { title: 'Theme Diagram: Judgment & Justice', page: '19' }
 ];
 
 for (const entry of figureEntries) {
   tocSections.push(
     new Paragraph({
-      text: `• ${entry}`,
+      children: [
+        new TextRun({
+          text: entry.title,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        }),
+        new TextRun({
+          text: '\t',
+          font: 'Palatino Linotype'
+        }),
+        new TextRun({
+          text: entry.page,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        })
+      ],
       spacing: { after: SPACING.PARA_SMALL },
-      run: {
-        color: COLORS.TEXT_PRIMARY,
-        font: 'Times New Roman',
-        size: 20
-      }
+      tabStops: [
+        {
+          type: 'right',
+          position: convertInchesToTwip(6),
+          leader: 'dot'
+        }
+      ]
     })
   );
 }
