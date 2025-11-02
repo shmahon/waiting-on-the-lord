@@ -2432,6 +2432,7 @@ const doc = new Document({
     // Appendix Section (landscape)
     {
       properties: {
+        type: 'nextPage',  // Force new page section break
         page: {
           size: {
             width: convertInchesToTwip(11),    // US Letter landscape width (flipped)
