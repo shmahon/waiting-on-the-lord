@@ -1711,6 +1711,243 @@ const sourceTable = new Table({
 
 appendixSections.push(sourceTable);
 
+// Appendix B: Paraenetic and Protreptic Analysis
+const paraeneticAnalysisPath = path.join(__dirname, '../../study/source/paraenetic_protreptic_analysis.md');
+const paraeneticContent = fs.readFileSync(paraeneticAnalysisPath, 'utf8');
+
+// Add appendix header
+appendixSections.push(
+  new Paragraph({
+    text: 'Appendix B: Paraenetic and Protreptic Implications',
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    pageBreakBefore: true,
+    border: {
+      left: {
+        color: COLORS.ACCENT,
+        space: 8,
+        style: BorderStyle.SINGLE,
+        size: 40
+      }
+    },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Calibri',
+      size: 26
+    }
+  }),
+  new Paragraph({
+    text: 'This appendix examines the practical, ethical, and motivational consequences of biblical "waiting on the Lord" theology. Analysis draws from conservative evangelical and Reformed scholarship.',
+    spacing: { after: SPACING.PARA_LARGE, line: SPACING.LINE_RELAXED },
+    run: {
+      color: COLORS.TEXT_SECONDARY,
+      italics: true,
+      font: 'Times New Roman',
+      size: 20
+    }
+  })
+);
+
+// Parse markdown and convert to DOCX paragraphs
+const lines = paraeneticContent.split('\n');
+let inBlockQuote = false;
+let blockQuoteAuthor = '';
+
+for (let i = 0; i < lines.length; i++) {
+  const line = lines[i];
+
+  // Skip the title line (already added as heading)
+  if (i === 0 && line.startsWith('# Paraenetic')) {
+    continue;
+  }
+
+  // Skip horizontal rules
+  if (line.trim() === '---') {
+    continue;
+  }
+
+  // Handle H2 headings (## ...)
+  if (line.startsWith('## ')) {
+    appendixSections.push(
+      new Paragraph({
+        text: line.substring(3),
+        heading: HeadingLevel.HEADING_2,
+        spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+        run: {
+          color: COLORS.ACCENT,
+          font: 'Calibri',
+          size: 22
+        }
+      })
+    );
+    continue;
+  }
+
+  // Handle H3 headings (### ...)
+  if (line.startsWith('### ')) {
+    appendixSections.push(
+      new Paragraph({
+        text: line.substring(4),
+        heading: HeadingLevel.HEADING_3,
+        spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER },
+        run: {
+          color: COLORS.SUPPORTING,
+          font: 'Calibri',
+          size: 20
+        }
+      })
+    );
+    continue;
+  }
+
+  // Handle H4 headings (#### ...)
+  if (line.startsWith('#### ')) {
+    appendixSections.push(
+      new Paragraph({
+        text: line.substring(5),
+        spacing: { before: SPACING.PARA_MEDIUM, after: SPACING.PARA_SMALL },
+        run: {
+          bold: true,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Calibri',
+          size: 18
+        }
+      })
+    );
+    continue;
+  }
+
+  // Handle block quotes (> ...)
+  if (line.startsWith('> ')) {
+    const quoteText = line.substring(2);
+    appendixSections.push(
+      new Paragraph({
+        text: quoteText,
+        indent: {
+          left: convertInchesToTwip(0.5),
+          right: convertInchesToTwip(0.5)
+        },
+        spacing: { after: SPACING.PARA_SMALL, line: SPACING.LINE_RELAXED },
+        run: {
+          italics: true,
+          color: COLORS.TEXT_SECONDARY,
+          font: 'Times New Roman',
+          size: 18
+        },
+        shading: {
+          fill: COLORS.GRAY_VERY_LIGHT,
+          type: 'clear'
+        },
+        border: {
+          left: {
+            color: COLORS.ACCENT,
+            space: 4,
+            style: BorderStyle.SINGLE,
+            size: 8
+          }
+        }
+      })
+    );
+    continue;
+  }
+
+  // Handle bold text markers (**text:**)
+  if (line.match(/^\*\*.*\*\*:?$/)) {
+    const boldText = line.replace(/\*\*/g, '').replace(/:$/, '');
+    appendixSections.push(
+      new Paragraph({
+        text: boldText,
+        spacing: { after: SPACING.PARA_SMALL, before: SPACING.PARA_SMALL },
+        run: {
+          bold: true,
+          color: COLORS.PRIMARY,
+          font: 'Calibri',
+          size: 18
+        }
+      })
+    );
+    continue;
+  }
+
+  // Handle author citations (**Author Name** (Source):)
+  if (line.match(/^\*\*[^*]+\*\*\s+\([^)]+\):?$/)) {
+    // Extract author and source
+    const match = line.match(/^\*\*([^*]+)\*\*\s+\(([^)]+)\):?$/);
+    if (match) {
+      const author = match[1];
+      const source = match[2];
+      appendixSections.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: author,
+              bold: true,
+              color: COLORS.ACCENT,
+              font: 'Calibri',
+              size: 18
+            }),
+            new TextRun({
+              text: ` (${source}):`,
+              color: COLORS.TEXT_SECONDARY,
+              font: 'Times New Roman',
+              size: 18,
+              italics: true
+            })
+          ],
+          spacing: { after: SPACING.PARA_SMALL, before: SPACING.PARA_MEDIUM }
+        })
+      );
+    }
+    continue;
+  }
+
+  // Handle empty lines
+  if (line.trim() === '') {
+    continue;
+  }
+
+  // Handle regular paragraph text (with inline bold/italic markdown)
+  if (line.trim().length > 0) {
+    // Simple approach: split by bold markers and create TextRuns
+    const parts = line.split(/(\*\*[^*]+\*\*)/);
+    const children = [];
+
+    for (const part of parts) {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        // Bold text
+        children.push(
+          new TextRun({
+            text: part.substring(2, part.length - 2),
+            bold: true,
+            color: COLORS.TEXT_PRIMARY,
+            font: 'Times New Roman',
+            size: 18
+          })
+        );
+      } else if (part.trim().length > 0) {
+        // Regular text
+        children.push(
+          new TextRun({
+            text: part,
+            color: COLORS.TEXT_PRIMARY,
+            font: 'Times New Roman',
+            size: 18
+          })
+        );
+      }
+    }
+
+    if (children.length > 0) {
+      appendixSections.push(
+        new Paragraph({
+          children: children,
+          spacing: { after: SPACING.PARA_MEDIUM, line: SPACING.LINE_RELAXED }
+        })
+      );
+    }
+  }
+}
+
 // Lexeme Summary Section
 const lexemeSummary = JSON.parse(fs.readFileSync(path.join(dataDir, 'lexeme_summary.json'), 'utf8'));
 
