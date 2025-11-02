@@ -662,7 +662,7 @@ titlePageSections.push(
     run: {
       color: 'FFF8DC',  // Cornsilk - warm cream, harmonizes with golden palette
       bold: true,
-      font: 'Goudy Old Style',  // 19th-century scholarly elegance (fallback: Baskerville, Garamond)
+      font: 'Garamond',  // Classical serif with 19th-century elegance, universally available
       size: 48
     }
   }),
@@ -674,7 +674,7 @@ titlePageSections.push(
       color: 'FFFAF0',   // Floral white - slightly lighter for hierarchy
       italics: true,
       size: 24,
-      font: 'Goudy Old Style'  // Consistent font family
+      font: 'Garamond'  // Consistent font family
     }
   }),
   new Paragraph({
@@ -684,7 +684,7 @@ titlePageSections.push(
     run: {
       color: 'F5F5DC',   // Beige - softest tone for tertiary text
       size: 20,
-      font: 'Goudy Old Style',
+      font: 'Garamond',
       italics: true
     }
   })
