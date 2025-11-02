@@ -606,64 +606,76 @@ const footnoteResetInterval = 3; // Reset tracking after N lexeme occurrences (a
 const titleBackgroundPath = path.join(__dirname, '../assets/title-background.png');
 const titleBackgroundImage = fs.readFileSync(titleBackgroundPath);
 
-// Full-page background image (portrait letter size: 8.5" x 11" = 816 x 1056 points)
+// Create full-page background image filling entire page
+// Letter size: 8.5" x 11" = 612 x 792 points (72 points per inch)
 titlePageSections.push(
   new Paragraph({
     children: [
       new ImageRun({
         data: titleBackgroundImage,
         transformation: {
-          width: 816,  // 8.5 inches
-          height: 1056 // 11 inches
+          width: 612,   // 8.5 inches in points
+          height: 792   // 11 inches in points
+        },
+        floating: {
+          horizontalPosition: {
+            offset: 0
+          },
+          verticalPosition: {
+            offset: 0
+          },
+          behindDocument: true,  // Place behind text
+          lockAnchor: true
         }
       })
     ],
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 0 }
+    spacing: { after: 0, before: 0 }
   })
 );
 
-// Overlay title text in upper portion (using negative spacing to overlay on image)
-// Position text in golden sky area (top 30% of page)
+// Overlay title text in upper golden sky area (top ~20% of page)
+// Using classical, elegant typography to complement the classical artwork style
 titlePageSections.push(
+  // Top spacing to position text in golden sky area
   new Paragraph({
-    text: 'Waiting on the Lord',
+    text: '',
+    spacing: { before: convertInchesToTwip(1.2), after: 0 }
+  }),
+  new Paragraph({
+    text: 'WAITING ON THE LORD',
     alignment: AlignmentType.CENTER,
     spacing: {
-      before: convertInchesToTwip(-10), // Negative spacing to overlay on image
-      after: SPACING.PARA_MEDIUM
+      before: convertInchesToTwip(0.2),
+      after: convertInchesToTwip(0.35)
     },
     run: {
-      color: 'FFFFFF',
+      color: 'FFFAF0',  // Floral white - elegant, visible on golden sky
       bold: true,
-      font: 'Garamond',
-      size: 48,
-      shading: {
-        type: 'clear',
-        fill: '000000',
-        color: 'auto'
-      }
+      font: 'Trajan Pro',  // Classical Roman capitals (fallback: Garamond)
+      size: 56,
+      allCaps: true
     }
   }),
   new Paragraph({
-    text: 'A Lexical and Morphological Analysis',
+    text: 'A Lexical and Morphological Analysis of',
     alignment: AlignmentType.CENTER,
-    spacing: { after: convertInchesToTwip(0.3) },
+    spacing: { after: convertInchesToTwip(0.12) },
     run: {
-      color: 'FFFFFF',
+      color: 'F5DEB3',   // Wheat - warm, classical tone
       italics: true,
-      size: 28,
-      font: 'Garamond'
+      size: 26,
+      font: 'Adobe Caslon Pro'  // Classical book font (fallback: Palatino)
     }
   }),
   new Paragraph({
     text: 'Hebrew and Greek Waiting Vocabulary',
     alignment: AlignmentType.CENTER,
-    spacing: { after: SPACING.PARA_LARGE },
+    spacing: { after: convertInchesToTwip(0.4) },
     run: {
-      color: 'F0E68C', // Light golden color to complement sky
-      size: 20,
-      font: 'Garamond'
+      color: 'F0E68C',   // Khaki - golden to harmonize with sky
+      size: 24,
+      font: 'Adobe Caslon Pro',
+      italics: true
     }
   })
 );
@@ -2173,16 +2185,16 @@ tocSections.push(
   })
 );
 
-// Note: docx library doesn't auto-generate TOC, but we can create a manual reference list
-// List major sections
+// Note: docx library doesn't auto-generate TOC with live page numbers
+// Create manual TOC with estimated page numbers (user can update field codes in Word)
 const tocEntries = [
-  { title: 'Introduction', page: '[Auto]' },
-  { title: 'Thematic Analysis', page: '[Auto]' },
-  { title: 'Visual Summary: Grammar→Theme Pattern Analysis', page: '[Auto]' },
-  { title: 'Reference: Grammatical Concepts', page: '[Auto]' },
-  { title: 'Lexeme Summary', page: '[Auto]' },
-  { title: 'Appendix A: Source Reference Table', page: '[Auto]' },
-  { title: 'Appendix B: Paraenetic and Protreptic Implications', page: '[Auto]' }
+  { title: 'Introduction', page: '1' },
+  { title: 'Thematic Analysis', page: '3' },
+  { title: 'Visual Summary: Grammar→Theme Pattern Analysis', page: '20' },
+  { title: 'Reference: Grammatical Concepts', page: '25' },
+  { title: 'Lexeme Summary', page: '30' },
+  { title: 'Appendix A: Source Reference Table', page: 'A-1' },
+  { title: 'Appendix B: Paraenetic and Protreptic Implications', page: 'B-1' }
 ];
 
 for (const entry of tocEntries) {
@@ -2192,26 +2204,26 @@ for (const entry of tocEntries) {
         new TextRun({
           text: entry.title,
           color: COLORS.TEXT_PRIMARY,
-          font: 'Times New Roman',
+          font: 'Palatino Linotype',
           size: 22
         }),
         new TextRun({
-          text: ' ',
-          font: 'Times New Roman',
-          size: 22
+          text: '\t',  // Tab to leader dots
+          font: 'Palatino Linotype'
         }),
         new TextRun({
-          text: '...........................................................................................................................'.substring(0, 80),
-          color: COLORS.GRAY_LIGHT,
-          font: 'Times New Roman',
-          size: 18
+          text: entry.page,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 22
         })
       ],
       spacing: { after: SPACING.PARA_SMALL },
       tabStops: [
         {
           type: 'right',
-          position: convertInchesToTwip(6)
+          position: convertInchesToTwip(6),
+          leader: 'dot'
         }
       ]
     })
