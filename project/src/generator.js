@@ -2199,12 +2199,11 @@ tocSections.push(
 // Create manual TOC with estimated page numbers (user can update field codes in Word)
 const tocEntries = [
   { title: 'Introduction', page: '1' },
+  { title: 'Visual Summary: Grammar→Theme Pattern Analysis', page: '2' },
   { title: 'Thematic Analysis', page: '3' },
-  { title: 'Visual Summary: Grammar→Theme Pattern Analysis', page: '20' },
-  { title: 'Reference: Grammatical Concepts', page: '25' },
-  { title: 'Lexeme Summary', page: '30' },
-  { title: 'Appendix A: Source Reference Table', page: 'A-1' },
-  { title: 'Appendix B: Paraenetic and Protreptic Implications', page: 'B-1' }
+  { title: 'Reference: Grammatical Concepts', page: '21' },
+  { title: 'Appendix A: Source Reference Table', page: '27' },
+  { title: 'Appendix B: Paraenetic and Protreptic Implications', page: '37' }
 ];
 
 for (const entry of tocEntries) {
@@ -2438,6 +2437,12 @@ const doc = new Document({
             width: convertInchesToTwip(11),    // US Letter landscape width (flipped)
             height: convertInchesToTwip(8.5),  // US Letter landscape height (flipped)
             orientation: PageOrientation.LANDSCAPE
+          },
+          margin: {
+            top: convertInchesToTwip(1),
+            right: convertInchesToTwip(1),
+            bottom: convertInchesToTwip(1),
+            left: convertInchesToTwip(1)
           }
         }
       },
