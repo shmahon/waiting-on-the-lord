@@ -2435,9 +2435,8 @@ const doc = new Document({
         type: 'nextPage',  // Force new page section break
         page: {
           size: {
-            width: convertInchesToTwip(11),    // US Letter landscape width (flipped)
-            height: convertInchesToTwip(8.5),  // US Letter landscape height (flipped)
-            orientation: PageOrientation.LANDSCAPE
+            width: convertInchesToTwip(11),    // US Letter landscape width
+            height: convertInchesToTwip(8.5)   // US Letter landscape height
           },
           margin: {
             top: convertInchesToTwip(1),
