@@ -2371,12 +2371,18 @@ for (const entry of figureEntries) {
 const doc = new Document({
   footnotes: footnotes,
   sections: [
-    // Title Page Section (no page numbers)
+    // Title Page Section (no page numbers, zero margins for full-bleed image)
     {
       properties: {
         page: {
           size: {
             orientation: PageOrientation.PORTRAIT
+          },
+          margin: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
           }
         }
       },
