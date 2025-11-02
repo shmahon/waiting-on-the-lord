@@ -608,15 +608,17 @@ const titleBackgroundImage = fs.readFileSync(titleBackgroundPath);
 
 // Create full-page background image filling entire page edge-to-edge
 // Letter size: 8.5" x 11" = 612 x 792 points (72 points per inch)
-// Standard margins are 1" = 72 points, so we need to extend image beyond margins
+// Note: Original image is 1024x1536 (2:3 ratio), we're stretching to 8.5:11 ratio to fill page
+// Using EMUs (English Metric Units): 914400 EMUs = 1 inch
+// 8.5" = 7772400 EMUs, 11" = 10058400 EMUs
 titlePageSections.push(
   new Paragraph({
     children: [
       new ImageRun({
         data: titleBackgroundImage,
         transformation: {
-          width: 612,   // 8.5 inches in points (full page width)
-          height: 792   // 11 inches in points (full page height)
+          width: 7772400,   // 8.5 inches in EMUs (914400 * 8.5)
+          height: 10058400  // 11 inches in EMUs (914400 * 11)
         },
         floating: {
           horizontalPosition: {
@@ -634,7 +636,8 @@ titlePageSections.push(
             bottom: 0,
             left: 0,
             right: 0
-          }
+          },
+          allowOverlap: true
         }
       })
     ],
