@@ -587,6 +587,8 @@ function createStatisticalSummaryTable() {
 }
 
 // Create document sections and footnotes
+const titlePageSections = [];
+const tocSections = [];
 const sections = [];
 const footnotes = {};
 let footnoteCounter = 1;
@@ -596,34 +598,94 @@ let footnoteCounter = 1;
 const recentFootnotes = new Map();
 const footnoteResetInterval = 3; // Reset tracking after N lexeme occurrences (approximates page breaks)
 
-// Title
-sections.push(
+// ========================================
+// TITLE PAGE WITH BACKGROUND IMAGE
+// ========================================
+
+// Load title page background image (pre-scaled to exact page dimensions)
+const titleBackgroundPath = path.join(__dirname, '../assets/title-background-scaled.png');
+const titleBackgroundImage = fs.readFileSync(titleBackgroundPath);
+
+// Create full-page background image filling entire page edge-to-edge
+// Letter size: 8.5" x 11" in pixels at 96 DPI = 816 x 1056
+// Using pixel dimensions which docx library should handle correctly
+titlePageSections.push(
   new Paragraph({
-    text: 'Waiting on the Lord',
-    heading: HeadingLevel.TITLE,
+    children: [
+      new ImageRun({
+        data: titleBackgroundImage,
+        transformation: {
+          width: 816,   // 8.5 inches at 96 DPI
+          height: 1056  // 11 inches at 96 DPI
+        },
+        floating: {
+          horizontalPosition: {
+            relative: 'page',
+            offset: 0
+          },
+          verticalPosition: {
+            relative: 'page',
+            offset: 0
+          },
+          behindDocument: true,
+          lockAnchor: true,
+          margins: {
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0
+          },
+          allowOverlap: true
+        }
+      })
+    ],
+    spacing: { after: 0, before: 0 }
+  })
+);
+
+// Overlay title text in upper golden sky area (top ~20% of page)
+// Using classical, elegant typography to complement the classical artwork style
+titlePageSections.push(
+  // Top spacing to position text in golden sky area
+  new Paragraph({
+    text: '',
+    spacing: { before: convertInchesToTwip(1.2), after: 0 }
+  }),
+  new Paragraph({
+    text: 'WAITING ON THE LORD',
     alignment: AlignmentType.CENTER,
-    spacing: { after: SPACING.PARA_LARGE },
-    shading: {
-      fill: COLORS.PRIMARY,
-      type: 'clear',
-      color: 'auto'
+    spacing: {
+      before: convertInchesToTwip(0.2),
+      after: convertInchesToTwip(0.35)
     },
     run: {
-      color: 'FFFFFF',
+      color: 'FFFAF0',  // Floral white - elegant, visible on golden sky
       bold: true,
-      font: 'Garamond',  // Classic serif for title
-      size: 30  // Reduced from 32
+      font: 'Trajan Pro',  // Classical Roman capitals (fallback: Garamond)
+      size: 56,
+      allCaps: true
     }
   }),
   new Paragraph({
-    text: 'A Lexical and Morphological Analysis',
+    text: 'A Lexical and Morphological Analysis of',
     alignment: AlignmentType.CENTER,
-    spacing: { after: SPACING.PARA_LARGE },
+    spacing: { after: convertInchesToTwip(0.12) },
     run: {
-      color: COLORS.PRIMARY,
+      color: 'F5DEB3',   // Wheat - warm, classical tone
       italics: true,
-      size: 24,  // Reduced from 26
-      font: 'Garamond'
+      size: 26,
+      font: 'Adobe Caslon Pro'  // Classical book font (fallback: Palatino)
+    }
+  }),
+  new Paragraph({
+    text: 'Hebrew and Greek Waiting Vocabulary',
+    alignment: AlignmentType.CENTER,
+    spacing: { after: convertInchesToTwip(0.4) },
+    run: {
+      color: 'F0E68C',   // Khaki - golden to harmonize with sky
+      size: 24,
+      font: 'Adobe Caslon Pro',
+      italics: true
     }
   })
 );
@@ -1548,9 +1610,10 @@ for (const concept of greekConcepts.concepts) {
 
 // Appendix: Source Table (separate section for landscape orientation)
 const sourceData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../study/source/source_data.json'), 'utf8'));
-const appendixSections = [];
+const appendixASections = [];
+const appendixBSections = [];
 
-appendixSections.push(
+appendixASections.push(
   new Paragraph({
     text: 'Appendix: Source Reference Table',
     heading: HeadingLevel.HEADING_1,
@@ -1709,19 +1772,18 @@ const sourceTable = new Table({
   ]
 });
 
-appendixSections.push(sourceTable);
+appendixASections.push(sourceTable);
 
 // Appendix B: Paraenetic and Protreptic Analysis
 const paraeneticAnalysisPath = path.join(__dirname, '../../study/source/paraenetic_protreptic_analysis.md');
 const paraeneticContent = fs.readFileSync(paraeneticAnalysisPath, 'utf8');
 
 // Add appendix header
-appendixSections.push(
+appendixBSections.push(
   new Paragraph({
     text: 'Appendix B: Paraenetic and Protreptic Implications',
     heading: HeadingLevel.HEADING_1,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
-    pageBreakBefore: true,
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1768,7 +1830,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Handle H2 headings (## ...)
   if (line.startsWith('## ')) {
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: line.substring(3),
         heading: HeadingLevel.HEADING_2,
@@ -1785,7 +1847,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Handle H3 headings (### ...)
   if (line.startsWith('### ')) {
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: line.substring(4),
         heading: HeadingLevel.HEADING_3,
@@ -1802,7 +1864,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Handle H4 headings (#### ...)
   if (line.startsWith('#### ')) {
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: line.substring(5),
         spacing: { before: SPACING.PARA_MEDIUM, after: SPACING.PARA_SMALL },
@@ -1820,7 +1882,7 @@ for (let i = 0; i < lines.length; i++) {
   // Handle block quotes (> ...)
   if (line.startsWith('> ')) {
     const quoteText = line.substring(2);
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: quoteText,
         indent: {
@@ -1854,7 +1916,7 @@ for (let i = 0; i < lines.length; i++) {
   // Handle bold text markers (**text:**)
   if (line.match(/^\*\*.*\*\*:?$/)) {
     const boldText = line.replace(/\*\*/g, '').replace(/:$/, '');
-    appendixSections.push(
+    appendixBSections.push(
       new Paragraph({
         text: boldText,
         spacing: { after: SPACING.PARA_SMALL, before: SPACING.PARA_SMALL },
@@ -1876,7 +1938,7 @@ for (let i = 0; i < lines.length; i++) {
     if (match) {
       const author = match[1];
       const source = match[2];
-      appendixSections.push(
+      appendixBSections.push(
         new Paragraph({
           children: [
             new TextRun({
@@ -1938,7 +2000,7 @@ for (let i = 0; i < lines.length; i++) {
     }
 
     if (children.length > 0) {
-      appendixSections.push(
+      appendixBSections.push(
         new Paragraph({
           children: children,
           spacing: { after: SPACING.PARA_MEDIUM, line: SPACING.LINE_RELAXED }
@@ -2110,11 +2172,244 @@ const pageNumberFooter = new Footer({
   ]
 });
 
+// ========================================
+// TABLE OF CONTENTS AND LIST OF TABLES/FIGURES
+// ========================================
+
+// Add TOC section header
+tocSections.push(
+  new Paragraph({
+    text: 'Table of Contents',
+    heading: HeadingLevel.HEADING_1,
+    alignment: AlignmentType.CENTER,
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Garamond',
+      size: 28
+    }
+  }),
+  new Paragraph({
+    text: '',
+    spacing: { after: SPACING.PARA_LARGE }
+  })
+);
+
+// Note: docx library doesn't auto-generate TOC with live page numbers
+// Create manual TOC with estimated page numbers (user can update field codes in Word)
+const tocEntries = [
+  { title: 'Introduction', page: '1' },
+  { title: 'Visual Summary: Grammar→Theme Pattern Analysis', page: '2' },
+  { title: 'Thematic Analysis', page: '3' },
+  { title: 'Reference: Grammatical Concepts', page: '21' },
+  { title: 'Appendix A: Source Reference Table', page: '27' },
+  { title: 'Appendix B: Paraenetic and Protreptic Implications', page: '37' }
+];
+
+for (const entry of tocEntries) {
+  tocSections.push(
+    new Paragraph({
+      children: [
+        new TextRun({
+          text: entry.title,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 22
+        }),
+        new TextRun({
+          text: '\t',  // Tab to leader dots
+          font: 'Palatino Linotype'
+        }),
+        new TextRun({
+          text: entry.page,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 22
+        })
+      ],
+      spacing: { after: SPACING.PARA_SMALL },
+      tabStops: [
+        {
+          type: 'right',
+          position: convertInchesToTwip(6),
+          leader: 'dot'
+        }
+      ]
+    })
+  );
+}
+
+// List of Tables
+tocSections.push(
+  new Paragraph({
+    text: '',
+    spacing: { before: SPACING.H1_BEFORE }
+  }),
+  new Paragraph({
+    text: 'List of Tables',
+    heading: HeadingLevel.HEADING_1,
+    alignment: AlignmentType.CENTER,
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Garamond',
+      size: 28
+    }
+  })
+);
+
+const tableEntries = [
+  { title: 'Statistical Summary: Grammar→Theme Correlation Strength', page: '21' },
+  { title: 'Appendix A: Complete Source Reference Table', page: 'A-1' }
+];
+
+for (const entry of tableEntries) {
+  tocSections.push(
+    new Paragraph({
+      children: [
+        new TextRun({
+          text: entry.title,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        }),
+        new TextRun({
+          text: '\t',
+          font: 'Palatino Linotype'
+        }),
+        new TextRun({
+          text: entry.page,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        })
+      ],
+      spacing: { after: SPACING.PARA_SMALL },
+      tabStops: [
+        {
+          type: 'right',
+          position: convertInchesToTwip(6),
+          leader: 'dot'
+        }
+      ]
+    })
+  );
+}
+
+// List of Figures
+tocSections.push(
+  new Paragraph({
+    text: '',
+    spacing: { before: SPACING.H1_BEFORE }
+  }),
+  new Paragraph({
+    text: 'List of Figures',
+    heading: HeadingLevel.HEADING_1,
+    alignment: AlignmentType.CENTER,
+    spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    run: {
+      color: COLORS.PRIMARY,
+      font: 'Garamond',
+      size: 28
+    }
+  })
+);
+
+const figureEntries = [
+  { title: 'Strong Grammatical Pattern: προσδέχομαι Present Participle → Messianic Expectation', page: '21' },
+  { title: 'Weak Grammatical Pattern: קָוָה (qāwāh) Distribution Across Themes', page: '22' },
+  { title: 'Theme Diagram: Blessing & Inheritance', page: '4' },
+  { title: 'Theme Diagram: Eschatological Hope', page: '6' },
+  { title: 'Theme Diagram: Help & Deliverance', page: '8' },
+  { title: 'Theme Diagram: Patience & Endurance', page: '10' },
+  { title: 'Theme Diagram: Trust & Hope', page: '12' },
+  { title: 'Theme Diagram: Strength & Renewal', page: '14' },
+  { title: 'Theme Diagram: Messianic Expectation', page: '15' },
+  { title: 'Theme Diagram: Faithfulness & Devotion', page: '16' },
+  { title: 'Theme Diagram: Goodness of God', page: '17' },
+  { title: 'Theme Diagram: Praise & Worship', page: '18' },
+  { title: 'Theme Diagram: Teaching & Guidance', page: '19' },
+  { title: 'Theme Diagram: Judgment & Justice', page: '19' }
+];
+
+for (const entry of figureEntries) {
+  tocSections.push(
+    new Paragraph({
+      children: [
+        new TextRun({
+          text: entry.title,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        }),
+        new TextRun({
+          text: '\t',
+          font: 'Palatino Linotype'
+        }),
+        new TextRun({
+          text: entry.page,
+          color: COLORS.TEXT_PRIMARY,
+          font: 'Palatino Linotype',
+          size: 20
+        })
+      ],
+      spacing: { after: SPACING.PARA_SMALL },
+      tabStops: [
+        {
+          type: 'right',
+          position: convertInchesToTwip(6),
+          leader: 'dot'
+        }
+      ]
+    })
+  );
+}
+
 // Create the document with footnotes and page numbers
-// Split into two sections: main content (portrait) and appendix (landscape)
+// Split into four sections: 1) Title Page (no page numbers), 2) TOC/Lists (roman numerals), 3) Main content (arabic numerals), 4) Appendix (landscape)
 const doc = new Document({
   footnotes: footnotes,
   sections: [
+    // Title Page Section (no page numbers, zero margins for full-bleed image)
+    {
+      properties: {
+        page: {
+          size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
+            orientation: PageOrientation.PORTRAIT
+          },
+          margin: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+          }
+        }
+      },
+      children: titlePageSections
+    },
+    // TOC Section (roman numeral page numbers)
+    {
+      properties: {
+        page: {
+          pageNumbers: {
+            start: 1,
+            formatType: NumberFormat.LOWER_ROMAN
+          },
+          size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
+            orientation: PageOrientation.PORTRAIT
+          }
+        }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: tocSections
+    },
+    // Main Content Section (arabic page numbers)
     {
       properties: {
         page: {
@@ -2123,6 +2418,8 @@ const doc = new Document({
             formatType: NumberFormat.DECIMAL
           },
           size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
             orientation: PageOrientation.PORTRAIT
           }
         }
@@ -2132,18 +2429,50 @@ const doc = new Document({
       },
       children: sections
     },
+    // Appendix A Section (landscape)
     {
       properties: {
+        type: 'nextPage',  // Force new page section break
         page: {
           size: {
-            orientation: PageOrientation.LANDSCAPE
+            width: convertInchesToTwip(11),    // US Letter landscape width
+            height: convertInchesToTwip(8.5)   // US Letter landscape height
+          },
+          margin: {
+            top: convertInchesToTwip(1),
+            right: convertInchesToTwip(1),
+            bottom: convertInchesToTwip(1),
+            left: convertInchesToTwip(1)
           }
         }
       },
       footers: {
         default: pageNumberFooter
       },
-      children: appendixSections
+      children: appendixASections
+    },
+    // Appendix B Section (portrait)
+    {
+      properties: {
+        type: 'nextPage',  // Force new page section break
+        page: {
+          size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
+            orientation: PageOrientation.PORTRAIT
+          },
+          margin: {
+            top: convertInchesToTwip(1),
+            right: convertInchesToTwip(1),
+            bottom: convertInchesToTwip(1),
+            left: convertInchesToTwip(1)
+          }
+        }
+      },
+      footers: {
+        default: pageNumberFooter
+      },
+      children: appendixBSections
     }
   ]
 });
