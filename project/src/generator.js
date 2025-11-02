@@ -2376,6 +2376,8 @@ const doc = new Document({
       properties: {
         page: {
           size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
             orientation: PageOrientation.PORTRAIT
           },
           margin: {
@@ -2397,6 +2399,8 @@ const doc = new Document({
             formatType: NumberFormat.LOWER_ROMAN
           },
           size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
             orientation: PageOrientation.PORTRAIT
           }
         }
@@ -2415,6 +2419,8 @@ const doc = new Document({
             formatType: NumberFormat.DECIMAL
           },
           size: {
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
             orientation: PageOrientation.PORTRAIT
           }
         }
@@ -2424,10 +2430,13 @@ const doc = new Document({
       },
       children: sections
     },
+    // Appendix Section (landscape)
     {
       properties: {
         page: {
           size: {
+            width: convertInchesToTwip(11),    // US Letter landscape width (flipped)
+            height: convertInchesToTwip(8.5),  // US Letter landscape height (flipped)
             orientation: PageOrientation.LANDSCAPE
           }
         }
