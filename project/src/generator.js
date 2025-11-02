@@ -643,48 +643,48 @@ titlePageSections.push(
   })
 );
 
-// Overlay title text in upper golden sky area (top ~20% of page)
-// Using classical, elegant typography to complement the classical artwork style
+// Overlay title text in upper golden sky area (top ~30% of page)
+// Typography selected to match 19th-century Romantic/Academic painting aesthetic
+// Colors: warm creams/ivories harmonizing with golden sky palette
 titlePageSections.push(
-  // Top spacing to position text in golden sky area
+  // Top spacing to position text in golden sky area (avoiding figure)
   new Paragraph({
     text: '',
-    spacing: { before: convertInchesToTwip(1.2), after: 0 }
+    spacing: { before: convertInchesToTwip(1.5), after: 0 }
   }),
   new Paragraph({
-    text: 'WAITING ON THE LORD',
+    text: 'Waiting on the Lord',
     alignment: AlignmentType.CENTER,
     spacing: {
-      before: convertInchesToTwip(0.2),
-      after: convertInchesToTwip(0.35)
+      before: convertInchesToTwip(0.15),
+      after: convertInchesToTwip(0.25)
     },
     run: {
-      color: 'FFFAF0',  // Floral white - elegant, visible on golden sky
+      color: 'FFF8DC',  // Cornsilk - warm cream, harmonizes with golden palette
       bold: true,
-      font: 'Trajan Pro',  // Classical Roman capitals (fallback: Garamond)
-      size: 56,
-      allCaps: true
+      font: 'Goudy Old Style',  // 19th-century scholarly elegance (fallback: Baskerville, Garamond)
+      size: 48
     }
   }),
   new Paragraph({
-    text: 'A Lexical and Morphological Analysis of',
+    text: 'A Lexical and Morphological Analysis',
     alignment: AlignmentType.CENTER,
-    spacing: { after: convertInchesToTwip(0.12) },
+    spacing: { after: convertInchesToTwip(0.1) },
     run: {
-      color: 'F5DEB3',   // Wheat - warm, classical tone
+      color: 'FFFAF0',   // Floral white - slightly lighter for hierarchy
       italics: true,
-      size: 26,
-      font: 'Adobe Caslon Pro'  // Classical book font (fallback: Palatino)
+      size: 24,
+      font: 'Goudy Old Style'  // Consistent font family
     }
   }),
   new Paragraph({
     text: 'Hebrew and Greek Waiting Vocabulary',
     alignment: AlignmentType.CENTER,
-    spacing: { after: convertInchesToTwip(0.4) },
+    spacing: { after: convertInchesToTwip(0.3) },
     run: {
-      color: 'F0E68C',   // Khaki - golden to harmonize with sky
-      size: 24,
-      font: 'Adobe Caslon Pro',
+      color: 'F5F5DC',   // Beige - softest tone for tertiary text
+      size: 20,
+      font: 'Goudy Old Style',
       italics: true
     }
   })
