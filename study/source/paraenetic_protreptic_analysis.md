@@ -368,50 +368,92 @@ The grammatical-thematic analysis supports the Reformers' vision: biblical waiti
 
 **Commentaries:**
 - Calvin, John. *Commentary on the Book of Psalms*. 5 vols. Translated by James Anderson. Grand Rapids: Baker, 1979.
+  [Provides commentary on Psalms 27:14, 31:24, 37:7, 37:9, 39:7, 40:1, 62:5, 69:3, 130:5]
 - Carson, D.A. *The Gospel According to John*. PNTC. Grand Rapids: Eerdmans, 1991.
+  [Addresses Johannine eschatological waiting and trust themes]
 - Davids, Peter. *The Epistle of James*. NIGTC. Grand Rapids: Eerdmans, 1982.
+  [Provides commentary on James 5:7-8 (patient waiting for the Lord's coming)]
 - Green, Joel. *The Gospel of Luke*. NICNT. Grand Rapids: Eerdmans, 1997.
+  [Explores Lukan themes of faithful endurance and eschatological expectation]
 - Kidner, Derek. *Psalms 1-72*. Tyndale Old Testament Commentary. Downers Grove: IVP, 1973.
+  [Provides commentary on Psalms 27:14, 31:24, 33:20, 37:7, 37:9, 39:7, 40:1, 62:5, 69:3]
 - Longman, Tremper III. *Psalms: An Introduction and Commentary*. Tyndale Old Testament Commentary. Downers Grove: IVP Academic, 2014.
+  [Provides commentary on all Psalm passages in source table; addresses lament and trust theology]
 - Marshall, I. Howard. *The Gospel of Luke*. NIGTC. Grand Rapids: Eerdmans, 1978.
+  [Explores Lukan perseverance theology and eschatological hope]
 - Moo, Douglas. *The Epistle to the Romans*. NICNT. Grand Rapids: Eerdmans, 1996.
+  [Provides commentary on Romans 8:23, 8:25 (waiting for adoption and redemption)]
 - Motyer, Alec. *Isaiah*. Tyndale Old Testament Commentary. Downers Grove: IVP, 1999.
+  [Provides commentary on Isaiah 33:2, 40:31 (core waiting passages)]
 - Oswalt, John. *The Book of Isaiah: Chapters 1-39*. NICOT. Grand Rapids: Eerdmans, 1986.
+  [Provides commentary on Isaiah 33:2; addresses covenant faithfulness and divine deliverance]
 - Schreiner, Thomas. *1, 2 Peter, Jude*. NAC. Nashville: B&H, 2003.
+  [Provides commentary on 1 Peter 1:13 (hope and self-control in waiting)]
 
 **Theological Works:**
 - Bauckham, Richard. *Jude, 2 Peter*. Word Biblical Commentary. Nashville: Thomas Nelson, 1983.
+  [Addresses eschatological patience and endurance during delay (2 Peter 3:8-9)]
 - Bridges, Jerry. *Trusting God: Even When Life Hurts*. Colorado Springs: NavPress, 2008.
+  [Explores theology of trust in suffering; directly addresses theme of waiting on God's providence]
 - Brueggemann, Walter. *The Message of the Psalms*. Minneapolis: Augsburg, 1984.
+  [Examines Psalm theology of orientation, disorientation, and new orientation through lament and trust]
 - Carson, D.A. *How Long, O Lord?: Reflections on Suffering and Evil*. 2nd ed. Grand Rapids: Baker Academic, 2006.
+  [Directly addresses the "How long?" question central to biblical waiting and lament]
 - Ferguson, Sinclair. *Let's Study Philippians*. Edinburgh: Banner of Truth, 1997.
+  [Explores confident waiting for Christ's return and God's faithfulness to complete His work]
 - Hoekema, Anthony. *The Bible and the Future*. Grand Rapids: Eerdmans, 1979.
+  [Addresses eschatological waiting for consummation and redemption (Romans 8:23-25)]
 - Ladd, George Eldon. *A Theology of the New Testament*. Revised ed. Grand Rapids: Eerdmans, 1993.
+  [Examines "already/not yet" tension requiring patient waiting for kingdom consummation]
 - Lewis, C.S. *Reflections on the Psalms*. New York: Harcourt Brace, 1958.
+  [Explores themes of divine delay, trust, and patience in the Psalms]
 - Packer, J.I. *Knowing God*. Downers Grove: IVP, 1973.
+  [Addresses trust, divine sovereignty, and patient dependence on God's character and timing]
 - Piper, John. *Desiring God: Meditations of a Christian Hedonist*. Colorado Springs: Multnomah, 2011.
+  [Explores satisfaction in God alone as motivation for patient waiting and hope]
 - Piper, John. *Future Grace*. Colorado Springs: Multnomah, 1995.
+  [Directly addresses hope-based ethics and trust in God's promised future provision]
 - Tozer, A.W. *The Pursuit of God*. Camp Hill, PA: Christian Publications, 1982.
+  [Explores seeking God's presence with patient longing and spiritual desire]
 - Volf, Miroslav. *Exclusion and Embrace: A Theological Exploration of Identity, Otherness, and Reconciliation*. Nashville: Abingdon, 1996.
+  [Addresses waiting for God's justice and the eschatological resolution of evil]
 - Waltke, Bruce. *An Old Testament Theology*. Grand Rapids: Zondervan, 2007.
+  [Provides theological framework for Old Testament waiting passages, especially Psalms and Isaiah]
 - Wright, Christopher. *Old Testament Ethics for the People of God*. Downers Grove: IVP Academic, 2004.
+  [Explores ethical implications of covenant trust and dependence on Yahweh]
 - Wright, N.T. *Surprised by Hope*. New York: HarperOne, 2008.
+  [Addresses Christian hope and patient waiting for new creation and bodily resurrection]
 
 **Specialized Studies:**
 - Brueggemann, Walter. *The Psalms and the Life of Faith*. Minneapolis: Fortress, 1995.
+  [Explores Psalm theology of lament, trust, and waiting on God through suffering]
 - Carson, D.A. *For the Love of God*. Vol. 2. Wheaton: Crossway, 1999.
+  [Devotional reflections on Scripture including waiting and trust passages]
 - Davis, Ellen. *Getting Involved with God: Rediscovering the Old Testament*. Cambridge, MA: Cowley, 2001.
+  [Explores Old Testament spirituality of patient attentiveness to God]
 - Guinness, Os. *The Call: Finding and Fulfilling the Central Purpose of Your Life*. Nashville: Thomas Nelson, 2003.
+  [Addresses discernment, patience, and waiting for God's calling and direction]
 - Hays, Richard. *The Moral Vision of the New Testament*. New York: HarperOne, 1996.
+  [Examines New Testament ethics of hope, endurance, and eschatological waiting]
 - Keller, Timothy. *Walking with God Through Pain and Suffering*. New York: Dutton, 2013.
+  [Explores trust and patient endurance through suffering; addresses "Why?" and "How long?" questions]
 - Mouw, Richard. *When the Kings Come Marching In: Isaiah and the New Jerusalem*. Revised ed. Grand Rapids: Eerdmans, 2002.
+  [Addresses Isaiah's vision of restoration and eschatological hope requiring patient waiting]
 - Vroegop, Mark. *Dark Clouds, Deep Mercy: Discovering the Grace of Lament*. Wheaton: Crossway, 2019.
+  [Explores biblical lament theology and patient waiting through grief and suffering]
 - Wolterstorff, Nicholas. *Lament for a Son*. Grand Rapids: Eerdmans, 1987.
+  [Personal testimony of waiting on God through profound grief and loss]
 - Wolterstorff, Nicholas. *Until Justice and Peace Embrace*. Grand Rapids: Eerdmans, 1983.
+  [Addresses waiting for God's justice and shalom in the face of injustice]
 - Wright, N.T. *Evil and the Justice of God*. Downers Grove: IVP, 2006.
+  [Explores theodicy and waiting for God's ultimate justice and vindication]
 
 **Critical/Liberationist Perspectives (for balance):**
 - Cone, James. *The Cross and the Lynching Tree*. Maryknoll, NY: Orbis, 2011.
+  [Explores Black suffering and waiting for God's justice in the face of systemic oppression]
 - Jennings, Willie James. *Acts*. Belief: A Theological Commentary on the Bible. Louisville: Westminster John Knox, 2017.
+  [Addresses themes of Spirit-empowered endurance and eschatological hope in multiethnic community]
 - Tamez, Elsa. *The Amnesty of Grace: Justification by Faith from a Latin American Perspective*. Nashville: Abingdon, 1993.
+  [Explores hope and patient waiting for liberation and justice from marginalized perspective]
 - Volf, Miroslav. *Against the Tide: Love in a Time of Petty Dreams and Persisting Enmities*. Grand Rapids: Eerdmans, 2010.
+  [Addresses endurance, hope, and waiting in contexts of cultural hostility and suffering]

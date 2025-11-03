@@ -1975,6 +1975,29 @@ for (let i = 0; i < lines.length; i++) {
     continue;
   }
 
+  // Handle bibliography annotations (indented lines starting with [)
+  if (line.match(/^  \[.*\]$/)) {
+    const annotationText = line.trim().substring(1, line.trim().length - 1); // Remove brackets
+    appendixBSections.push(
+      new Paragraph({
+        children: [
+          new TextRun({
+            text: annotationText,
+            italics: true,
+            color: COLORS.TEXT_SECONDARY,
+            font: 'Times New Roman',
+            size: 16  // 8pt font size (in half-points)
+          })
+        ],
+        indent: {
+          left: convertInchesToTwip(0.5)  // Indent annotation
+        },
+        spacing: { after: SPACING.PARA_MEDIUM }
+      })
+    );
+    continue;
+  }
+
   // Handle regular paragraph text (with inline bold/italic markdown)
   if (line.trim().length > 0) {
     // Simple approach: split by bold markers and create TextRuns
@@ -2442,8 +2465,9 @@ const doc = new Document({
         type: 'nextPage',  // Force new page section break
         page: {
           size: {
-            width: convertInchesToTwip(11),    // US Letter landscape width
-            height: convertInchesToTwip(8.5)   // US Letter landscape height
+            width: convertInchesToTwip(8.5),   // US Letter width
+            height: convertInchesToTwip(11),   // US Letter height
+            orientation: PageOrientation.LANDSCAPE
           },
           margin: {
             top: convertInchesToTwip(1),
