@@ -703,6 +703,7 @@ sections.push(
     text: 'Introduction',
     heading: HeadingLevel.HEADING_1,
     spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -895,6 +896,7 @@ for (const themeData of structuredData) {
       text: themeData.theme,
       heading: HeadingLevel.HEADING_1,
       spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+      keepNext: true,  // Prevent widowed headings
       border: {
         left: {
           color: COLORS.PRIMARY,
@@ -1274,6 +1276,7 @@ sections.push(
     heading: HeadingLevel.HEADING_1,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
     pageBreakBefore: true,
+    keepNext: true,  // Prevent widowed headings
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1306,6 +1309,7 @@ sections.push(
     text: 'Hebrew Verb Stem System',
     heading: HeadingLevel.HEADING_2,
     spacing: { before: SPACING.H3_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -1379,6 +1383,7 @@ sections.push(
     text: 'Hebrew Grammatical Concepts',
     heading: HeadingLevel.HEADING_2,
     spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -1500,6 +1505,7 @@ sections.push(
     text: 'Greek Grammatical Concepts',
     heading: HeadingLevel.HEADING_2,
     spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -1625,6 +1631,7 @@ appendixASections.push(
     text: 'Appendix: Source Reference Table',
     heading: HeadingLevel.HEADING_1,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1791,6 +1798,7 @@ appendixBSections.push(
     text: 'Appendix B: Paraenetic and Protreptic Implications',
     heading: HeadingLevel.HEADING_1,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     border: {
       left: {
         color: COLORS.ACCENT,
@@ -1842,6 +1850,7 @@ for (let i = 0; i < lines.length; i++) {
         text: line.substring(3),
         heading: HeadingLevel.HEADING_2,
         spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+        keepNext: true,  // Prevent widowed headings
         run: {
           color: COLORS.ACCENT,
           font: 'Calibri',
@@ -1859,6 +1868,7 @@ for (let i = 0; i < lines.length; i++) {
         text: line.substring(4),
         heading: HeadingLevel.HEADING_3,
         spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER },
+        keepNext: true,  // Prevent widowed headings
         run: {
           color: COLORS.SUPPORTING,
           font: 'Calibri',
@@ -1875,6 +1885,7 @@ for (let i = 0; i < lines.length; i++) {
       new Paragraph({
         text: line.substring(5),
         spacing: { before: SPACING.PARA_MEDIUM, after: SPACING.PARA_SMALL },
+        keepNext: true,  // Prevent widowed headings
         run: {
           bold: true,
           color: COLORS.TEXT_PRIMARY,
@@ -2048,6 +2059,7 @@ sections.push(
     text: 'Lexeme Summary',
     heading: HeadingLevel.HEADING_2,
     spacing: { before: SPACING.H2_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.ACCENT,
       font: 'Calibri',
@@ -2072,6 +2084,7 @@ sections.push(
     text: 'Hebrew Words',
     heading: HeadingLevel.HEADING_3,
     spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
@@ -2132,6 +2145,7 @@ sections.push(
     text: 'Greek Words',
     heading: HeadingLevel.HEADING_3,
     spacing: { before: SPACING.H3_BEFORE, after: SPACING.H2_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.PRIMARY,
       font: 'Calibri',
@@ -2213,6 +2227,7 @@ tocSections.push(
     heading: HeadingLevel.HEADING_1,
     alignment: AlignmentType.CENTER,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.PRIMARY,
       font: 'Garamond',
@@ -2280,6 +2295,7 @@ tocSections.push(
     heading: HeadingLevel.HEADING_1,
     alignment: AlignmentType.CENTER,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.PRIMARY,
       font: 'Garamond',
@@ -2337,6 +2353,7 @@ tocSections.push(
     heading: HeadingLevel.HEADING_1,
     alignment: AlignmentType.CENTER,
     spacing: { before: SPACING.H1_BEFORE, after: SPACING.H1_AFTER },
+    keepNext: true,  // Prevent widowed headings
     run: {
       color: COLORS.PRIMARY,
       font: 'Garamond',
